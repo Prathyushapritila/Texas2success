@@ -28,20 +28,18 @@ export default function ServiceDetailPage({ params }: { params: { id: string } }
   return (
     <div className="pt-20">
       {/* Hero Section with Background Image */}
-      <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
-        {/* Background Image with Overlay */}
-        <div className="absolute inset-0">
-          {/* Background Image */}
-          <Image
+      <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden">
+        {/* Background Image Container */}
+        <div className="absolute inset-0 z-0">
+          {/* Background Image using regular img for external URLs */}
+          <img
             src={service.backgroundImage}
             alt={service.title}
-            fill
-            className="object-cover"
-            priority
-            quality={90}
+            className="absolute inset-0 w-full h-full object-cover"
+            style={{ objectPosition: 'center' }}
           />
           {/* Green gradient overlay for better text readability */}
-          <div className="absolute inset-0 bg-gradient-to-br from-green-600/85 via-green-700/85 to-green-800/85 z-10"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-green-600/80 via-green-700/85 to-green-800/90 z-10"></div>
         </div>
 
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
@@ -54,7 +52,7 @@ export default function ServiceDetailPage({ params }: { params: { id: string } }
             >
               <Link
                 href="/services"
-                className="inline-flex items-center text-white/90 hover:text-white transition-colors bg-white/10 backdrop-blur-sm px-4 py-2 rounded-lg"
+                className="inline-flex items-center text-white/90 hover:text-white transition-colors bg-white/10 backdrop-blur-sm px-4 py-2 rounded-lg border border-white/20"
               >
                 <ArrowLeft className="w-5 h-5 mr-2" />
                 Back to Services
@@ -68,7 +66,7 @@ export default function ServiceDetailPage({ params }: { params: { id: string } }
               transition={{ duration: 0.8 }}
               className="mb-8"
             >
-              <div className="w-24 h-24 bg-white/20 backdrop-blur-md rounded-2xl flex items-center justify-center mx-auto border border-white/30">
+              <div className="w-24 h-24 bg-white/20 backdrop-blur-md rounded-2xl flex items-center justify-center mx-auto border border-white/30 shadow-lg">
                 <Icon className="w-12 h-12 text-white" />
               </div>
             </motion.div>
@@ -78,7 +76,7 @@ export default function ServiceDetailPage({ params }: { params: { id: string } }
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6"
+              className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 drop-shadow-lg"
             >
               {service.title}
             </motion.h1>
@@ -88,7 +86,7 @@ export default function ServiceDetailPage({ params }: { params: { id: string } }
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto"
+              className="text-xl md:text-2xl text-white/95 max-w-3xl mx-auto drop-shadow-md"
             >
               {service.shortDescription}
             </motion.p>
