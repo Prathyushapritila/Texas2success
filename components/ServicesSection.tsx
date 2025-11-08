@@ -4,9 +4,39 @@ import { motion } from 'framer-motion'
 import Link from 'next/link'
 import Image from 'next/image'
 import { services } from '@/data/siteData'
-import { ArrowRight } from 'lucide-react'
+import { ArrowRight, Cloud } from 'lucide-react'
 
 export default function ServicesSection() {
+  const getOverlayStyle = (overlayType: string) => {
+    switch (overlayType) {
+      case 'dark':
+        // ERP & CRM: Dark overlay rgba(0,0,0,0.5)
+        return {
+          background: 'linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5))'
+        }
+      case 'blue':
+        // Websites & Mobile Apps: Brand blue #004AAD with 60% opacity
+        return {
+          background: 'linear-gradient(rgba(0, 74, 173, 0.6), rgba(0, 74, 173, 0.6))'
+        }
+      case 'cloud':
+        // Salesforce: Cloud/blur effect
+        return {
+          background: 'linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5))',
+          backdropFilter: 'blur(2px)'
+        }
+      case 'orange':
+        // SEO & Digital Marketing: Orange-to-black gradient
+        return {
+          background: 'linear-gradient(135deg, rgba(255, 140, 0, 0.6) 0%, rgba(0,0,0,0.7) 100%)'
+        }
+      default:
+        return {
+          background: 'linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4))'
+        }
+    }
+  }
+
   return (
     <section id="services" className="py-20 md:py-24 bg-gray-50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -50,13 +80,20 @@ export default function ServicesSection() {
                     sizes="(max-width: 768px) 100vw, 50vw"
                   />
                   
-                  {/* Dark Overlay - 40% opacity black */}
+                  {/* Dynamic Overlay based on service type */}
                   <div 
-                    className="absolute inset-0 bg-gradient-to-br from-black/40 to-black/40 transition-opacity duration-300 group-hover:opacity-70"
-                    style={{
-                      background: 'linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4))'
-                    }}
-                  ></div>
+                    className="absolute inset-0 transition-opacity duration-300 group-hover:opacity-80"
+                    style={getOverlayStyle(service.overlayType || 'dark')}
+                  >
+                    {/* Cloud icons for Salesforce service */}
+                    {service.overlayType === 'cloud' && (
+                      <div className="absolute inset-0 opacity-20">
+                        <Cloud className="absolute top-10 left-10 w-16 h-16 text-white" />
+                        <Cloud className="absolute top-32 right-16 w-12 h-12 text-white" />
+                        <Cloud className="absolute bottom-20 left-1/4 w-14 h-14 text-white" />
+                      </div>
+                    )}
+                  </div>
                   
                   {/* Content Overlay */}
                   <div className="absolute inset-0 flex flex-col justify-end p-6 md:p-8 z-10">
