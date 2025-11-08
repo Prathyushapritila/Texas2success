@@ -87,8 +87,8 @@ export default function About() {
                 whileHover={{ y: -10 }}
                 className="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all"
               >
-                <div className="w-16 h-16 bg-primary-100 dark:bg-primary-900/30 rounded-xl flex items-center justify-center mb-4">
-                  <Icon className="w-8 h-8 text-primary-600 dark:text-primary-400" />
+                <div className="w-16 h-16 bg-green-100 dark:bg-green-900/30 rounded-xl flex items-center justify-center mb-4">
+                  <Icon className="w-8 h-8 text-green-600 dark:text-green-400" />
                 </div>
                 <h3 className="text-2xl font-semibold mb-3 text-gray-900 dark:text-white">
                   {value.title}
@@ -136,7 +136,7 @@ export default function About() {
               <h3 className="text-2xl font-semibold mb-2 text-gray-900 dark:text-white">
                 {leader.name}
               </h3>
-              <p className="text-primary-600 dark:text-primary-400 font-medium mb-4">
+              <p className="text-green-600 dark:text-green-400 font-medium mb-4">
                 {leader.role}
               </p>
               <p className="text-gray-600 dark:text-gray-300 text-sm">

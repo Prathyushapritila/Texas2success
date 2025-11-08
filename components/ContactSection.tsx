@@ -39,7 +39,7 @@ export default function ContactSection() {
               <div className="glass dark:bg-slate-800/50 p-8 rounded-2xl border border-gray-200 dark:border-gray-700">
                 <button
                   onClick={() => setIsModalOpen(true)}
-                  className="w-full bg-primary-600 text-white px-6 py-4 rounded-lg font-semibold hover:bg-primary-700 transition-colors flex items-center justify-center space-x-2 mb-6"
+                  className="w-full bg-green-600 text-white px-6 py-4 rounded-lg font-semibold hover:bg-green-700 transition-colors flex items-center justify-center space-x-2 mb-6"
                 >
                   <MessageCircle className="w-5 h-5" />
                   <span>Open Contact Form</span>
@@ -60,12 +60,12 @@ export default function ContactSection() {
             >
               <div className="glass dark:bg-slate-800/50 p-6 rounded-xl border border-gray-200 dark:border-gray-700">
                 <div className="flex items-start">
-                  <Phone className="w-6 h-6 text-primary-600 dark:text-primary-400 mr-4 mt-1 flex-shrink-0" />
+                  <Phone className="w-6 h-6 text-green-600 dark:text-green-400 mr-4 mt-1 flex-shrink-0" />
                   <div>
                     <h3 className="font-semibold text-gray-900 dark:text-white mb-1">Phone</h3>
                     <a
                       href={`tel:${siteConfig.contact.phone.replace(/\s/g, '')}`}
-                      className="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+                      className="text-gray-600 dark:text-gray-300 hover:text-green-600 dark:hover:text-green-400 transition-colors"
                     >
                       {siteConfig.contact.phone}
                     </a>
@@ -75,12 +75,12 @@ export default function ContactSection() {
 
               <div className="glass dark:bg-slate-800/50 p-6 rounded-xl border border-gray-200 dark:border-gray-700">
                 <div className="flex items-start">
-                  <Mail className="w-6 h-6 text-primary-600 dark:text-primary-400 mr-4 mt-1 flex-shrink-0" />
+                  <Mail className="w-6 h-6 text-green-600 dark:text-green-400 mr-4 mt-1 flex-shrink-0" />
                   <div>
                     <h3 className="font-semibold text-gray-900 dark:text-white mb-1">Email</h3>
                     <a
                       href={`mailto:${siteConfig.contact.email}`}
-                      className="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+                      className="text-gray-600 dark:text-gray-300 hover:text-green-600 dark:hover:text-green-400 transition-colors"
                     >
                       {siteConfig.contact.email}
                     </a>
@@ -90,14 +90,14 @@ export default function ContactSection() {
 
               <div className="glass dark:bg-slate-800/50 p-6 rounded-xl border border-gray-200 dark:border-gray-700">
                 <div className="flex items-start">
-                  <MapPin className="w-6 h-6 text-primary-600 dark:text-primary-400 mr-4 mt-1 flex-shrink-0" />
+                  <MapPin className="w-6 h-6 text-green-600 dark:text-green-400 mr-4 mt-1 flex-shrink-0" />
                   <div>
                     <h3 className="font-semibold text-gray-900 dark:text-white mb-1">Address</h3>
                     <a
                       href={`https://maps.google.com/?q=${encodeURIComponent(siteConfig.contact.fullAddress)}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+                      className="text-gray-600 dark:text-gray-300 hover:text-green-600 dark:hover:text-green-400 transition-colors"
                     >
                       {siteConfig.contact.address}<br />
                       {siteConfig.contact.city}
@@ -112,7 +112,7 @@ export default function ContactSection() {
                   href={siteConfig.social.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-12 h-12 bg-primary-100 dark:bg-primary-900/30 rounded-lg flex items-center justify-center hover:bg-primary-600 hover:text-white transition-colors"
+                  className="w-12 h-12 bg-green-100 dark:bg-green-900/30 rounded-lg flex items-center justify-center hover:bg-green-600 hover:text-white transition-colors"
                   aria-label="LinkedIn"
                 >
                   <span className="text-xl">in</span>
@@ -121,7 +121,7 @@ export default function ContactSection() {
                   href={siteConfig.social.twitter}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-12 h-12 bg-primary-100 dark:bg-primary-900/30 rounded-lg flex items-center justify-center hover:bg-primary-600 hover:text-white transition-colors"
+                  className="w-12 h-12 bg-green-100 dark:bg-green-900/30 rounded-lg flex items-center justify-center hover:bg-green-600 hover:text-white transition-colors"
                   aria-label="Twitter"
                 >
                   <span className="text-xl">𝕏</span>
@@ -130,7 +130,7 @@ export default function ContactSection() {
                   href={siteConfig.social.facebook}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-12 h-12 bg-primary-100 dark:bg-primary-900/30 rounded-lg flex items-center justify-center hover:bg-primary-600 hover:text-white transition-colors"
+                  className="w-12 h-12 bg-green-100 dark:bg-green-900/30 rounded-lg flex items-center justify-center hover:bg-green-600 hover:text-white transition-colors"
                   aria-label="Facebook"
                 >
                   <span className="text-xl">f</span>

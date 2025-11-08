@@ -22,7 +22,7 @@ export default function Footer() {
                 href={siteConfig.social.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-primary-600 transition-colors"
+                className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-green-600 transition-colors"
                 aria-label="LinkedIn"
               >
                 <Linkedin className="w-5 h-5" />
@@ -31,7 +31,7 @@ export default function Footer() {
                 href={siteConfig.social.twitter}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-primary-600 transition-colors"
+                className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-green-600 transition-colors"
                 aria-label="Twitter"
               >
                 <Twitter className="w-5 h-5" />
@@ -40,7 +40,7 @@ export default function Footer() {
                 href={siteConfig.social.facebook}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-primary-600 transition-colors"
+                className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-green-600 transition-colors"
                 aria-label="Facebook"
               >
                 <Facebook className="w-5 h-5" />
@@ -112,19 +112,19 @@ export default function Footer() {
             <h4 className="text-lg font-semibold mb-4">Contact Info</h4>
             <ul className="space-y-3">
               <li className="flex items-start">
-                <Phone className="w-5 h-5 mr-3 mt-1 text-primary-400" />
+                <Phone className="w-5 h-5 mr-3 mt-1 text-green-400" />
                 <a href={`tel:${siteConfig.contact.phone.replace(/\s/g, '')}`} className="text-gray-400 hover:text-white transition-colors">
                   {siteConfig.contact.phone}
                 </a>
               </li>
               <li className="flex items-start">
-                <Mail className="w-5 h-5 mr-3 mt-1 text-primary-400" />
+                <Mail className="w-5 h-5 mr-3 mt-1 text-green-400" />
                 <a href={`mailto:${siteConfig.contact.email}`} className="text-gray-400 hover:text-white transition-colors">
                   {siteConfig.contact.email}
                 </a>
               </li>
               <li className="flex items-start">
-                <MapPin className="w-5 h-5 mr-3 mt-1 text-primary-400" />
+                <MapPin className="w-5 h-5 mr-3 mt-1 text-green-400" />
                 <a
                   href={`https://maps.google.com/?q=${encodeURIComponent(siteConfig.contact.fullAddress)}`}
                   target="_blank"

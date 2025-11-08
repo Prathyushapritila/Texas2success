@@ -51,37 +51,37 @@ export default function Salesforce() {
               <h2 className="text-3xl font-semibold mb-6 text-gray-800">Why Choose Our Salesforce Services</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="flex items-start">
-                  <svg className="w-6 h-6 text-primary-600 mr-3 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-6 h-6 text-green-600 mr-3 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
                   <span className="text-gray-700">Certified Salesforce professionals</span>
                 </div>
                 <div className="flex items-start">
-                  <svg className="w-6 h-6 text-primary-600 mr-3 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-6 h-6 text-green-600 mr-3 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
                   <span className="text-gray-700">End-to-end project management</span>
                 </div>
                 <div className="flex items-start">
-                  <svg className="w-6 h-6 text-primary-600 mr-3 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-6 h-6 text-green-600 mr-3 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
                   <span className="text-gray-700">Custom solutions for all business sizes</span>
                 </div>
                 <div className="flex items-start">
-                  <svg className="w-6 h-6 text-primary-600 mr-3 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-6 h-6 text-green-600 mr-3 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
                   <span className="text-gray-700">Ongoing support and training</span>
                 </div>
                 <div className="flex items-start">
-                  <svg className="w-6 h-6 text-primary-600 mr-3 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-6 h-6 text-green-600 mr-3 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
                   <span className="text-gray-700">Proven track record</span>
                 </div>
                 <div className="flex items-start">
-                  <svg className="w-6 h-6 text-primary-600 mr-3 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-6 h-6 text-green-600 mr-3 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
                   <span className="text-gray-700">Scalable and flexible solutions</span>
@@ -89,14 +89,14 @@ export default function Salesforce() {
               </div>
             </div>
 
-            <div className="bg-primary-50 p-8 rounded-lg text-center">
+            <div className="bg-green-50 p-8 rounded-lg text-center">
               <h2 className="text-3xl font-semibold mb-4 text-gray-800">Ready to Transform Your Business?</h2>
               <p className="text-gray-700 mb-6">
                 Let our Salesforce experts help you unlock the full potential of the platform. Contact us for a free consultation.
               </p>
               <Link 
                 href="/contact" 
-                className="bg-primary-600 text-white px-8 py-3 rounded-md font-semibold hover:bg-primary-700 transition inline-block"
+                className="bg-green-600 text-white px-8 py-3 rounded-md font-semibold hover:bg-green-700 transition inline-block"
               >
                 Get Free Consultation
               </Link>

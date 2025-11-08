@@ -48,12 +48,12 @@ export default function Contact() {
               className="glass dark:bg-slate-800/50 p-6 rounded-xl border border-gray-200 dark:border-gray-700"
             >
               <div className="flex items-start">
-                <Phone className="w-6 h-6 text-primary-600 dark:text-primary-400 mr-4 mt-1 flex-shrink-0" />
+                <Phone className="w-6 h-6 text-green-600 dark:text-green-400 mr-4 mt-1 flex-shrink-0" />
                 <div>
                   <h3 className="font-semibold text-gray-900 dark:text-white mb-1">Phone</h3>
                   <a
                     href={`tel:${siteConfig.contact.phone.replace(/\s/g, '')}`}
-                    className="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+                    className="text-gray-600 dark:text-gray-300 hover:text-green-600 dark:hover:text-green-400 transition-colors"
                   >
                     {siteConfig.contact.phone}
                   </a>
@@ -68,12 +68,12 @@ export default function Contact() {
               className="glass dark:bg-slate-800/50 p-6 rounded-xl border border-gray-200 dark:border-gray-700"
             >
               <div className="flex items-start">
-                <Mail className="w-6 h-6 text-primary-600 dark:text-primary-400 mr-4 mt-1 flex-shrink-0" />
+                <Mail className="w-6 h-6 text-green-600 dark:text-green-400 mr-4 mt-1 flex-shrink-0" />
                 <div>
                   <h3 className="font-semibold text-gray-900 dark:text-white mb-1">Email</h3>
                   <a
                     href={`mailto:${siteConfig.contact.email}`}
-                    className="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+                    className="text-gray-600 dark:text-gray-300 hover:text-green-600 dark:hover:text-green-400 transition-colors"
                   >
                     {siteConfig.contact.email}
                   </a>
@@ -88,14 +88,14 @@ export default function Contact() {
               className="glass dark:bg-slate-800/50 p-6 rounded-xl border border-gray-200 dark:border-gray-700"
             >
               <div className="flex items-start">
-                <MapPin className="w-6 h-6 text-primary-600 dark:text-primary-400 mr-4 mt-1 flex-shrink-0" />
+                <MapPin className="w-6 h-6 text-green-600 dark:text-green-400 mr-4 mt-1 flex-shrink-0" />
                 <div>
                   <h3 className="font-semibold text-gray-900 dark:text-white mb-1">Address</h3>
                   <a
                     href={`https://maps.google.com/?q=${encodeURIComponent(siteConfig.contact.fullAddress)}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+                    className="text-gray-600 dark:text-gray-300 hover:text-green-600 dark:hover:text-green-400 transition-colors"
                   >
                     {siteConfig.contact.address}<br />
                     {siteConfig.contact.city}
@@ -111,7 +111,7 @@ export default function Contact() {
               className="glass dark:bg-slate-800/50 p-6 rounded-xl border border-gray-200 dark:border-gray-700"
             >
               <div className="flex items-start">
-                <Clock className="w-6 h-6 text-primary-600 dark:text-primary-400 mr-4 mt-1 flex-shrink-0" />
+                <Clock className="w-6 h-6 text-green-600 dark:text-green-400 mr-4 mt-1 flex-shrink-0" />
                 <div>
                   <h3 className="font-semibold text-gray-900 dark:text-white mb-1">Business Hours</h3>
                   <p className="text-gray-600 dark:text-gray-300">

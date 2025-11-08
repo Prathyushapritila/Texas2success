@@ -122,12 +122,12 @@ export default function TestimonialsSlider() {
                 className="absolute inset-0"
               >
                 <div className="glass dark:bg-slate-900/50 p-8 md:p-12 rounded-2xl border border-gray-200 dark:border-gray-700 h-full flex flex-col">
-                  <Quote className="w-12 h-12 text-primary-600 dark:text-primary-400 mb-6" />
+                  <Quote className="w-12 h-12 text-green-600 dark:text-green-400 mb-6" />
                   <p className="text-xl text-gray-700 dark:text-gray-300 mb-8 flex-grow italic">
                     "{testimonials[currentIndex].quote}"
                   </p>
                   <div className="flex items-center space-x-4">
-                    <div className="w-16 h-16 bg-primary-100 dark:bg-primary-900/30 rounded-full flex items-center justify-center">
+                    <div className="w-16 h-16 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
                       <span className="text-2xl">👤</span>
                     </div>
                     <div>
@@ -147,14 +147,14 @@ export default function TestimonialsSlider() {
           {/* Navigation Arrows */}
           <button
             onClick={prevSlide}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 w-12 h-12 bg-white dark:bg-slate-800 rounded-full shadow-lg flex items-center justify-center hover:bg-primary-600 hover:text-white transition-all z-10"
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 w-12 h-12 bg-white dark:bg-slate-800 rounded-full shadow-lg flex items-center justify-center hover:bg-green-600 hover:text-white transition-all z-10"
             aria-label="Previous testimonial"
           >
             <ChevronLeft className="w-6 h-6" />
           </button>
           <button
             onClick={nextSlide}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 w-12 h-12 bg-white dark:bg-slate-800 rounded-full shadow-lg flex items-center justify-center hover:bg-primary-600 hover:text-white transition-all z-10"
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 w-12 h-12 bg-white dark:bg-slate-800 rounded-full shadow-lg flex items-center justify-center hover:bg-green-600 hover:text-white transition-all z-10"
             aria-label="Next testimonial"
           >
             <ChevronRight className="w-6 h-6" />
@@ -168,7 +168,7 @@ export default function TestimonialsSlider() {
                 onClick={() => goToSlide(index)}
                 className={`w-3 h-3 rounded-full transition-all ${
                   index === currentIndex
-                    ? 'bg-primary-600 w-8'
+                    ? 'bg-green-600 w-8'
                     : 'bg-gray-300 dark:bg-gray-600'
                 }`}
                 aria-label={`Go to testimonial ${index + 1}`}

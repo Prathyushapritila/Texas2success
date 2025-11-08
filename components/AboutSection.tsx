@@ -19,7 +19,7 @@ export default function AboutSection() {
             <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900 dark:text-white">
               About Texas 2 Success
             </h2>
-            <div className="w-24 h-1 bg-primary-600 mx-auto"></div>
+            <div className="w-24 h-1 bg-green-600 mx-auto"></div>
           </motion.div>
 
           {/* Two Column Layout */}
@@ -33,7 +33,7 @@ export default function AboutSection() {
               className="space-y-6"
             >
               <div className="flex items-center space-x-3 mb-4">
-                <Target className="w-8 h-8 text-primary-600 dark:text-primary-400" />
+                <Target className="w-8 h-8 text-green-600 dark:text-green-400" />
                 <h3 className="text-3xl font-bold text-gray-900 dark:text-white">Our Mission</h3>
               </div>
               <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
@@ -58,7 +58,7 @@ export default function AboutSection() {
               className="space-y-6"
             >
               <div className="flex items-center space-x-3 mb-4">
-                <Zap className="w-8 h-8 text-primary-600 dark:text-primary-400" />
+                <Zap className="w-8 h-8 text-green-600 dark:text-green-400" />
                 <h3 className="text-3xl font-bold text-gray-900 dark:text-white">Our Story</h3>
               </div>
               <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
@@ -83,11 +83,11 @@ export default function AboutSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="relative rounded-2xl overflow-hidden bg-gradient-to-br from-primary-600 to-primary-800 p-12 text-center"
+            className="relative rounded-2xl overflow-hidden bg-gradient-to-br from-green-600 to-green-800 p-12 text-center"
           >
             <div className="max-w-2xl mx-auto">
               <h3 className="text-3xl font-bold text-white mb-4">Meet Our Team</h3>
-              <p className="text-primary-100 mb-8">
+              <p className="text-green-100 mb-8">
                 A diverse group of experts passionate about driving your success
               </p>
               {/* Placeholder for team photo */}
@@ -121,8 +121,8 @@ export default function AboutSection() {
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   className="text-center p-6 rounded-xl bg-gray-50 dark:bg-slate-800"
                 >
-                  <div className="w-16 h-16 bg-primary-100 dark:bg-primary-900/30 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Icon className="w-8 h-8 text-primary-600 dark:text-primary-400" />
+                  <div className="w-16 h-16 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Icon className="w-8 h-8 text-green-600 dark:text-green-400" />
                   </div>
                   <h4 className="text-xl font-semibold mb-2 text-gray-900 dark:text-white">{item.title}</h4>
                   <p className="text-gray-600 dark:text-gray-300">{item.desc}</p>

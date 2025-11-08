@@ -87,7 +87,7 @@ export default function CaseStudiesSection() {
                   transition={{ duration: 0.8 }}
                   className={isEven ? 'lg:order-1' : 'lg:order-2'}
                 >
-                  <div className="relative rounded-2xl overflow-hidden bg-gradient-to-br from-primary-500 to-primary-700 aspect-video flex items-center justify-center">
+                  <div className="relative rounded-2xl overflow-hidden bg-gradient-to-br from-green-500 to-green-700 aspect-video flex items-center justify-center">
                     <div className="text-white text-center p-8">
                       <div className="text-6xl mb-4">
                         {study.industry === 'Retail' && '🛒'}
@@ -109,7 +109,7 @@ export default function CaseStudiesSection() {
                 >
                   <div className="space-y-6">
                     <div>
-                      <span className="text-sm font-semibold text-primary-600 dark:text-primary-400 bg-primary-100 dark:bg-primary-900/30 px-3 py-1 rounded-full">
+                      <span className="text-sm font-semibold text-green-600 dark:text-green-400 bg-green-100 dark:bg-green-900/30 px-3 py-1 rounded-full">
                         {study.industry}
                       </span>
                       <h3 className="text-3xl font-bold mt-4 mb-4 text-gray-900 dark:text-white">
@@ -142,7 +142,7 @@ export default function CaseStudiesSection() {
                     <div className="grid grid-cols-3 gap-4 pt-4 border-t border-gray-200 dark:border-gray-700">
                       {study.metrics.map((metric, idx) => (
                         <div key={idx} className="text-center">
-                          <div className="text-3xl font-bold text-primary-600 dark:text-primary-400 mb-1">
+                          <div className="text-3xl font-bold text-green-600 dark:text-green-400 mb-1">
                             {metric.value}
                           </div>
                           <div className="text-sm text-gray-600 dark:text-gray-400">
@@ -152,7 +152,7 @@ export default function CaseStudiesSection() {
                       ))}
                     </div>
 
-                    <button className="inline-flex items-center text-primary-600 dark:text-primary-400 font-semibold hover:underline group">
+                    <button className="inline-flex items-center text-green-600 dark:text-green-400 font-semibold hover:underline group">
                       Read More
                       <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
                     </button>

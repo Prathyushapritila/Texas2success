@@ -35,7 +35,7 @@ export default function ServiceDetailPage({ params }: { params: { id: string } }
         >
           <Link
             href="/services"
-            className="inline-flex items-center text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 transition-colors"
+            className="inline-flex items-center text-green-600 dark:text-green-400 hover:text-green-700 dark:hover:text-green-300 transition-colors"
           >
             <ArrowLeft className="w-5 h-5 mr-2" />
             Back to Services
@@ -49,8 +49,8 @@ export default function ServiceDetailPage({ params }: { params: { id: string } }
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <div className="w-24 h-24 bg-primary-100 dark:bg-primary-900/30 rounded-2xl flex items-center justify-center mx-auto mb-6">
-            <Icon className="w-12 h-12 text-primary-600 dark:text-primary-400" />
+          <div className="w-24 h-24 bg-green-100 dark:bg-green-900/30 rounded-2xl flex items-center justify-center mx-auto mb-6">
+            <Icon className="w-12 h-12 text-green-600 dark:text-green-400" />
           </div>
           <h1 className="text-5xl md:text-6xl font-bold mb-6 text-gray-900 dark:text-white">
             {service.title}
@@ -94,7 +94,7 @@ export default function ServiceDetailPage({ params }: { params: { id: string } }
                 transition={{ duration: 0.5, delay: 0.5 + index * 0.1 }}
                 className="flex items-start bg-white dark:bg-slate-800 p-4 rounded-lg"
               >
-                <Check className="w-6 h-6 text-primary-600 dark:text-primary-400 mr-3 flex-shrink-0 mt-0.5" />
+                <Check className="w-6 h-6 text-green-600 dark:text-green-400 mr-3 flex-shrink-0 mt-0.5" />
                 <span className="text-gray-700 dark:text-gray-300">{feature}</span>
               </motion.div>
             ))}
@@ -108,14 +108,14 @@ export default function ServiceDetailPage({ params }: { params: { id: string } }
           transition={{ duration: 0.8, delay: 0.6 }}
           className="text-center"
         >
-          <div className="bg-gradient-to-r from-primary-600 to-primary-800 p-12 rounded-2xl text-white max-w-3xl mx-auto">
+          <div className="bg-gradient-to-r from-green-600 to-green-800 p-12 rounded-2xl text-white max-w-3xl mx-auto">
             <h2 className="text-3xl font-bold mb-4">Ready to Get Started?</h2>
-            <p className="text-xl mb-8 text-primary-100">
+            <p className="text-xl mb-8 text-green-100">
               Contact us today for a free consultation and learn how we can help transform your business.
             </p>
             <Link
               href="/contact"
-              className="bg-white text-primary-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-primary-50 transition inline-block"
+              className="bg-white text-green-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-green-50 transition inline-block"
             >
               Get Free Consultation
             </Link>

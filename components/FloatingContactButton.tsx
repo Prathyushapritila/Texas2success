@@ -43,7 +43,7 @@ export default function FloatingContactButton() {
                     setIsModalOpen(true)
                     setIsExpanded(false)
                   }}
-                  className="w-full bg-primary-600 text-white px-4 py-2 rounded-lg text-center hover:bg-primary-700 transition-colors text-sm font-medium flex items-center justify-center space-x-2"
+                  className="w-full bg-green-600 text-white px-4 py-2 rounded-lg text-center hover:bg-green-700 transition-colors text-sm font-medium flex items-center justify-center space-x-2"
                 >
                   <MessageCircle className="w-4 h-4" />
                   <span>Contact Form</span>
@@ -71,7 +71,7 @@ export default function FloatingContactButton() {
           onClick={() => setIsExpanded(!isExpanded)}
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
-          className="w-14 h-14 bg-primary-600 text-white rounded-full shadow-lg hover:shadow-xl flex items-center justify-center transition-all"
+          className="w-14 h-14 bg-green-600 text-white rounded-full shadow-lg hover:shadow-xl flex items-center justify-center transition-all"
           aria-label="Contact us"
         >
           <AnimatePresence mode="wait">

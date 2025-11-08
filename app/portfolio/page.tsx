@@ -35,7 +35,7 @@ export default function Portfolio() {
             >
               <div className="glass dark:bg-slate-800/50 rounded-2xl overflow-hidden border border-gray-200 dark:border-gray-700 hover:shadow-2xl transition-all">
                 {/* Image Placeholder */}
-                <div className="h-64 bg-gradient-to-br from-primary-400 to-primary-600 flex items-center justify-center">
+                <div className="h-64 bg-gradient-to-br from-green-400 to-green-600 flex items-center justify-center">
                   <div className="text-white text-center">
                     <Award className="w-16 h-16 mx-auto mb-4 opacity-50" />
                     <p className="text-lg font-semibold">{study.category}</p>
@@ -44,7 +44,7 @@ export default function Portfolio() {
 
                 <div className="p-8">
                   <div className="flex items-center justify-between mb-4">
-                    <span className="text-sm font-semibold text-primary-600 dark:text-primary-400 bg-primary-100 dark:bg-primary-900/30 px-3 py-1 rounded-full">
+                    <span className="text-sm font-semibold text-green-600 dark:text-green-400 bg-green-100 dark:bg-green-900/30 px-3 py-1 rounded-full">
                       {study.category}
                     </span>
                     <span className="text-sm text-gray-500 dark:text-gray-400">
@@ -67,7 +67,7 @@ export default function Portfolio() {
                   <div className="grid grid-cols-3 gap-4 pt-6 border-t border-gray-200 dark:border-gray-700">
                     {study.results.map((result, idx) => (
                       <div key={idx} className="text-center">
-                        <div className="text-3xl font-bold text-primary-600 dark:text-primary-400 mb-1">
+                        <div className="text-3xl font-bold text-green-600 dark:text-green-400 mb-1">
                           {result.metric}
                         </div>
                         <div className="text-xs text-gray-600 dark:text-gray-400">
@@ -91,15 +91,15 @@ export default function Portfolio() {
           className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-8"
         >
           <div className="text-center">
-            <div className="text-5xl font-bold text-primary-600 dark:text-primary-400 mb-2">100+</div>
+            <div className="text-5xl font-bold text-green-600 dark:text-green-400 mb-2">100+</div>
             <div className="text-gray-600 dark:text-gray-300">Projects Completed</div>
           </div>
           <div className="text-center">
-            <div className="text-5xl font-bold text-primary-600 dark:text-primary-400 mb-2">50+</div>
+            <div className="text-5xl font-bold text-green-600 dark:text-green-400 mb-2">50+</div>
             <div className="text-gray-600 dark:text-gray-300">Happy Clients</div>
           </div>
           <div className="text-center">
-            <div className="text-5xl font-bold text-primary-600 dark:text-primary-400 mb-2">15+</div>
+            <div className="text-5xl font-bold text-green-600 dark:text-green-400 mb-2">15+</div>
             <div className="text-gray-600 dark:text-gray-300">Years Experience</div>
           </div>
         </motion.div>

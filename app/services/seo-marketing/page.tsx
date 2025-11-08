@@ -51,37 +51,37 @@ export default function SEOMarketing() {
               <h2 className="text-3xl font-semibold mb-6 text-gray-800">Our Approach</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="flex items-start">
-                  <svg className="w-6 h-6 text-primary-600 mr-3 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-6 h-6 text-green-600 mr-3 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
                   <span className="text-gray-700">Data-driven strategies</span>
                 </div>
                 <div className="flex items-start">
-                  <svg className="w-6 h-6 text-primary-600 mr-3 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-6 h-6 text-green-600 mr-3 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
                   <span className="text-gray-700">Keyword research and optimization</span>
                 </div>
                 <div className="flex items-start">
-                  <svg className="w-6 h-6 text-primary-600 mr-3 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-6 h-6 text-green-600 mr-3 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
                   <span className="text-gray-700">On-page and off-page SEO</span>
                 </div>
                 <div className="flex items-start">
-                  <svg className="w-6 h-6 text-primary-600 mr-3 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-6 h-6 text-green-600 mr-3 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
                   <span className="text-gray-700">Performance tracking and analytics</span>
                 </div>
                 <div className="flex items-start">
-                  <svg className="w-6 h-6 text-primary-600 mr-3 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-6 h-6 text-green-600 mr-3 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
                   <span className="text-gray-700">Conversion rate optimization</span>
                 </div>
                 <div className="flex items-start">
-                  <svg className="w-6 h-6 text-primary-600 mr-3 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-6 h-6 text-green-600 mr-3 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
                   <span className="text-gray-700">Regular reporting and insights</span>
@@ -89,14 +89,14 @@ export default function SEOMarketing() {
               </div>
             </div>
 
-            <div className="bg-primary-50 p-8 rounded-lg text-center">
+            <div className="bg-green-50 p-8 rounded-lg text-center">
               <h2 className="text-3xl font-semibold mb-4 text-gray-800">Ready to Grow Your Online Presence?</h2>
               <p className="text-gray-700 mb-6">
                 Let's develop a digital marketing strategy that drives results. Contact us for a free consultation and SEO audit.
               </p>
               <Link 
                 href="/contact" 
-                className="bg-primary-600 text-white px-8 py-3 rounded-md font-semibold hover:bg-primary-700 transition inline-block"
+                className="bg-green-600 text-white px-8 py-3 rounded-md font-semibold hover:bg-green-700 transition inline-block"
               >
                 Get Free Consultation
               </Link>
