@@ -31,23 +31,17 @@ export default function ServiceDetailPage({ params }: { params: { id: string } }
       <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
         {/* Background Image with Overlay */}
         <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-gradient-to-br from-green-600/90 via-green-700/90 to-green-800/90 z-10"></div>
-          {/* Placeholder background - replace with actual service image */}
-          <div className="absolute inset-0 bg-gradient-to-br from-green-500 to-green-700">
-            <div className="absolute inset-0 flex items-center justify-center opacity-20">
-              <Icon className="w-64 h-64 text-white/20" />
-            </div>
-          </div>
-          {/* Uncomment when you have background images:
+          {/* Background Image */}
           <Image
             src={service.backgroundImage}
             alt={service.title}
             fill
             className="object-cover"
             priority
+            quality={90}
           />
-          <div className="absolute inset-0 bg-gradient-to-br from-green-600/80 via-green-700/80 to-green-800/80 z-10"></div>
-          */}
+          {/* Green gradient overlay for better text readability */}
+          <div className="absolute inset-0 bg-gradient-to-br from-green-600/85 via-green-700/85 to-green-800/85 z-10"></div>
         </div>
 
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
