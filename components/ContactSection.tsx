@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 import ContactModal from './ContactModal'
 import { siteConfig } from '@/data/siteData'
 import { Phone, Mail, MapPin, MessageCircle, Clock } from 'lucide-react'
@@ -11,8 +12,21 @@ export default function ContactSection() {
 
   return (
     <>
-      <section id="contact" className="py-20 md:py-24 bg-gradient-to-b from-white to-gray-50">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <section id="contact" className="relative py-20 md:py-24 bg-gradient-to-b from-white via-gray-50 to-white overflow-hidden">
+        {/* Subtle Logo Watermark */}
+        <div className="absolute inset-0 opacity-5 pointer-events-none">
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+            <Image
+              src="/logo.png"
+              alt="Texas 2 Success Logo Watermark"
+              width={400}
+              height={400}
+              className="object-contain"
+            />
+          </div>
+        </div>
+
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -24,27 +38,28 @@ export default function ContactSection() {
               Let's Build Your Success Story
             </h2>
             <div className="w-24 h-1 bg-green-600 mx-auto mb-6"></div>
-            <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
               We'd love to hear from you. Drop us a message and our team will respond within 24 hours.
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-12 max-w-6xl mx-auto mb-12">
             {/* Contact Form Button */}
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
+              className="flex items-center"
             >
-              <div className="bg-white p-8 md:p-10 rounded-2xl border border-gray-200 shadow-lg">
+              <div className="bg-white p-8 md:p-10 rounded-3xl border-2 border-gray-100 shadow-xl hover:shadow-2xl transition-all duration-300 w-full hover:border-green-200">
                 <h3 className="text-2xl md:text-3xl font-bold mb-4 text-gray-900">Get in Touch</h3>
-                <p className="text-gray-600 mb-6">
+                <p className="text-gray-600 mb-8 text-lg leading-relaxed">
                   Ready to transform your business? Contact us today for a free consultation.
                 </p>
                 <button
                   onClick={() => setIsModalOpen(true)}
-                  className="w-full bg-green-600 text-white px-6 py-4 rounded-lg font-semibold hover:bg-green-700 transition-colors flex items-center justify-center space-x-2 shadow-lg hover:shadow-xl transform hover:scale-105"
+                  className="w-full bg-gradient-to-r from-green-600 to-green-700 text-white px-6 py-4 rounded-full font-semibold hover:from-green-700 hover:to-green-800 transition-all flex items-center justify-center space-x-2 shadow-lg hover:shadow-xl transform hover:scale-105"
                 >
                   <MessageCircle className="w-5 h-5" />
                   <span>Open Contact Form</span>
@@ -58,11 +73,16 @@ export default function ContactSection() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="space-y-4 md:space-y-6"
+              className="space-y-5 md:space-y-6"
             >
-              <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-md hover:shadow-lg transition-all">
+              <motion.div
+                whileHover={{ scale: 1.02, x: 5 }}
+                className="bg-white p-6 rounded-2xl border-2 border-gray-100 shadow-lg hover:shadow-xl transition-all duration-300 hover:border-green-200"
+              >
                 <div className="flex items-start">
-                  <Phone className="w-6 h-6 text-green-600 mr-4 mt-1 flex-shrink-0" />
+                  <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                    <Phone className="w-6 h-6 text-green-600" />
+                  </div>
                   <div>
                     <h3 className="font-semibold text-gray-900 mb-1 text-lg">Phone</h3>
                     <a
@@ -73,11 +93,16 @@ export default function ContactSection() {
                     </a>
                   </div>
                 </div>
-              </div>
+              </motion.div>
 
-              <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-md hover:shadow-lg transition-all">
+              <motion.div
+                whileHover={{ scale: 1.02, x: 5 }}
+                className="bg-white p-6 rounded-2xl border-2 border-gray-100 shadow-lg hover:shadow-xl transition-all duration-300 hover:border-green-200"
+              >
                 <div className="flex items-start">
-                  <Mail className="w-6 h-6 text-green-600 mr-4 mt-1 flex-shrink-0" />
+                  <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                    <Mail className="w-6 h-6 text-green-600" />
+                  </div>
                   <div>
                     <h3 className="font-semibold text-gray-900 mb-1 text-lg">Email</h3>
                     <a
@@ -88,11 +113,16 @@ export default function ContactSection() {
                     </a>
                   </div>
                 </div>
-              </div>
+              </motion.div>
 
-              <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-md hover:shadow-lg transition-all">
+              <motion.div
+                whileHover={{ scale: 1.02, x: 5 }}
+                className="bg-white p-6 rounded-2xl border-2 border-gray-100 shadow-lg hover:shadow-xl transition-all duration-300 hover:border-green-200"
+              >
                 <div className="flex items-start">
-                  <MapPin className="w-6 h-6 text-green-600 mr-4 mt-1 flex-shrink-0" />
+                  <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                    <MapPin className="w-6 h-6 text-green-600" />
+                  </div>
                   <div>
                     <h3 className="font-semibold text-gray-900 mb-1 text-lg">Address</h3>
                     <a
@@ -106,11 +136,16 @@ export default function ContactSection() {
                     </a>
                   </div>
                 </div>
-              </div>
+              </motion.div>
 
-              <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-md hover:shadow-lg transition-all">
+              <motion.div
+                whileHover={{ scale: 1.02, x: 5 }}
+                className="bg-white p-6 rounded-2xl border-2 border-gray-100 shadow-lg hover:shadow-xl transition-all duration-300 hover:border-green-200"
+              >
                 <div className="flex items-start">
-                  <Clock className="w-6 h-6 text-green-600 mr-4 mt-1 flex-shrink-0" />
+                  <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                    <Clock className="w-6 h-6 text-green-600" />
+                  </div>
                   <div>
                     <h3 className="font-semibold text-gray-900 mb-1 text-lg">Business Hours</h3>
                     <p className="text-gray-600 text-base md:text-lg">
@@ -120,7 +155,7 @@ export default function ContactSection() {
                     </p>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             </motion.div>
           </div>
 
@@ -130,7 +165,7 @@ export default function ContactSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="mt-12 rounded-2xl overflow-hidden shadow-xl"
+            className="mt-12 rounded-3xl overflow-hidden shadow-2xl border-2 border-gray-100"
           >
             <div className="aspect-w-16 aspect-h-9 h-64 md:h-96">
               <iframe
