@@ -14,6 +14,35 @@ const iconMap = {
   TrendingUp,
 }
 
+const getOverlayStyle = (serviceId: string) => {
+  switch (serviceId) {
+    case 'erp-crm':
+      // Blue tones (#004AAD) with soft gradient
+      return {
+        background: 'linear-gradient(135deg, rgba(0, 74, 173, 0.75) 0%, rgba(0, 74, 173, 0.85) 100%)'
+      }
+    case 'salesforce':
+      // Blue and orange highlights with dark gradient
+      return {
+        background: 'linear-gradient(135deg, rgba(0, 74, 173, 0.7) 0%, rgba(255, 122, 0, 0.3) 50%, rgba(0, 0, 0, 0.6) 100%)'
+      }
+    case 'websites-apps':
+      // Blue and orange accents with subtle dark gradient
+      return {
+        background: 'linear-gradient(135deg, rgba(0, 74, 173, 0.6) 0%, rgba(255, 122, 0, 0.4) 50%, rgba(0, 0, 0, 0.5) 100%)'
+      }
+    case 'seo-marketing':
+      // Blue and orange accent colors with subtle dark gradient
+      return {
+        background: 'linear-gradient(135deg, rgba(0, 74, 173, 0.65) 0%, rgba(255, 122, 0, 0.35) 50%, rgba(0, 0, 0, 0.55) 100%)'
+      }
+    default:
+      return {
+        background: 'linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7))'
+      }
+  }
+}
+
 export default function ServiceDetailPage({ params }: { params: { id: string } }) {
   const router = useRouter()
   const service = services.find(s => s.id === params.id)
@@ -26,20 +55,23 @@ export default function ServiceDetailPage({ params }: { params: { id: string } }
   const Icon = iconMap[service.icon as keyof typeof iconMap] || Database
 
   return (
-    <div className="pt-20">
-      {/* Hero Section with Background Image */}
-      <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden">
+    <div className="pt-0">
+      {/* Full-Screen Hero Section with Background Image */}
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         {/* Background Image Container */}
         <div className="absolute inset-0 z-0">
-          {/* Background Image using regular img for external URLs */}
+          {/* Background Image */}
           <img
             src={service.backgroundImage}
             alt={service.title}
             className="absolute inset-0 w-full h-full object-cover"
             style={{ objectPosition: 'center' }}
           />
-          {/* Green gradient overlay for better text readability */}
-          <div className="absolute inset-0 bg-gradient-to-br from-green-600/80 via-green-700/85 to-green-800/90 z-10"></div>
+          {/* Dynamic Overlay based on service type */}
+          <div 
+            className="absolute inset-0 z-10"
+            style={getOverlayStyle(service.id)}
+          ></div>
         </div>
 
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
@@ -76,7 +108,7 @@ export default function ServiceDetailPage({ params }: { params: { id: string } }
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 drop-shadow-lg"
+              className="text-4xl md:text-5xl lg:text-7xl font-bold mb-6 drop-shadow-2xl"
             >
               {service.title}
             </motion.h1>
@@ -86,7 +118,7 @@ export default function ServiceDetailPage({ params }: { params: { id: string } }
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="text-xl md:text-2xl text-white/95 max-w-3xl mx-auto drop-shadow-md"
+              className="text-xl md:text-2xl lg:text-3xl text-white/95 max-w-3xl mx-auto drop-shadow-lg"
             >
               {service.shortDescription}
             </motion.p>

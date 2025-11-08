@@ -1,11 +1,27 @@
 'use client'
 
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import { siteConfig } from '@/data/siteData'
 import { Linkedin, Twitter, Facebook, Mail, Phone, MapPin, MessageCircle } from 'lucide-react'
 
 export default function Footer() {
   const currentYear = new Date().getFullYear()
+  const pathname = usePathname()
+
+  const isActive = (href: string) => {
+    if (href === '/') {
+      return pathname === '/'
+    }
+    return pathname?.startsWith(href)
+  }
+
+  const navLinks = [
+    { href: '/', label: 'Home' },
+    { href: '/services', label: 'Services' },
+    { href: '/about', label: 'About' },
+    { href: '/portfolio', label: 'Portfolio' },
+  ]
 
   return (
     <footer className="bg-gray-900 text-white">
@@ -57,33 +73,31 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Quick Links */}
+          {/* Quick Links - Highlighted */}
           <div>
             <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
-            <ul className="space-y-2">
+            <ul className="space-y-3">
+              {navLinks.map((link) => {
+                const active = isActive(link.href)
+                return (
+                  <li key={link.href}>
+                    <Link 
+                      href={link.href} 
+                      className={`inline-flex items-center transition-all duration-300 ${
+                        active
+                          ? 'text-green-400 font-semibold text-lg'
+                          : 'text-gray-400 hover:text-green-400 hover:translate-x-2'
+                      }`}
+                    >
+                      {active && <span className="w-2 h-2 bg-green-400 rounded-full mr-2"></span>}
+                      {link.label}
+                    </Link>
+                  </li>
+                )
+              })}
               <li>
-                <Link href="/" className="text-gray-400 hover:text-white transition-colors">
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link href="/services" className="text-gray-400 hover:text-white transition-colors">
-                  Services
-                </Link>
-              </li>
-              <li>
-                <Link href="/about" className="text-gray-400 hover:text-white transition-colors">
-                  About
-                </Link>
-              </li>
-              <li>
-                <Link href="/portfolio" className="text-gray-400 hover:text-white transition-colors">
-                  Portfolio
-                </Link>
-              </li>
-              <li>
-                <Link href="/careers" className="text-gray-400 hover:text-white transition-colors">
-                  Careers
+                <Link href="/contact" className="text-gray-400 hover:text-green-400 hover:translate-x-2 transition-all duration-300 inline-flex items-center">
+                  Contact
                 </Link>
               </li>
             </ul>
@@ -94,22 +108,26 @@ export default function Footer() {
             <h4 className="text-lg font-semibold mb-4">Services</h4>
             <ul className="space-y-2">
               <li>
-                <Link href="/services/erp-crm" className="text-gray-400 hover:text-white transition-colors">
+                <Link href="/services/erp-crm" className="text-gray-400 hover:text-green-400 transition-colors inline-flex items-center hover:translate-x-1">
+                  <span className="mr-2">→</span>
                   ERP & CRM Software
                 </Link>
               </li>
               <li>
-                <Link href="/services/salesforce" className="text-gray-400 hover:text-white transition-colors">
+                <Link href="/services/salesforce" className="text-gray-400 hover:text-green-400 transition-colors inline-flex items-center hover:translate-x-1">
+                  <span className="mr-2">→</span>
                   Salesforce Development
                 </Link>
               </li>
               <li>
-                <Link href="/services/websites-apps" className="text-gray-400 hover:text-white transition-colors">
+                <Link href="/services/websites-apps" className="text-gray-400 hover:text-green-400 transition-colors inline-flex items-center hover:translate-x-1">
+                  <span className="mr-2">→</span>
                   Websites & Apps
                 </Link>
               </li>
               <li>
-                <Link href="/services/seo-marketing" className="text-gray-400 hover:text-white transition-colors">
+                <Link href="/services/seo-marketing" className="text-gray-400 hover:text-green-400 transition-colors inline-flex items-center hover:translate-x-1">
+                  <span className="mr-2">→</span>
                   SEO & Marketing
                 </Link>
               </li>
@@ -122,13 +140,13 @@ export default function Footer() {
             <ul className="space-y-3">
               <li className="flex items-start">
                 <Phone className="w-5 h-5 mr-3 mt-1 text-green-400 flex-shrink-0" />
-                <a href={`tel:${siteConfig.contact.phone.replace(/\s/g, '')}`} className="text-gray-400 hover:text-white transition-colors">
+                <a href={`tel:${siteConfig.contact.phone.replace(/\s/g, '')}`} className="text-gray-400 hover:text-green-400 transition-colors">
                   {siteConfig.contact.phone}
                 </a>
               </li>
               <li className="flex items-start">
                 <Mail className="w-5 h-5 mr-3 mt-1 text-green-400 flex-shrink-0" />
-                <a href={`mailto:${siteConfig.contact.email}`} className="text-gray-400 hover:text-white transition-colors break-all">
+                <a href={`mailto:${siteConfig.contact.email}`} className="text-gray-400 hover:text-green-400 transition-colors break-all">
                   {siteConfig.contact.email}
                 </a>
               </li>
@@ -138,7 +156,7 @@ export default function Footer() {
                   href={`https://maps.google.com/?q=${encodeURIComponent(siteConfig.contact.fullAddress)}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-white transition-colors"
+                  className="text-gray-400 hover:text-green-400 transition-colors"
                 >
                   {siteConfig.contact.address}<br />
                   {siteConfig.contact.city}
