@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { siteConfig } from '@/data/siteData'
-import { Linkedin, Twitter, Facebook, Mail, Phone, MapPin } from 'lucide-react'
+import { Linkedin, Twitter, Facebook, Mail, Phone, MapPin, MessageCircle } from 'lucide-react'
 
 export default function Footer() {
   const currentYear = new Date().getFullYear()
@@ -44,6 +44,15 @@ export default function Footer() {
                 aria-label="Facebook"
               >
                 <Facebook className="w-5 h-5" />
+              </a>
+              <a
+                href={siteConfig.social.whatsapp}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-green-600 transition-colors"
+                aria-label="WhatsApp"
+              >
+                <MessageCircle className="w-5 h-5" />
               </a>
             </div>
           </div>

@@ -21,22 +21,26 @@ export default function Hero() {
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-6xl mx-auto text-center">
-          {/* Logo Section */}
+          {/* Logo Section - Beautiful styling */}
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8 }}
             className="mb-8 flex justify-center"
           >
-            <div className="w-32 h-32 md:w-40 md:h-40 bg-white rounded-full shadow-xl flex items-center justify-center border-4 border-green-100 p-4">
-              <Image
-                src="/logo.png"
-                alt="Texas 2 Success Logo"
-                width={120}
-                height={120}
-                className="object-contain"
-                priority
-              />
+            <div className="relative">
+              {/* Glow effect */}
+              <div className="absolute inset-0 bg-green-400 rounded-full blur-2xl opacity-20 animate-pulse"></div>
+              {/* Logo container - no box, just clean image */}
+              <div className="relative w-40 h-40 md:w-48 md:h-48">
+                <Image
+                  src="/logo.png"
+                  alt="Texas 2 Success Logo"
+                  fill
+                  className="object-contain drop-shadow-2xl"
+                  priority
+                />
+              </div>
             </div>
           </motion.div>
 

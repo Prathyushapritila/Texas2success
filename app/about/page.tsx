@@ -15,137 +15,131 @@ const valueIcons = {
 export default function About() {
   return (
     <div className="pt-32 pb-20">
-      {/* Hero Section */}
-      <section className="container mx-auto px-4 mb-20">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="max-w-4xl mx-auto text-center"
-        >
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 text-gray-900">
-            About Us
-          </h1>
-          <p className="text-xl text-gray-600">
-            {siteConfig.description}
-          </p>
-        </motion.div>
-      </section>
-
-      {/* Company Story */}
-      <section className="container mx-auto px-4 mb-20">
+      <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
+          {/* Hero Section */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-20"
+          >
+            <h1 className="text-5xl md:text-6xl font-bold mb-6 text-gray-900">
+              About Us
+            </h1>
+            <p className="text-xl text-gray-600 mb-8">
+              {siteConfig.description}
+            </p>
+          </motion.div>
+
+          {/* Company Story */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="glass"
+            className="bg-white p-8 md:p-12 rounded-2xl border border-gray-200 shadow-lg mb-16"
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900">
               Our Story
             </h2>
-            <div className="prose prose-lg">
-              <p className="text-gray-700">
+            <div className="prose prose-lg max-w-none">
+              <p className="text-gray-700 leading-relaxed mb-4">
                 We are privileged to work with hundreds of future-thinking businesses, including many of the world's top hardware, software, and brands. Our comprehensive approach combines cutting-edge technology with proven methodologies to deliver exceptional results.
               </p>
-              <p className="text-gray-700">
+              <p className="text-gray-700 leading-relaxed">
                 As a boutique IT Staffing consultancy & software development company, we pride ourselves on delivering personalized solutions that drive real business value. Our team of experts brings decades of combined experience in enterprise software, cloud infrastructure, and digital transformation.
               </p>
             </div>
           </motion.div>
-        </div>
-      </section>
 
-      {/* Values */}
-      <section className="container mx-auto px-4 mb-20">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-12"
-        >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900">
-            Our Values
-          </h2>
-          <p className="text-xl text-gray-600">
-            The principles that guide everything we do
-          </p>
-        </motion.div>
+          {/* Values */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900">
+              Our Values
+            </h2>
+            <p className="text-xl text-gray-600">
+              The principles that guide everything we do
+            </p>
+          </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {companyValues.map((value, index) => {
-            const Icon = valueIcons[value.title as keyof typeof valueIcons] || Target
-            return (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+            {companyValues.map((value, index) => {
+              const Icon = valueIcons[value.title as keyof typeof valueIcons] || Target
+              return (
+                <motion.div
+                  key={value.title}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  whileHover={{ y: -10 }}
+                  className="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all border border-gray-100"
+                >
+                  <div className="w-16 h-16 bg-green-100 rounded-xl flex items-center justify-center mb-4">
+                    <Icon className="w-8 h-8 text-green-600" />
+                  </div>
+                  <h3 className="text-2xl font-semibold mb-3 text-gray-900">
+                    {value.title}
+                  </h3>
+                  <p className="text-gray-600">
+                    {value.description}
+                  </p>
+                </motion.div>
+              )
+            })}
+          </div>
+
+          {/* Leadership */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900">
+              Leadership Team
+            </h2>
+            <p className="text-xl text-gray-600">
+              Meet the experts driving our success
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            {leadership.map((leader, index) => (
               <motion.div
-                key={value.title}
+                key={leader.name}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                whileHover={{ y: -10 }}
-                className="bg-white"
+                whileHover={{ y: -5 }}
+                className="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all text-center border border-gray-100"
               >
-                <div className="w-16 h-16 bg-green-100">
-                  <Icon className="w-8 h-8 text-green-600" />
+                <div className="w-32 h-32 bg-gray-200 rounded-full mx-auto mb-4 flex items-center justify-center">
+                  <span className="text-4xl text-gray-400">👤</span>
                 </div>
-                <h3 className="text-2xl font-semibold mb-3 text-gray-900">
-                  {value.title}
+                <h3 className="text-2xl font-semibold mb-2 text-gray-900">
+                  {leader.name}
                 </h3>
-                <p className="text-gray-600">
-                  {value.description}
+                <p className="text-green-600 font-medium mb-4">
+                  {leader.role}
+                </p>
+                <p className="text-gray-600 text-sm">
+                  {leader.bio}
                 </p>
               </motion.div>
-            )
-          })}
+            ))}
+          </div>
         </div>
-      </section>
-
-      {/* Leadership */}
-      <section className="container mx-auto px-4">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-12"
-        >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900">
-            Leadership Team
-          </h2>
-          <p className="text-xl text-gray-600">
-            Meet the experts driving our success
-          </p>
-        </motion.div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-          {leadership.map((leader, index) => (
-            <motion.div
-              key={leader.name}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              whileHover={{ y: -5 }}
-              className="bg-white"
-            >
-              <div className="w-32 h-32 bg-gray-200">
-                <span className="text-4xl text-gray-400">👤</span>
-              </div>
-              <h3 className="text-2xl font-semibold mb-2 text-gray-900">
-                {leader.name}
-              </h3>
-              <p className="text-green-600">
-                {leader.role}
-              </p>
-              <p className="text-gray-600">
-                {leader.bio}
-              </p>
-            </motion.div>
-          ))}
-        </div>
-      </section>
+      </div>
     </div>
   )
 }

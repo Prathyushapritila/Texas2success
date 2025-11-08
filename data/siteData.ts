@@ -16,7 +16,8 @@ export const siteConfig = {
   social: {
     linkedin: "https://www.linkedin.com/company/texas2success",
     twitter: "https://twitter.com/texas2success",
-    facebook: "https://www.facebook.com/texas2success"
+    facebook: "https://www.facebook.com/texas2success",
+    whatsapp: "https://wa.me/14697083802"
   }
 }
 
@@ -28,6 +29,7 @@ export const services = [
     description: "Streamline your business operations with custom ERP solutions designed to integrate all your core business processes. Our ERP systems help you manage inventory, finance, human resources, and more in one unified platform. Build stronger customer relationships with our custom CRM software.",
     icon: "Database",
     image: "/services/erp-crm.jpg",
+    backgroundImage: "/services/erp-crm-bg.jpg",
     features: [
       "Real-time data integration",
       "Scalable architecture",
@@ -44,6 +46,7 @@ export const services = [
     description: "From initial setup to full deployment, we guide you through every step of your Salesforce implementation. Our team ensures seamless integration with your existing systems and processes. Build custom applications, workflows, and integrations tailored to your specific business needs.",
     icon: "Zap",
     image: "/services/salesforce.jpg",
+    backgroundImage: "/services/salesforce-bg.jpg",
     features: [
       "Certified Salesforce professionals",
       "End-to-end project management",
@@ -60,6 +63,7 @@ export const services = [
     description: "Create stunning, responsive websites that work seamlessly across all devices. From simple landing pages to complex web applications, we build solutions that engage users and drive conversions. Develop native and cross-platform mobile applications for iOS and Android.",
     icon: "Smartphone",
     image: "/services/mobile-apps.jpg",
+    backgroundImage: "/services/mobile-apps-bg.jpg",
     features: [
       "Responsive and mobile-first design",
       "Fast loading and optimized performance",
@@ -76,6 +80,7 @@ export const services = [
     description: "Improve your website's visibility in search engine results. Our SEO strategies help you rank higher, attract more organic traffic, and generate quality leads. Comprehensive digital marketing campaigns that drive engagement and conversions.",
     icon: "TrendingUp",
     image: "/services/seo-marketing.jpg",
+    backgroundImage: "/services/seo-marketing-bg.jpg",
     features: [
       "Data-driven strategies",
       "Keyword research and optimization",
@@ -151,6 +156,15 @@ export const industries = [
     description: "Property management systems and real estate technology solutions.",
     icon: "Building"
   }
+]
+
+export const clients = [
+  { name: 'Lumen Med', industry: 'Healthcare' },
+  { name: 'Illinois Valley', industry: 'Healthcare' },
+  { name: 'Tech Innovations Inc', industry: 'Technology' },
+  { name: 'Digital Solutions Group', industry: 'Technology' },
+  { name: 'Global Manufacturing Corp', industry: 'Manufacturing' },
+  { name: 'Retail Excellence Inc', industry: 'Retail' },
 ]
 
 export const testimonials = [

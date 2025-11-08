@@ -39,19 +39,18 @@ export default function Navbar() {
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20 md:h-24">
-          {/* Logo */}
+          {/* Logo - No box, clean design */}
           <Link href="/" className="flex items-center space-x-3">
             <motion.div
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="flex items-center space-x-3"
             >
-              <div className="w-12 h-12 md:w-14 md:h-14 bg-white rounded-lg flex items-center justify-center shadow-md p-2">
+              <div className="relative w-12 h-12 md:w-16 md:h-16">
                 <Image
                   src="/logo.png"
                   alt="Texas 2 Success Logo"
-                  width={48}
-                  height={48}
+                  fill
                   className="object-contain"
                   priority
                 />

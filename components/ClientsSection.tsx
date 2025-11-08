@@ -1,20 +1,11 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import Image from 'next/image'
-
-const clients = [
-  { name: 'Lumen Med', logo: '/clients/lumen-med.png' },
-  { name: 'Illinois Valley', logo: '/clients/illinois-valley.png' },
-  { name: 'Tech Innovations', logo: '/clients/tech-innovations.png' },
-  { name: 'Digital Solutions', logo: '/clients/digital-solutions.png' },
-  { name: 'Global Manufacturing', logo: '/clients/global-manufacturing.png' },
-  { name: 'Retail Excellence', logo: '/clients/retail-excellence.png' },
-]
+import { clients } from '@/data/siteData'
 
 export default function ClientsSection() {
   return (
-    <section className="py-16 md:py-20 bg-gray-50">
+    <section className="py-16 md:py-20 bg-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -24,11 +15,11 @@ export default function ClientsSection() {
           className="text-center mb-12 md:mb-16"
         >
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-gray-900">
-            Trusted by Leading Companies
+            Our Clients
           </h2>
           <div className="w-24 h-1 bg-green-600 mx-auto mb-4"></div>
           <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto">
-            We're proud to partner with innovative businesses across industries
+            Trusted by leading companies across industries
           </p>
         </motion.div>
 
@@ -41,29 +32,23 @@ export default function ClientsSection() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               whileHover={{ scale: 1.1, y: -5 }}
-              className="bg-white p-6 md:p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border border-gray-200 flex items-center justify-center h-32 md:h-40"
+              className="bg-gradient-to-br from-gray-50 to-white p-6 md:p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border border-gray-200 flex items-center justify-center h-32 md:h-40 group"
             >
-              <div className="relative w-full h-full">
-                {/* Client Logo - Using text placeholder for now, replace with actual logos */}
-                <div className="w-full h-full flex items-center justify-center">
-                  <span className="text-gray-400 font-semibold text-sm md:text-base text-center">
-                    {client.name}
-                  </span>
+              <div className="text-center">
+                <div className="text-2xl md:text-3xl font-bold text-green-600 mb-2 group-hover:text-green-700 transition-colors">
+                  {client.name.split(' ').map(word => word[0]).join('')}
                 </div>
-                {/* Uncomment when you have client logos:
-                <Image
-                  src={client.logo}
-                  alt={`${client.name} Logo`}
-                  fill
-                  className="object-contain p-4 grayscale hover:grayscale-0 transition-all"
-                />
-                */}
+                <div className="text-xs md:text-sm text-gray-600 font-medium">
+                  {client.name}
+                </div>
+                <div className="text-xs text-gray-400 mt-1">
+                  {client.industry}
+                </div>
               </div>
             </motion.div>
           ))}
         </div>
 
-        {/* Additional Info */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -79,4 +64,3 @@ export default function ClientsSection() {
     </section>
   )
 }
-
