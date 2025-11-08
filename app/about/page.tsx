@@ -3,12 +3,12 @@
 import { motion } from 'framer-motion'
 import { companyValues, leadership } from '@/data/siteData'
 import { siteConfig } from '@/data/siteData'
-import { Target, Users, Award, Handshake } from 'lucide-react'
+import { Target, Users, Award, UserCheck } from 'lucide-react'
 
 const valueIcons = {
   Innovation: Target,
   Excellence: Award,
-  Partnership: Handshake,
+  Partnership: UserCheck,
   Integrity: Users,
 }
 
