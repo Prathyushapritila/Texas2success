@@ -30,6 +30,7 @@ export const services = [
     icon: "Database",
     image: "/services/erp-crm.jpg",
     backgroundImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+    cardBackgroundImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80",
     features: [
       "Real-time data integration",
       "Scalable architecture",
@@ -41,12 +42,13 @@ export const services = [
   },
   {
     id: "salesforce",
-    title: "Salesforce Development",
+    title: "Salesforce Development & Integration",
     shortDescription: "Expert Salesforce solutions, consulting, and integration for all business sizes.",
     description: "From initial setup to full deployment, we guide you through every step of your Salesforce implementation. Our team ensures seamless integration with your existing systems and processes. Build custom applications, workflows, and integrations tailored to your specific business needs.",
     icon: "Zap",
     image: "/services/salesforce.jpg",
     backgroundImage: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80",
+    cardBackgroundImage: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80",
     features: [
       "Certified Salesforce professionals",
       "End-to-end project management",
@@ -64,6 +66,7 @@ export const services = [
     icon: "Smartphone",
     image: "/services/mobile-apps.jpg",
     backgroundImage: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+    cardBackgroundImage: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80",
     features: [
       "Responsive and mobile-first design",
       "Fast loading and optimized performance",
@@ -81,6 +84,7 @@ export const services = [
     icon: "TrendingUp",
     image: "/services/seo-marketing.jpg",
     backgroundImage: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2015&q=80",
+    cardBackgroundImage: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80",
     features: [
       "Data-driven strategies",
       "Keyword research and optimization",
