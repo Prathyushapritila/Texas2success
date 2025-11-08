@@ -50,18 +50,15 @@ export default function Navbar() {
               whileTap={{ scale: 0.95 }}
               className="flex items-center space-x-3"
             >
-              {/* Logo Image Placeholder */}
-              <div className="w-12 h-12 md:w-14 md:h-14 bg-green-600 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-lg md:text-xl">T2S</span>
-                {/* Uncomment when you have logo:
+              <div className="w-12 h-12 md:w-14 md:h-14 bg-white rounded-lg flex items-center justify-center shadow-md p-2">
                 <Image
                   src="/logo.png"
                   alt="Texas 2 Success Logo"
-                  width={56}
-                  height={56}
+                  width={48}
+                  height={48}
                   className="object-contain"
+                  priority
                 />
-                */}
               </div>
               <div className="text-xl md:text-2xl font-bold bg-gradient-to-r from-green-600 to-green-800 bg-clip-text text-transparent hidden sm:block">
                 {siteConfig.name}

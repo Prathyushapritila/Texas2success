@@ -1,6 +1,7 @@
 import Hero from '@/components/Hero'
 import ServicesSection from '@/components/ServicesSection'
 import DifferentiatorsSection from '@/components/DifferentiatorsSection'
+import ClientsSection from '@/components/ClientsSection'
 import TestimonialsSection from '@/components/TestimonialsSection'
 import ContactSection from '@/components/ContactSection'
 import { siteConfig } from '@/data/siteData'
@@ -16,6 +17,7 @@ export default function Home() {
       <Hero />
       <ServicesSection />
       <DifferentiatorsSection />
+      <ClientsSection />
       <TestimonialsSection />
       <ContactSection />
       

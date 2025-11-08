@@ -28,12 +28,7 @@ export default function Hero() {
             transition={{ duration: 0.8 }}
             className="mb-8 flex justify-center"
           >
-            <div className="w-32 h-32 md:w-40 md:h-40 bg-white rounded-full shadow-xl flex items-center justify-center border-4 border-green-100">
-              {/* Logo placeholder - replace with actual logo image */}
-              <div className="text-4xl md:text-5xl font-bold text-green-600">
-                T2S
-              </div>
-              {/* Uncomment when you have logo image:
+            <div className="w-32 h-32 md:w-40 md:h-40 bg-white rounded-full shadow-xl flex items-center justify-center border-4 border-green-100 p-4">
               <Image
                 src="/logo.png"
                 alt="Texas 2 Success Logo"
@@ -42,7 +37,6 @@ export default function Hero() {
                 className="object-contain"
                 priority
               />
-              */}
             </div>
           </motion.div>
 
@@ -122,30 +116,6 @@ export default function Hero() {
           </motion.div>
         </div>
       </div>
-
-      {/* Scroll Indicator - Fixed at bottom */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1, delay: 1.2 }}
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10"
-      >
-        <motion.div
-          animate={{ y: [0, 10, 0] }}
-          transition={{ duration: 1.5, repeat: Infinity }}
-          className="flex flex-col items-center text-gray-500 hover:text-green-600 transition-colors cursor-pointer"
-          onClick={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })}
-        >
-          <span className="text-sm mb-2 font-medium">Scroll to explore</span>
-          <div className="w-6 h-10 border-2 border-gray-400 rounded-full flex justify-center p-2">
-            <motion.div
-              animate={{ y: [0, 12, 0] }}
-              transition={{ duration: 1.5, repeat: Infinity }}
-              className="w-1.5 h-3 bg-gray-400 rounded-full"
-            />
-          </div>
-        </motion.div>
-      </motion.div>
     </section>
   )
 }
