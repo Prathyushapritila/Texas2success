@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 import { clients } from '@/data/siteData'
 
 export default function ClientsSection() {
@@ -23,7 +24,7 @@ export default function ClientsSection() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 md:gap-8 items-center">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 md:gap-12 items-center justify-items-center max-w-5xl mx-auto">
           {clients.map((client, index) => (
             <motion.div
               key={client.name}
@@ -31,19 +32,17 @@ export default function ClientsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              whileHover={{ scale: 1.1, y: -5 }}
-              className="bg-gradient-to-br from-gray-50 to-white p-6 md:p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border border-gray-200 flex items-center justify-center h-32 md:h-40 group"
+              whileHover={{ scale: 1.05, y: -5 }}
+              className="bg-gradient-to-br from-gray-50 to-white p-6 md:p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border border-gray-200 flex items-center justify-center w-full h-40 md:h-48 group"
             >
-              <div className="text-center">
-                <div className="text-2xl md:text-3xl font-bold text-green-600 mb-2 group-hover:text-green-700 transition-colors">
-                  {client.name.split(' ').map(word => word[0]).join('')}
-                </div>
-                <div className="text-xs md:text-sm text-gray-600 font-medium">
-                  {client.name}
-                </div>
-                <div className="text-xs text-gray-400 mt-1">
-                  {client.industry}
-                </div>
+              <div className="relative w-full h-full">
+                <Image
+                  src={client.logo}
+                  alt={`${client.name} Logo`}
+                  fill
+                  className="object-contain p-4 grayscale hover:grayscale-0 transition-all duration-300"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                />
               </div>
             </motion.div>
           ))}
@@ -57,7 +56,7 @@ export default function ClientsSection() {
           className="text-center mt-12 md:mt-16"
         >
           <p className="text-gray-600 text-sm md:text-base">
-            And many more satisfied clients across Texas and beyond
+            Proud to partner with innovative healthcare organizations
           </p>
         </motion.div>
       </div>

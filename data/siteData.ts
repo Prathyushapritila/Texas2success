@@ -159,12 +159,21 @@ export const industries = [
 ]
 
 export const clients = [
-  { name: 'Lumen Med', industry: 'Healthcare' },
-  { name: 'Illinois Valley', industry: 'Healthcare' },
-  { name: 'Tech Innovations Inc', industry: 'Technology' },
-  { name: 'Digital Solutions Group', industry: 'Technology' },
-  { name: 'Global Manufacturing Corp', industry: 'Manufacturing' },
-  { name: 'Retail Excellence Inc', industry: 'Retail' },
+  { 
+    name: 'Lumen Med', 
+    industry: 'Healthcare',
+    logo: '/clients/LumenMed.png'
+  },
+  { 
+    name: 'Illinois Valley', 
+    industry: 'Healthcare',
+    logo: '/clients/IllinoiValley.png'
+  },
+  { 
+    name: 'Honestabes', 
+    industry: 'Healthcare',
+    logo: '/clients/HonestAbes.png'
+  },
 ]
 
 export const testimonials = [
