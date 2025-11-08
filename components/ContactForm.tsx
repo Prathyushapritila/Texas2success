@@ -45,11 +45,11 @@ export default function ContactForm() {
       <motion.div
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
-        className="glass dark:bg-slate-800/50 p-12 rounded-2xl text-center border border-gray-200 dark:border-gray-700"
+        className="glass"
       >
         <CheckCircle className="w-16 h-16 text-green-500 mx-auto mb-4" />
-        <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-2">Thank you!</h3>
-        <p className="text-gray-600 dark:text-gray-300">
+        <h3 className="text-2xl font-semibold text-gray-900">Thank you!</h3>
+        <p className="text-gray-600">
           We've received your request and will get back to you within 24 hours.
         </p>
       </motion.div>
@@ -61,13 +61,13 @@ export default function ContactForm() {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       onSubmit={handleSubmit}
-      className="glass dark:bg-slate-800/50 p-8 rounded-2xl border border-gray-200 dark:border-gray-700"
+      className="glass"
     >
-      <h2 className="text-3xl font-semibold mb-6 text-gray-900 dark:text-white">Send us a Message</h2>
+      <h2 className="text-3xl font-semibold mb-6 text-gray-900">Send us a Message</h2>
       
       <div className="space-y-4">
         <div>
-          <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+          <label htmlFor="name" className="block text-sm font-medium text-gray-700">
             Name *
           </label>
           <input
@@ -77,13 +77,13 @@ export default function ContactForm() {
             required
             value={formData.name}
             onChange={handleChange}
-            className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent bg-white dark:bg-slate-700 text-gray-900 dark:text-white"
+            className="w-full px-4 py-3 border border-gray-300"
             placeholder="Your Name"
           />
         </div>
 
         <div>
-          <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+          <label htmlFor="email" className="block text-sm font-medium text-gray-700">
             Email *
           </label>
           <input
@@ -93,13 +93,13 @@ export default function ContactForm() {
             required
             value={formData.email}
             onChange={handleChange}
-            className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent bg-white dark:bg-slate-700 text-gray-900 dark:text-white"
+            className="w-full px-4 py-3 border border-gray-300"
             placeholder="your.email@example.com"
           />
         </div>
 
         <div>
-          <label htmlFor="phone" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+          <label htmlFor="phone" className="block text-sm font-medium text-gray-700">
             Phone
           </label>
           <input
@@ -108,13 +108,13 @@ export default function ContactForm() {
             name="phone"
             value={formData.phone}
             onChange={handleChange}
-            className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent bg-white dark:bg-slate-700 text-gray-900 dark:text-white"
+            className="w-full px-4 py-3 border border-gray-300"
             placeholder="(469) 708-3802"
           />
         </div>
 
         <div>
-          <label htmlFor="company" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+          <label htmlFor="company" className="block text-sm font-medium text-gray-700">
             Company
           </label>
           <input
@@ -123,13 +123,13 @@ export default function ContactForm() {
             name="company"
             value={formData.company}
             onChange={handleChange}
-            className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent bg-white dark:bg-slate-700 text-gray-900 dark:text-white"
+            className="w-full px-4 py-3 border border-gray-300"
             placeholder="Your Company"
           />
         </div>
 
         <div>
-          <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+          <label htmlFor="message" className="block text-sm font-medium text-gray-700">
             Message *
           </label>
           <textarea
@@ -139,7 +139,7 @@ export default function ContactForm() {
             rows={5}
             value={formData.message}
             onChange={handleChange}
-            className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent bg-white dark:bg-slate-700 text-gray-900 dark:text-white resize-none"
+            className="w-full px-4 py-3 border border-gray-300"
             placeholder="Tell us about your project or inquiry..."
           />
         </div>

@@ -14,9 +14,9 @@ export const siteConfig = {
     fullAddress: "7800 Preston Rd, STE 125, Plano TX 75024"
   },
   social: {
-    linkedin: "https://linkedin.com/company/texas2success",
+    linkedin: "https://www.linkedin.com/company/texas2success",
     twitter: "https://twitter.com/texas2success",
-    facebook: "https://facebook.com/texas2success"
+    facebook: "https://www.facebook.com/texas2success"
   }
 }
 
@@ -27,6 +27,7 @@ export const services = [
     shortDescription: "Custom software solutions for your business needs, including ERP and CRM systems.",
     description: "Streamline your business operations with custom ERP solutions designed to integrate all your core business processes. Our ERP systems help you manage inventory, finance, human resources, and more in one unified platform. Build stronger customer relationships with our custom CRM software.",
     icon: "Database",
+    image: "/services/erp-crm.jpg",
     features: [
       "Real-time data integration",
       "Scalable architecture",
@@ -42,6 +43,7 @@ export const services = [
     shortDescription: "Expert Salesforce solutions, consulting, and integration for all business sizes.",
     description: "From initial setup to full deployment, we guide you through every step of your Salesforce implementation. Our team ensures seamless integration with your existing systems and processes. Build custom applications, workflows, and integrations tailored to your specific business needs.",
     icon: "Zap",
+    image: "/services/salesforce.jpg",
     features: [
       "Certified Salesforce professionals",
       "End-to-end project management",
@@ -57,6 +59,7 @@ export const services = [
     shortDescription: "Modern, responsive websites and mobile applications to grow your business online.",
     description: "Create stunning, responsive websites that work seamlessly across all devices. From simple landing pages to complex web applications, we build solutions that engage users and drive conversions. Develop native and cross-platform mobile applications for iOS and Android.",
     icon: "Smartphone",
+    image: "/services/mobile-apps.jpg",
     features: [
       "Responsive and mobile-first design",
       "Fast loading and optimized performance",
@@ -72,6 +75,7 @@ export const services = [
     shortDescription: "Boost your online presence and reach with our SEO and digital marketing services.",
     description: "Improve your website's visibility in search engine results. Our SEO strategies help you rank higher, attract more organic traffic, and generate quality leads. Comprehensive digital marketing campaigns that drive engagement and conversions.",
     icon: "TrendingUp",
+    image: "/services/seo-marketing.jpg",
     features: [
       "Data-driven strategies",
       "Keyword research and optimization",
@@ -113,6 +117,39 @@ export const differentiators = [
     title: "24/7 Support & Maintenance",
     description: "Round-the-clock technical support and maintenance services to ensure your systems run smoothly and efficiently.",
     icon: "Headphones"
+  }
+]
+
+export const industries = [
+  {
+    name: "Healthcare",
+    description: "HIPAA-compliant solutions for hospitals, clinics, and healthcare providers.",
+    icon: "Heart"
+  },
+  {
+    name: "Manufacturing",
+    description: "ERP and automation solutions for manufacturing and supply chain management.",
+    icon: "Factory"
+  },
+  {
+    name: "Retail & E-commerce",
+    description: "E-commerce platforms, POS systems, and inventory management solutions.",
+    icon: "ShoppingCart"
+  },
+  {
+    name: "Financial Services",
+    description: "Secure financial software and compliance solutions for banks and financial institutions.",
+    icon: "DollarSign"
+  },
+  {
+    name: "Education",
+    description: "Learning management systems and educational technology solutions.",
+    icon: "GraduationCap"
+  },
+  {
+    name: "Real Estate",
+    description: "Property management systems and real estate technology solutions.",
+    icon: "Building"
   }
 ]
 
@@ -235,4 +272,3 @@ export const leadership = [
     image: "/leadership/robert-williams.jpg"
   }
 ]
-

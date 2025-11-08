@@ -15,10 +15,10 @@ export default function Contact() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 text-gray-900 dark:text-white">
+          <h1 className="text-5xl md:text-6xl font-bold mb-6 text-gray-900">
             Contact Us
           </h1>
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-600">
             Get in touch with us. We're here to help transform your business.
           </p>
         </motion.div>
@@ -36,7 +36,7 @@ export default function Contact() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <h2 className="text-3xl font-semibold mb-8 text-gray-900 dark:text-white">
+              <h2 className="text-3xl font-semibold mb-8 text-gray-900">
                 Get in Touch
               </h2>
             </motion.div>
@@ -45,15 +45,15 @@ export default function Contact() {
               initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
-              className="glass dark:bg-slate-800/50 p-6 rounded-xl border border-gray-200 dark:border-gray-700"
+              className="glass"
             >
               <div className="flex items-start">
-                <Phone className="w-6 h-6 text-green-600 dark:text-green-400 mr-4 mt-1 flex-shrink-0" />
+                <Phone className="w-6 h-6 text-green-600" />
                 <div>
-                  <h3 className="font-semibold text-gray-900 dark:text-white mb-1">Phone</h3>
+                  <h3 className="font-semibold text-gray-900">Phone</h3>
                   <a
                     href={`tel:${siteConfig.contact.phone.replace(/\s/g, '')}`}
-                    className="text-gray-600 dark:text-gray-300 hover:text-green-600 dark:hover:text-green-400 transition-colors"
+                    className="text-gray-600"
                   >
                     {siteConfig.contact.phone}
                   </a>
@@ -65,15 +65,15 @@ export default function Contact() {
               initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="glass dark:bg-slate-800/50 p-6 rounded-xl border border-gray-200 dark:border-gray-700"
+              className="glass"
             >
               <div className="flex items-start">
-                <Mail className="w-6 h-6 text-green-600 dark:text-green-400 mr-4 mt-1 flex-shrink-0" />
+                <Mail className="w-6 h-6 text-green-600" />
                 <div>
-                  <h3 className="font-semibold text-gray-900 dark:text-white mb-1">Email</h3>
+                  <h3 className="font-semibold text-gray-900">Email</h3>
                   <a
                     href={`mailto:${siteConfig.contact.email}`}
-                    className="text-gray-600 dark:text-gray-300 hover:text-green-600 dark:hover:text-green-400 transition-colors"
+                    className="text-gray-600"
                   >
                     {siteConfig.contact.email}
                   </a>
@@ -85,17 +85,17 @@ export default function Contact() {
               initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.5 }}
-              className="glass dark:bg-slate-800/50 p-6 rounded-xl border border-gray-200 dark:border-gray-700"
+              className="glass"
             >
               <div className="flex items-start">
-                <MapPin className="w-6 h-6 text-green-600 dark:text-green-400 mr-4 mt-1 flex-shrink-0" />
+                <MapPin className="w-6 h-6 text-green-600" />
                 <div>
-                  <h3 className="font-semibold text-gray-900 dark:text-white mb-1">Address</h3>
+                  <h3 className="font-semibold text-gray-900">Address</h3>
                   <a
                     href={`https://maps.google.com/?q=${encodeURIComponent(siteConfig.contact.fullAddress)}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-gray-600 dark:text-gray-300 hover:text-green-600 dark:hover:text-green-400 transition-colors"
+                    className="text-gray-600"
                   >
                     {siteConfig.contact.address}<br />
                     {siteConfig.contact.city}
@@ -108,13 +108,13 @@ export default function Contact() {
               initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
-              className="glass dark:bg-slate-800/50 p-6 rounded-xl border border-gray-200 dark:border-gray-700"
+              className="glass"
             >
               <div className="flex items-start">
-                <Clock className="w-6 h-6 text-green-600 dark:text-green-400 mr-4 mt-1 flex-shrink-0" />
+                <Clock className="w-6 h-6 text-green-600" />
                 <div>
-                  <h3 className="font-semibold text-gray-900 dark:text-white mb-1">Business Hours</h3>
-                  <p className="text-gray-600 dark:text-gray-300">
+                  <h3 className="font-semibold text-gray-900">Business Hours</h3>
+                  <p className="text-gray-600">
                     Monday - Friday: 9:00 AM - 6:00 PM<br />
                     Saturday: 10:00 AM - 4:00 PM<br />
                     Sunday: Closed
@@ -131,7 +131,7 @@ export default function Contact() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="bg-gray-100 dark:bg-slate-800 rounded-2xl overflow-hidden"
+          className="bg-gray-100"
         >
           <div className="aspect-w-16 aspect-h-9 h-96">
             <iframe

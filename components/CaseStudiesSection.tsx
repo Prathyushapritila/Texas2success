@@ -50,7 +50,7 @@ const caseStudies = [
 
 export default function CaseStudiesSection() {
   return (
-    <section id="case-studies" className="py-20 bg-white dark:bg-slate-900">
+    <section id="case-studies" className="py-20 bg-white">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -59,10 +59,10 @@ export default function CaseStudiesSection() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900 dark:text-white">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900">
             Case Studies
           </h2>
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-600">
             Real results from real projects
           </p>
         </motion.div>
@@ -109,50 +109,50 @@ export default function CaseStudiesSection() {
                 >
                   <div className="space-y-6">
                     <div>
-                      <span className="text-sm font-semibold text-green-600 dark:text-green-400 bg-green-100 dark:bg-green-900/30 px-3 py-1 rounded-full">
+                      <span className="text-sm font-semibold text-green-600">
                         {study.industry}
                       </span>
-                      <h3 className="text-3xl font-bold mt-4 mb-4 text-gray-900 dark:text-white">
+                      <h3 className="text-3xl font-bold mt-4 mb-4 text-gray-900">
                         {study.title}
                       </h3>
                     </div>
 
                     <div className="space-y-4">
                       <div>
-                        <h4 className="font-semibold text-gray-900 dark:text-white mb-2">
+                        <h4 className="font-semibold text-gray-900">
                           Problem:
                         </h4>
-                        <p className="text-gray-600 dark:text-gray-300">{study.problem}</p>
+                        <p className="text-gray-600">{study.problem}</p>
                       </div>
                       <div>
-                        <h4 className="font-semibold text-gray-900 dark:text-white mb-2">
+                        <h4 className="font-semibold text-gray-900">
                           Solution:
                         </h4>
-                        <p className="text-gray-600 dark:text-gray-300">{study.solution}</p>
+                        <p className="text-gray-600">{study.solution}</p>
                       </div>
                       <div>
-                        <h4 className="font-semibold text-gray-900 dark:text-white mb-2">
+                        <h4 className="font-semibold text-gray-900">
                           Outcome:
                         </h4>
-                        <p className="text-gray-600 dark:text-gray-300">{study.outcome}</p>
+                        <p className="text-gray-600">{study.outcome}</p>
                       </div>
                     </div>
 
                     {/* Metrics */}
-                    <div className="grid grid-cols-3 gap-4 pt-4 border-t border-gray-200 dark:border-gray-700">
+                    <div className="grid grid-cols-3 gap-4 pt-4 border-t border-gray-200">
                       {study.metrics.map((metric, idx) => (
                         <div key={idx} className="text-center">
-                          <div className="text-3xl font-bold text-green-600 dark:text-green-400 mb-1">
+                          <div className="text-3xl font-bold text-green-600">
                             {metric.value}
                           </div>
-                          <div className="text-sm text-gray-600 dark:text-gray-400">
+                          <div className="text-sm text-gray-600">
                             {metric.label}
                           </div>
                         </div>
                       ))}
                     </div>
 
-                    <button className="inline-flex items-center text-green-600 dark:text-green-400 font-semibold hover:underline group">
+                    <button className="inline-flex items-center text-green-600">
                       Read More
                       <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
                     </button>

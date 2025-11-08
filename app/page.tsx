@@ -1,6 +1,7 @@
 import Hero from '@/components/Hero'
 import ServicesSection from '@/components/ServicesSection'
 import DifferentiatorsSection from '@/components/DifferentiatorsSection'
+import IndustriesSection from '@/components/IndustriesSection'
 import ClientsSection from '@/components/ClientsSection'
 import TestimonialsSection from '@/components/TestimonialsSection'
 import ContactSection from '@/components/ContactSection'
@@ -17,6 +18,7 @@ export default function Home() {
       <Hero />
       <ServicesSection />
       <DifferentiatorsSection />
+      <IndustriesSection />
       <ClientsSection />
       <TestimonialsSection />
       <ContactSection />

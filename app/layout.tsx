@@ -1,7 +1,6 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
-import { ThemeProvider } from '@/components/ThemeProvider'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import FloatingContactButton from '@/components/FloatingContactButton'
@@ -72,7 +71,7 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-        <meta name="theme-color" content="#0284c7" />
+        <meta name="theme-color" content="#16a34a" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -134,12 +133,10 @@ export default function RootLayout({
         />
       </head>
       <body className={inter.className}>
-        <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
-          <Navbar />
-          {children}
-          <Footer />
-          <FloatingContactButton />
-        </ThemeProvider>
+        <Navbar />
+        {children}
+        <Footer />
+        <FloatingContactButton />
       </body>
     </html>
   )

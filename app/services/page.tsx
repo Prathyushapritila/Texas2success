@@ -22,10 +22,10 @@ export default function ServicesPage() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 text-gray-900 dark:text-white">
+          <h1 className="text-5xl md:text-6xl font-bold mb-6 text-gray-900">
             Our Services
           </h1>
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-600">
             Comprehensive IT solutions to help you succeed. We provide a full range of services to transform your business.
           </p>
         </motion.div>
@@ -44,19 +44,19 @@ export default function ServicesPage() {
                 className="group"
               >
                 <Link href={`/services/${service.id}`}>
-                  <div className="glass dark:bg-slate-800/50 p-8 rounded-2xl h-full hover:shadow-2xl transition-all duration-300 border border-gray-200 dark:border-gray-700">
+                  <div className="glass">
                     <div className="flex items-start space-x-6">
-                      <div className="w-20 h-20 bg-green-100 dark:bg-green-900/30 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform flex-shrink-0">
-                        <Icon className="w-10 h-10 text-green-600 dark:text-green-400" />
+                      <div className="w-20 h-20 bg-green-100">
+                        <Icon className="w-10 h-10 text-green-600" />
                       </div>
                       <div className="flex-1">
-                        <h3 className="text-2xl font-bold mb-3 text-gray-900 dark:text-white group-hover:text-green-600 dark:group-hover:text-green-400 transition-colors">
+                        <h3 className="text-2xl font-bold mb-3 text-gray-900">
                           {service.title}
                         </h3>
-                        <p className="text-gray-600 dark:text-gray-300 mb-4">
+                        <p className="text-gray-600">
                           {service.shortDescription}
                         </p>
-                        <div className="flex items-center text-green-600 dark:text-green-400 font-semibold">
+                        <div className="flex items-center text-green-600">
                           <span>Learn More</span>
                           <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
                         </div>

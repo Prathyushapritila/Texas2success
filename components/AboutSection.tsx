@@ -5,7 +5,7 @@ import { Target, Zap, TrendingUp } from 'lucide-react'
 
 export default function AboutSection() {
   return (
-    <section id="about" className="py-20 bg-white dark:bg-slate-900">
+    <section id="about" className="py-20 bg-white">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
@@ -16,7 +16,7 @@ export default function AboutSection() {
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900 dark:text-white">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900">
               About Texas 2 Success
             </h2>
             <div className="w-24 h-1 bg-green-600 mx-auto"></div>
@@ -33,16 +33,16 @@ export default function AboutSection() {
               className="space-y-6"
             >
               <div className="flex items-center space-x-3 mb-4">
-                <Target className="w-8 h-8 text-green-600 dark:text-green-400" />
-                <h3 className="text-3xl font-bold text-gray-900 dark:text-white">Our Mission</h3>
+                <Target className="w-8 h-8 text-green-600" />
+                <h3 className="text-3xl font-bold text-gray-900">Our Mission</h3>
               </div>
-              <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+              <p className="text-lg text-gray-700">
                 At Texas 2 Success, we are dedicated to empowering businesses across Texas and beyond 
                 with cutting-edge technology solutions and strategic consulting. Our mission is to be 
                 the catalyst for your digital transformation, helping you achieve sustainable growth 
                 and competitive advantage in today's rapidly evolving marketplace.
               </p>
-              <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+              <p className="text-lg text-gray-700">
                 We combine deep industry expertise with innovative thinking to deliver results that 
                 matter. Every project we undertake is driven by our commitment to excellence, 
                 integrity, and your success.
@@ -58,16 +58,16 @@ export default function AboutSection() {
               className="space-y-6"
             >
               <div className="flex items-center space-x-3 mb-4">
-                <Zap className="w-8 h-8 text-green-600 dark:text-green-400" />
-                <h3 className="text-3xl font-bold text-gray-900 dark:text-white">Our Story</h3>
+                <Zap className="w-8 h-8 text-green-600" />
+                <h3 className="text-3xl font-bold text-gray-900">Our Story</h3>
               </div>
-              <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+              <p className="text-lg text-gray-700">
                 Founded with a vision to bridge the gap between business needs and technological 
                 innovation, Texas 2 Success has grown from a boutique consultancy into a trusted 
                 partner for businesses of all sizes. Our boutique approach allows us to provide 
                 personalized attention and customized solutions that larger firms simply cannot match.
               </p>
-              <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+              <p className="text-lg text-gray-700">
                 We pride ourselves on our innovation focus and results-driven mindset. Every 
                 solution we deliver is meticulously crafted to address your unique challenges 
                 and drive measurable outcomes. From startups to enterprise-level organizations, 
@@ -119,13 +119,13 @@ export default function AboutSection() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="text-center p-6 rounded-xl bg-gray-50 dark:bg-slate-800"
+                  className="text-center p-6 rounded-xl bg-gray-50"
                 >
-                  <div className="w-16 h-16 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Icon className="w-8 h-8 text-green-600 dark:text-green-400" />
+                  <div className="w-16 h-16 bg-green-100">
+                    <Icon className="w-8 h-8 text-green-600" />
                   </div>
-                  <h4 className="text-xl font-semibold mb-2 text-gray-900 dark:text-white">{item.title}</h4>
-                  <p className="text-gray-600 dark:text-gray-300">{item.desc}</p>
+                  <h4 className="text-xl font-semibold mb-2 text-gray-900">{item.title}</h4>
+                  <p className="text-gray-600">{item.desc}</p>
                 </motion.div>
               )
             })}

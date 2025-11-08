@@ -87,7 +87,7 @@ export default function TestimonialsSlider() {
   }
 
   return (
-    <section className="py-20 bg-gray-50 dark:bg-slate-800">
+    <section className="py-20 bg-gray-50">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -96,10 +96,10 @@ export default function TestimonialsSlider() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900 dark:text-white">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900">
             Trusted by Businesses Across Texas
           </h2>
-          <p className="text-xl text-gray-600 dark:text-gray-300">
+          <p className="text-xl text-gray-600">
             See what our clients have to say
           </p>
         </motion.div>
@@ -121,20 +121,20 @@ export default function TestimonialsSlider() {
                 }}
                 className="absolute inset-0"
               >
-                <div className="glass dark:bg-slate-900/50 p-8 md:p-12 rounded-2xl border border-gray-200 dark:border-gray-700 h-full flex flex-col">
-                  <Quote className="w-12 h-12 text-green-600 dark:text-green-400 mb-6" />
-                  <p className="text-xl text-gray-700 dark:text-gray-300 mb-8 flex-grow italic">
+                <div className="glass">
+                  <Quote className="w-12 h-12 text-green-600" />
+                  <p className="text-xl text-gray-700">
                     "{testimonials[currentIndex].quote}"
                   </p>
                   <div className="flex items-center space-x-4">
-                    <div className="w-16 h-16 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                    <div className="w-16 h-16 bg-green-100">
                       <span className="text-2xl">👤</span>
                     </div>
                     <div>
-                      <p className="font-semibold text-gray-900 dark:text-white">
+                      <p className="font-semibold text-gray-900">
                         {testimonials[currentIndex].name}
                       </p>
-                      <p className="text-sm text-gray-600 dark:text-gray-400">
+                      <p className="text-sm text-gray-600">
                         {testimonials[currentIndex].role}
                       </p>
                     </div>
@@ -147,14 +147,14 @@ export default function TestimonialsSlider() {
           {/* Navigation Arrows */}
           <button
             onClick={prevSlide}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 w-12 h-12 bg-white dark:bg-slate-800 rounded-full shadow-lg flex items-center justify-center hover:bg-green-600 hover:text-white transition-all z-10"
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 w-12 h-12 bg-white"
             aria-label="Previous testimonial"
           >
             <ChevronLeft className="w-6 h-6" />
           </button>
           <button
             onClick={nextSlide}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 w-12 h-12 bg-white dark:bg-slate-800 rounded-full shadow-lg flex items-center justify-center hover:bg-green-600 hover:text-white transition-all z-10"
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 w-12 h-12 bg-white"
             aria-label="Next testimonial"
           >
             <ChevronRight className="w-6 h-6" />
@@ -169,7 +169,7 @@ export default function TestimonialsSlider() {
                 className={`w-3 h-3 rounded-full transition-all ${
                   index === currentIndex
                     ? 'bg-green-600 w-8'
-                    : 'bg-gray-300 dark:bg-gray-600'
+                    : 'bg-gray-300'
                 }`}
                 aria-label={`Go to testimonial ${index + 1}`}
               />

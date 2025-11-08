@@ -25,13 +25,13 @@ export default function FloatingContactButton() {
               initial={{ opacity: 0, scale: 0.8, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.8, y: 20 }}
-              className="mb-4 bg-white dark:bg-slate-800 rounded-lg shadow-2xl p-4 border border-gray-200 dark:border-gray-700 min-w-[200px]"
+              className="mb-4 bg-white rounded-lg shadow-2xl p-4 border border-gray-200 min-w-[200px]"
             >
               <div className="flex items-center justify-between mb-3">
-                <h3 className="font-semibold text-gray-900 dark:text-white text-sm">Get in Touch</h3>
+                <h3 className="font-semibold text-gray-900 text-sm">Get in Touch</h3>
                 <button
                   onClick={() => setIsExpanded(false)}
-                  className="text-gray-500 hover:text-gray-700 dark:hover:text-gray-300"
+                  className="text-gray-500 hover:text-gray-700"
                   aria-label="Close menu"
                 >
                   <X className="w-4 h-4" />
@@ -50,14 +50,14 @@ export default function FloatingContactButton() {
                 </button>
                 <button
                   onClick={scrollToContact}
-                  className="w-full bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-white px-4 py-2 rounded-lg text-center hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors text-sm font-medium flex items-center justify-center space-x-2"
+                  className="w-full bg-gray-100 text-gray-900 px-4 py-2 rounded-lg text-center hover:bg-gray-200 transition-colors text-sm font-medium flex items-center justify-center space-x-2"
                 >
                   <Mail className="w-4 h-4" />
                   <span>Contact Section</span>
                 </button>
                 <a
                   href={`tel:${siteConfig.contact.phone.replace(/\s/g, '')}`}
-                  className="block w-full bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-white px-4 py-2 rounded-lg text-center hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors text-sm font-medium flex items-center justify-center space-x-2"
+                  className="block w-full bg-gray-100"
                 >
                   <Phone className="w-4 h-4" />
                   <span>Call Now</span>
