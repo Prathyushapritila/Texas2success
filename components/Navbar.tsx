@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
 import { siteConfig } from '@/data/siteData'
@@ -10,6 +11,7 @@ import Image from 'next/image'
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const pathname = usePathname()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -26,6 +28,13 @@ export default function Navbar() {
     { href: '/portfolio', label: 'Portfolio' },
     { href: '/contact', label: 'Contact' },
   ]
+
+  const isActive = (href: string) => {
+    if (href === '/') {
+      return pathname === '/'
+    }
+    return pathname?.startsWith(href)
+  }
 
   return (
     <motion.nav
@@ -63,16 +72,33 @@ export default function Navbar() {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-6 lg:space-x-8">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="text-gray-700 hover:text-green-600 transition-colors font-medium text-sm lg:text-base relative group"
-              >
-                {link.label}
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-green-600 group-hover:w-full transition-all duration-300"></span>
-              </Link>
-            ))}
+            {navLinks.map((link) => {
+              const active = isActive(link.href)
+              return (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className={`relative font-medium text-sm lg:text-base transition-all duration-300 ${
+                    active
+                      ? 'text-green-600 font-semibold'
+                      : 'text-gray-700 hover:text-green-600'
+                  }`}
+                >
+                  {link.label}
+                  {active && (
+                    <motion.span
+                      layoutId="activeIndicator"
+                      className="absolute bottom-0 left-0 w-full h-0.5 bg-green-600"
+                      initial={false}
+                      transition={{ type: 'spring', stiffness: 380, damping: 30 }}
+                    />
+                  )}
+                  {!active && (
+                    <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-green-600 group-hover:w-full transition-all duration-300"></span>
+                  )}
+                </Link>
+              )
+            })}
 
             <Link
               href="/contact"
@@ -109,16 +135,23 @@ export default function Navbar() {
             className="md:hidden bg-white border-t border-gray-200"
           >
             <div className="container mx-auto px-4 py-4 space-y-2">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="block py-3 text-gray-700 hover:text-green-600 hover:bg-green-50 transition-colors rounded-lg px-4 font-medium"
-                >
-                  {link.label}
-                </Link>
-              ))}
+              {navLinks.map((link) => {
+                const active = isActive(link.href)
+                return (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className={`block py-3 rounded-lg px-4 font-medium transition-colors ${
+                      active
+                        ? 'text-green-600 bg-green-50 font-semibold'
+                        : 'text-gray-700 hover:text-green-600 hover:bg-green-50'
+                    }`}
+                  >
+                    {link.label}
+                  </Link>
+                )
+              })}
               <Link
                 href="/contact"
                 onClick={() => setIsMobileMenuOpen(false)}

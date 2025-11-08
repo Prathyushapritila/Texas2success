@@ -96,7 +96,7 @@ export default function Hero() {
             </a>
           </motion.div>
 
-          {/* Stats or Features */}
+          {/* Stats or Features with Rounded Borders */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -108,14 +108,22 @@ export default function Hero() {
               { number: '50+', label: 'Happy Clients' },
               { number: '15+', label: 'Years Experience' },
             ].map((stat, index) => (
-              <div key={index} className="text-center">
-                <div className="text-4xl md:text-5xl font-bold text-green-600 mb-2">
-                  {stat.number}
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5, delay: 1.2 + index * 0.1 }}
+                className="text-center"
+              >
+                <div className="inline-flex items-center justify-center w-24 h-24 md:w-28 md:h-28 rounded-full border-4 border-green-600 bg-white shadow-lg mb-3">
+                  <div className="text-3xl md:text-4xl font-bold text-green-600">
+                    {stat.number}
+                  </div>
                 </div>
-                <div className="text-gray-600 font-medium">
+                <div className="text-gray-600 font-medium text-sm md:text-base">
                   {stat.label}
                 </div>
-              </div>
+              </motion.div>
             ))}
           </motion.div>
         </div>

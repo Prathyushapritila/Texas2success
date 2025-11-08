@@ -28,8 +28,26 @@ const teamworkValues = [
 
 export default function TeamworkSection() {
   return (
-    <section className="py-20 md:py-24 bg-gradient-to-b from-gray-50 to-white">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="relative py-20 md:py-24 overflow-hidden">
+      {/* Background Image */}
+      <div className="absolute inset-0 z-0">
+        <img
+          src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+          alt="Teamwork and collaboration background"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        {/* Warm lighting (soft orange accent) with company blue tones, faint gradient overlay */}
+        <div 
+          className="absolute inset-0"
+          style={{
+            background: 'linear-gradient(135deg, rgba(255, 122, 0, 0.3) 0%, rgba(0, 74, 173, 0.5) 50%, rgba(0, 74, 173, 0.7) 100%)'
+          }}
+        ></div>
+        {/* Faint gradient overlay for text contrast */}
+        <div className="absolute inset-0 bg-black/40"></div>
+      </div>
+
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -37,11 +55,11 @@ export default function TeamworkSection() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-gray-900">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-white drop-shadow-lg">
             Our Teamwork Approach
           </h2>
-          <div className="w-24 h-1 bg-green-600 mx-auto mb-6"></div>
-          <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
+          <div className="w-24 h-1 bg-white mx-auto mb-6"></div>
+          <p className="text-lg md:text-xl text-white/90 max-w-3xl mx-auto drop-shadow-md">
             We believe in working together to achieve extraordinary results
           </p>
         </motion.div>
@@ -57,7 +75,7 @@ export default function TeamworkSection() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 whileHover={{ y: -5, scale: 1.02 }}
-                className="bg-white p-6 md:p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 text-center"
+                className="bg-white/95 backdrop-blur-sm p-6 md:p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-white/20 text-center"
               >
                 <div className="w-16 h-16 md:w-20 md:h-20 bg-green-100 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:bg-green-600 transition-colors">
                   <Icon className="w-8 h-8 md:w-10 md:h-10 text-green-600" />
@@ -76,4 +94,3 @@ export default function TeamworkSection() {
     </section>
   )
 }
-
