@@ -2,12 +2,12 @@
 
 import { motion } from 'framer-motion'
 import { testimonials } from '@/data/siteData'
-import { Star } from 'lucide-react'
+import { Star, Quote } from 'lucide-react'
 
 export default function TestimonialsSection() {
   return (
-    <section className="py-20 bg-white">
-      <div className="container mx-auto px-4">
+    <section className="py-20 md:py-24 bg-white">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -15,12 +15,16 @@ export default function TestimonialsSection() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-gray-900">
             What Our Clients Say
           </h2>
+          <div className="w-24 h-1 bg-green-600 mx-auto mb-6"></div>
+          <p className="text-xl md:text-2xl text-gray-600">
+            Trusted by businesses worldwide
+          </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
           {testimonials.map((testimonial, index) => (
             <motion.div
               key={index}
@@ -28,8 +32,10 @@ export default function TestimonialsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-gray-50 p-8 rounded-xl border border-gray-200"
+              whileHover={{ y: -5 }}
+              className="bg-gradient-to-br from-gray-50 to-white p-6 md:p-8 rounded-2xl border border-gray-200 shadow-md hover:shadow-xl transition-all"
             >
+              <Quote className="w-10 h-10 text-green-600 mb-4 opacity-50" />
               <div className="flex mb-4">
                 {[...Array(testimonial.rating)].map((_, i) => (
                   <Star
@@ -38,14 +44,14 @@ export default function TestimonialsSection() {
                   />
                 ))}
               </div>
-              <p className="text-gray-700 mb-6 italic">
+              <p className="text-gray-700 mb-6 italic text-sm md:text-base leading-relaxed">
                 "{testimonial.content}"
               </p>
-              <div>
-                <p className="font-semibold text-gray-900">
+              <div className="border-t border-gray-200 pt-4">
+                <p className="font-semibold text-gray-900 text-base md:text-lg">
                   {testimonial.name}
                 </p>
-                <p className="text-sm text-gray-600">
+                <p className="text-sm md:text-base text-gray-600">
                   {testimonial.role}
                 </p>
               </div>
