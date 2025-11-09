@@ -64,7 +64,7 @@ export default function ServiceDetailPage({ params }: { params: { id: string } }
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',
-          paddingTop: '180px', // Significantly increased padding to ensure title is fully below navbar with plenty of space
+          paddingTop: '300px', // Maximum padding to ensure title is fully below navbar with ample space
         }}
       >
         {/* Enhanced Dark Overlay for better text readability */}
