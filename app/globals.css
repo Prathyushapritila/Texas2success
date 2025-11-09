@@ -37,13 +37,9 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Prevent header from covering content */
-main {
-  padding-top: var(--header-h);
-}
-
+/* Prevent header from covering content when scrolling to anchors */
 h1, h2, h3, section[id] {
-  scroll-margin-top: var(--header-h);
+  scroll-margin-top: calc(var(--header-h) + 1rem);
 }
 
 /* Glassmorphism effect */
