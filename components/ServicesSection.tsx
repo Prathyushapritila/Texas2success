@@ -17,7 +17,7 @@ export default function ServicesSection() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-gray-900 dark:text-white break-words">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 break-words bg-gradient-to-r from-green-600 via-green-500 to-green-700 dark:from-green-400 dark:via-green-300 dark:to-green-500 bg-clip-text text-transparent">
             Our Services
           </h2>
           <div className="w-24 h-1 bg-green-600 dark:bg-green-500 mx-auto mb-6"></div>
@@ -62,13 +62,18 @@ export default function ServicesSection() {
                   <div className="absolute inset-0 flex flex-col justify-end z-10" style={{ padding: '1.5rem' }}>
                     <div className="w-full">
                       <h3 
-                        className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-2 sm:mb-3 text-white drop-shadow-lg break-words leading-snug"
+                        className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-2 sm:mb-3 drop-shadow-lg break-words leading-snug"
                         style={{ 
                           wordBreak: 'break-word', 
                           overflowWrap: 'break-word',
                           hyphens: 'auto',
                           maxWidth: '100%',
-                          overflow: 'visible'
+                          overflow: 'visible',
+                          background: 'linear-gradient(135deg, #ffffff 0%, #e0f2fe 50%, #ffffff 100%)',
+                          WebkitBackgroundClip: 'text',
+                          WebkitTextFillColor: 'transparent',
+                          backgroundClip: 'text',
+                          filter: 'drop-shadow(0 4px 6px rgba(0, 0, 0, 0.5)) drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3))',
                         }}
                       >
                         {service.title}

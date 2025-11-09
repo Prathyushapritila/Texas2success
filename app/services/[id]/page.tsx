@@ -77,7 +77,7 @@ export default function ServiceDetailPage({ params }: { params: { id: string } }
 
         {/* Content Container with proper spacing */}
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-20 w-full py-16 md:py-20">
-          <div className="max-w-5xl mx-auto text-center text-white">
+          <div className="max-w-5xl mx-auto text-center">
             {/* Back Button - Positioned at top */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
@@ -106,16 +106,21 @@ export default function ServiceDetailPage({ params }: { params: { id: string } }
               </div>
             </motion.div>
 
-            {/* Title - Fixed to prevent cutoff with proper word wrapping and responsive sizing */}
+            {/* Title - Premium gradient effect with proper visibility */}
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 md:mb-6 drop-shadow-2xl leading-tight px-4 text-white break-words"
+              className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 md:mb-6 drop-shadow-2xl leading-tight px-4 break-words"
               style={{ 
                 wordBreak: 'break-word', 
                 overflowWrap: 'break-word',
-                hyphens: 'auto'
+                hyphens: 'auto',
+                background: 'linear-gradient(135deg, #ffffff 0%, #e0f2fe 50%, #ffffff 100%)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                backgroundClip: 'text',
+                filter: 'drop-shadow(0 4px 6px rgba(0, 0, 0, 0.5)) drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3))',
               }}
             >
               {service.title}
