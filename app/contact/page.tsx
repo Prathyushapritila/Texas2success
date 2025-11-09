@@ -15,10 +15,10 @@ export default function Contact() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 text-gray-900 dark:text-white">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 text-gray-900 dark:text-white break-words px-4">
             Contact Us
           </h1>
-          <p className="text-xl text-gray-600 dark:text-gray-400">
+          <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-400 break-words px-4">
             Get in touch with us. We're here to help transform your business.
           </p>
         </motion.div>

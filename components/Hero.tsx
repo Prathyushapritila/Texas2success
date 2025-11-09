@@ -19,7 +19,7 @@ export default function Hero() {
         <div className="absolute -bottom-8 left-1/2 w-72 h-72 bg-green-100 dark:bg-green-900/30 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-4000"></div>
       </div>
 
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="max-w-6xl mx-auto text-center">
           {/* Logo Section - Beautiful styling */}
           <motion.div
@@ -49,7 +49,8 @@ export default function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 text-gray-900 dark:text-white leading-tight"
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 text-gray-900 dark:text-white leading-tight px-4 break-words"
+            style={{ wordBreak: 'break-word', overflowWrap: 'break-word' }}
           >
             Texas 2 Success
           </motion.h1>
@@ -59,7 +60,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-xl md:text-2xl lg:text-3xl text-gray-700 dark:text-gray-300 mb-4 font-medium"
+            className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-700 dark:text-gray-300 mb-4 font-medium px-4 break-words"
           >
             Comprehensive IT solutions to help you succeed
           </motion.p>
@@ -68,7 +69,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="text-lg md:text-xl text-gray-600 dark:text-gray-400 mb-12 max-w-3xl mx-auto"
+            className="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-400 mb-12 max-w-3xl mx-auto px-4 break-words"
           >
             Your trusted boutique IT Staffing consultancy & software development company
           </motion.p>
@@ -78,18 +79,18 @@ export default function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16"
+            className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16 px-4"
           >
             <button
               onClick={scrollToContact}
-              className="group bg-green-600 hover:bg-green-700 dark:bg-green-700 dark:hover:bg-green-600 text-white px-10 py-4 rounded-lg font-semibold text-lg transition-all flex items-center space-x-2 shadow-lg hover:shadow-xl transform hover:scale-105"
+              className="group bg-green-600 hover:bg-green-700 dark:bg-green-700 dark:hover:bg-green-600 text-white px-10 py-4 rounded-lg font-semibold text-lg transition-all flex items-center space-x-2 shadow-lg hover:shadow-xl transform hover:scale-105 w-full sm:w-auto"
             >
               <span>Get a Free Consultation Today</span>
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </button>
             <a
               href="#services"
-              className="group bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 text-green-600 dark:text-green-400 border-2 border-green-600 dark:border-green-500 px-10 py-4 rounded-lg font-semibold text-lg transition-all flex items-center space-x-2 shadow-md hover:shadow-lg"
+              className="group bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 text-green-600 dark:text-green-400 border-2 border-green-600 dark:border-green-500 px-10 py-4 rounded-lg font-semibold text-lg transition-all flex items-center space-x-2 shadow-md hover:shadow-lg w-full sm:w-auto justify-center"
             >
               <span>Our Services</span>
               <ArrowDown className="w-5 h-5 group-hover:translate-y-1 transition-transform" />
@@ -101,7 +102,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1 }}
-            className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto"
+            className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto px-4"
           >
             {[
               { number: '100+', label: 'Projects Completed' },
@@ -120,7 +121,7 @@ export default function Hero() {
                     {stat.number}
                   </div>
                 </div>
-                <div className="text-gray-600 dark:text-gray-400 font-medium text-sm md:text-base">
+                <div className="text-gray-600 dark:text-gray-400 font-medium text-sm md:text-base break-words">
                   {stat.label}
                 </div>
               </motion.div>

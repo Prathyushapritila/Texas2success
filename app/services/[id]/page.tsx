@@ -105,23 +105,31 @@ export default function ServiceDetailPage({ params }: { params: { id: string } }
               </div>
             </motion.div>
 
-            {/* Title - Fixed to prevent cutoff with proper word wrapping */}
+            {/* Title - Fixed to prevent cutoff with proper word wrapping and responsive sizing */}
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 md:mb-6 drop-shadow-2xl leading-tight px-4 text-white break-words hyphens-auto"
-              style={{ wordBreak: 'break-word', overflowWrap: 'break-word' }}
+              className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 md:mb-6 drop-shadow-2xl leading-tight px-4 text-white break-words"
+              style={{ 
+                wordBreak: 'break-word', 
+                overflowWrap: 'break-word',
+                hyphens: 'auto'
+              }}
             >
               {service.title}
             </motion.h1>
 
-            {/* Description - Responsive sizing */}
+            {/* Description - Responsive sizing with proper wrapping */}
             <motion.p
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/95 max-w-3xl mx-auto drop-shadow-lg leading-relaxed px-4"
+              className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/95 max-w-3xl mx-auto drop-shadow-lg leading-relaxed px-4 break-words"
+              style={{ 
+                wordBreak: 'break-word', 
+                overflowWrap: 'break-word'
+              }}
             >
               {service.shortDescription}
             </motion.p>
@@ -141,8 +149,8 @@ export default function ServiceDetailPage({ params }: { params: { id: string } }
             className="max-w-4xl mx-auto mb-16 md:mb-20"
           >
             <div className="bg-white dark:bg-gray-800 p-8 md:p-12 rounded-2xl border border-gray-200 dark:border-gray-700 shadow-lg transition-colors duration-300">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900 dark:text-white">Overview</h2>
-              <p className="text-lg md:text-xl text-gray-700 dark:text-gray-300 leading-relaxed">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900 dark:text-white break-words">Overview</h2>
+              <p className="text-lg md:text-xl text-gray-700 dark:text-gray-300 leading-relaxed break-words">
                 {service.description}
               </p>
             </div>
@@ -156,7 +164,7 @@ export default function ServiceDetailPage({ params }: { params: { id: string } }
             transition={{ duration: 0.8 }}
             className="max-w-4xl mx-auto mb-16 md:mb-20"
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-8 md:mb-12 text-center text-gray-900 dark:text-white">
+            <h2 className="text-3xl md:text-4xl font-bold mb-8 md:mb-12 text-center text-gray-900 dark:text-white break-words">
               Key Features
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
@@ -170,7 +178,7 @@ export default function ServiceDetailPage({ params }: { params: { id: string } }
                   className="flex items-start bg-gray-50 dark:bg-gray-800 p-4 md:p-6 rounded-lg border border-gray-200 dark:border-gray-700 transition-colors duration-300"
                 >
                   <Check className="w-6 h-6 text-green-600 dark:text-green-400 mr-3 flex-shrink-0 mt-0.5" />
-                  <span className="text-gray-700 dark:text-gray-300 text-base md:text-lg">{feature}</span>
+                  <span className="text-gray-700 dark:text-gray-300 text-base md:text-lg break-words">{feature}</span>
                 </motion.div>
               ))}
             </div>
@@ -185,8 +193,8 @@ export default function ServiceDetailPage({ params }: { params: { id: string } }
             className="text-center"
           >
             <div className="bg-gradient-to-r from-green-600 to-green-700 dark:from-green-700 dark:to-green-800 p-12 md:p-16 rounded-2xl text-white max-w-3xl mx-auto shadow-xl">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to Get Started?</h2>
-              <p className="text-xl md:text-2xl mb-8 text-green-50 dark:text-green-100">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 break-words">Ready to Get Started?</h2>
+              <p className="text-xl md:text-2xl mb-8 text-green-50 dark:text-green-100 break-words">
                 Contact us today for a free consultation and learn how we can help transform your business.
               </p>
               <Link

@@ -22,10 +22,10 @@ export default function ServicesPage() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 text-gray-900 dark:text-white">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 text-gray-900 dark:text-white break-words px-4">
             Our Services
           </h1>
-          <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
+          <p className="text-lg sm:text-xl md:text-2xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto break-words px-4">
             Comprehensive IT solutions to help you succeed. We provide a full range of services to transform your business.
           </p>
         </motion.div>
@@ -50,10 +50,10 @@ export default function ServicesPage() {
                         <Icon className="w-10 h-10 md:w-12 md:h-12 text-green-600 dark:text-green-400" />
                       </div>
                       <div className="flex-1 min-w-0">
-                        <h3 className="text-2xl md:text-3xl font-bold mb-3 text-gray-900 dark:text-white">
+                        <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-3 text-gray-900 dark:text-white break-words">
                           {service.title}
                         </h3>
-                        <p className="text-gray-600 dark:text-gray-400 mb-4 leading-relaxed text-base md:text-lg">
+                        <p className="text-gray-600 dark:text-gray-400 mb-4 leading-relaxed text-base md:text-lg break-words">
                           {service.shortDescription}
                         </p>
                         <div className="flex items-center text-green-600 dark:text-green-400 font-semibold group-hover:translate-x-2 transition-transform">
@@ -77,8 +77,8 @@ export default function ServicesPage() {
           transition={{ duration: 0.8 }}
           className="bg-gradient-to-r from-green-600 to-green-800 dark:from-green-700 dark:to-green-900 p-12 md:p-16 rounded-2xl text-center text-white shadow-xl"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Need Help Choosing a Service?</h2>
-          <p className="text-xl md:text-2xl mb-8 text-green-50 dark:text-green-100 max-w-3xl mx-auto leading-relaxed">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 break-words px-4">Need Help Choosing a Service?</h2>
+          <p className="text-lg sm:text-xl md:text-2xl mb-8 text-green-50 dark:text-green-100 max-w-3xl mx-auto leading-relaxed break-words px-4">
             Contact us for a free consultation and we'll help you determine the best solution for your business needs.
           </p>
           <Link

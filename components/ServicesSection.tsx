@@ -17,11 +17,11 @@ export default function ServicesSection() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-gray-900 dark:text-white">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-gray-900 dark:text-white break-words">
             Our Services
           </h2>
           <div className="w-24 h-1 bg-green-600 dark:bg-green-500 mx-auto mb-6"></div>
-          <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
+          <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto break-words">
             Comprehensive IT solutions to help you succeed
           </p>
         </motion.div>
@@ -60,10 +60,10 @@ export default function ServicesSection() {
                   
                   {/* Content Overlay */}
                   <div className="absolute inset-0 flex flex-col justify-end p-6 md:p-8 z-10">
-                    <h3 className="text-2xl md:text-3xl font-bold mb-3 text-white drop-shadow-lg">
+                    <h3 className="text-2xl md:text-3xl font-bold mb-3 text-white drop-shadow-lg break-words">
                       {service.title}
                     </h3>
-                    <p className="text-white/90 mb-6 text-base md:text-lg drop-shadow-md line-clamp-2">
+                    <p className="text-white/90 mb-6 text-base md:text-lg drop-shadow-md leading-relaxed break-words">
                       {service.shortDescription}
                     </p>
                     <div className="inline-flex items-center space-x-2 bg-white/20 backdrop-blur-sm px-6 py-3 rounded-lg text-white font-semibold hover:bg-white/30 transition-all duration-300 group-hover:translate-x-2">
