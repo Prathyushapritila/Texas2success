@@ -15,8 +15,9 @@ export const siteConfig = {
   },
   social: {
     linkedin: "https://www.linkedin.com/company/texas-2-success/posts/?feedView=all",
-    twitter: "https://twitter.com/texas2success",
-    facebook: "https://www.facebook.com/texas2success",
+    twitter: "https://twitter.com",
+    facebook: "https://facebook.com",
+    instagram: "https://instagram.com",
     whatsapp: "https://wa.me/14697083802"
   }
 }

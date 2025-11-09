@@ -3,7 +3,7 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { siteConfig } from '@/data/siteData'
-import { Linkedin, Twitter, Facebook, Mail, Phone, MapPin, MessageCircle } from 'lucide-react'
+import { Linkedin, Twitter, Facebook, Instagram, Mail, Phone, MapPin, MessageCircle } from 'lucide-react'
 
 export default function Footer() {
   const currentYear = new Date().getFullYear()
@@ -44,6 +44,15 @@ export default function Footer() {
                 <Linkedin className="w-5 h-5" />
               </a>
               <a
+                href={siteConfig.social.facebook}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 bg-gray-800 dark:bg-gray-800 rounded-lg flex items-center justify-center hover:bg-green-600 transition-colors"
+                aria-label="Facebook"
+              >
+                <Facebook className="w-5 h-5" />
+              </a>
+              <a
                 href={siteConfig.social.twitter}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -53,13 +62,13 @@ export default function Footer() {
                 <Twitter className="w-5 h-5" />
               </a>
               <a
-                href={siteConfig.social.facebook}
+                href={siteConfig.social.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 bg-gray-800 dark:bg-gray-800 rounded-lg flex items-center justify-center hover:bg-green-600 transition-colors"
-                aria-label="Facebook"
+                aria-label="Instagram"
               >
-                <Facebook className="w-5 h-5" />
+                <Instagram className="w-5 h-5" />
               </a>
               <a
                 href={siteConfig.social.whatsapp}
