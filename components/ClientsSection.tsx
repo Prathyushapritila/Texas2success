@@ -28,21 +28,23 @@ export default function ClientsSection() {
         <div className="relative overflow-hidden">
           <div className="animate-scroll flex items-center">
             {duplicatedClients.map((client, index) => (
-              <div
+              <motion.div
                 key={`${client.name}-${index}`}
-                className="flex-shrink-0 mx-8 md:mx-12 lg:mx-16"
+                className="flex-shrink-0 mx-8 md:mx-12 lg:mx-16 group"
+                whileHover={{ scale: 1.15, y: -8 }}
+                transition={{ duration: 0.2, ease: "easeOut" }}
               >
                 {/* Fixed size container for consistent logo appearance */}
-                <div className="relative w-48 h-32 md:w-56 md:h-40 flex items-center justify-center">
+                <div className="relative w-48 h-32 md:w-56 md:h-40 flex items-center justify-center cursor-pointer">
                   <Image
                     src={client.logo}
                     alt={`${client.name} Logo`}
                     fill
-                    className="object-contain filter drop-shadow-lg hover:drop-shadow-2xl transition-all duration-300 p-4"
+                    className="object-contain filter drop-shadow-lg group-hover:drop-shadow-2xl group-hover:brightness-110 transition-all duration-200 p-4"
                     sizes="(max-width: 768px) 200px, 250px"
                   />
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
