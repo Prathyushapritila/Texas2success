@@ -14,31 +14,32 @@ const iconMap = {
   TrendingUp,
 }
 
+// Enhanced overlay function with stronger dark overlay for better text readability
 const getOverlayStyle = (serviceId: string) => {
   switch (serviceId) {
     case 'erp-crm':
-      // Blue tones (#004AAD) with soft gradient
+      // Dark overlay for ERP/CRM - business analytics theme
       return {
-        background: 'linear-gradient(135deg, rgba(0, 74, 173, 0.75) 0%, rgba(0, 74, 173, 0.85) 100%)'
+        background: 'linear-gradient(135deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 74, 173, 0.7) 50%, rgba(0, 0, 0, 0.75) 100%)'
       }
     case 'salesforce':
-      // Blue and orange highlights with dark gradient
+      // Dark overlay for Salesforce - cloud CRM theme
       return {
-        background: 'linear-gradient(135deg, rgba(0, 74, 173, 0.7) 0%, rgba(255, 122, 0, 0.3) 50%, rgba(0, 0, 0, 0.6) 100%)'
+        background: 'linear-gradient(135deg, rgba(0, 0, 0, 0.65) 0%, rgba(0, 74, 173, 0.6) 50%, rgba(0, 0, 0, 0.7) 100%)'
       }
     case 'websites-apps':
-      // Blue and orange accents with subtle dark gradient
+      // Dark overlay for Websites & Apps - development theme
       return {
-        background: 'linear-gradient(135deg, rgba(0, 74, 173, 0.6) 0%, rgba(255, 122, 0, 0.4) 50%, rgba(0, 0, 0, 0.5) 100%)'
+        background: 'linear-gradient(135deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 74, 173, 0.5) 50%, rgba(0, 0, 0, 0.7) 100%)'
       }
     case 'seo-marketing':
-      // Blue and orange accent colors with subtle dark gradient
+      // Dark overlay for SEO & Marketing - analytics theme
       return {
-        background: 'linear-gradient(135deg, rgba(0, 74, 173, 0.65) 0%, rgba(255, 122, 0, 0.35) 50%, rgba(0, 0, 0, 0.55) 100%)'
+        background: 'linear-gradient(135deg, rgba(0, 0, 0, 0.65) 0%, rgba(255, 122, 0, 0.3) 50%, rgba(0, 0, 0, 0.75) 100%)'
       }
     default:
       return {
-        background: 'linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7))'
+        background: 'linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.8))'
       }
   }
 }
@@ -57,37 +58,49 @@ export default function ServiceDetailPage({ params }: { params: { id: string } }
   return (
     <div className="pt-0 min-h-screen">
       {/* Full-Screen Hero Section with Background Image */}
-      <section className="relative min-h-[70vh] md:min-h-[80vh] flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-[85vh] md:min-h-[90vh] flex items-center justify-center overflow-hidden pt-20 md:pt-24">
         {/* Background Image Container */}
         <div className="absolute inset-0 z-0">
-          {/* Background Image */}
+          {/* Background Image - Using Next.js Image for better optimization */}
           <img
             src={service.backgroundImage}
-            alt={service.title}
+            alt={`${service.title} background`}
             className="absolute inset-0 w-full h-full object-cover"
-            style={{ objectPosition: 'center' }}
+            style={{ 
+              objectPosition: 'center',
+              width: '100%',
+              height: '100%'
+            }}
+            onError={(e) => {
+              // Fallback if image fails to load
+              console.error('Background image failed to load:', service.backgroundImage)
+            }}
           />
-          {/* Dynamic Overlay based on service type */}
+          {/* Enhanced Dark Overlay for better text readability */}
           <div 
             className="absolute inset-0 z-10"
             style={getOverlayStyle(service.id)}
           ></div>
+          {/* Additional subtle gradient overlay for extra contrast */}
+          <div className="absolute inset-0 z-10 bg-gradient-to-b from-transparent via-black/20 to-black/40"></div>
         </div>
 
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-20 py-20 md:py-24">
-          <div className="max-w-4xl mx-auto text-center text-white">
-            {/* Back Button */}
+        {/* Content Container with proper spacing */}
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-20 w-full">
+          <div className="max-w-5xl mx-auto text-center text-white py-12 md:py-16">
+            {/* Back Button - Positioned at top */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
-              className="mb-8 flex justify-start"
+              transition={{ duration: 0.5 }}
+              className="mb-8 md:mb-12 flex justify-start"
             >
               <Link
                 href="/services"
-                className="inline-flex items-center text-white/90 hover:text-white transition-colors bg-white/10 backdrop-blur-sm px-4 py-2 rounded-lg border border-white/20 dark:bg-white/5 dark:border-white/10"
+                className="inline-flex items-center text-white/90 hover:text-white transition-colors bg-white/10 backdrop-blur-sm px-4 py-2.5 rounded-lg border border-white/20 hover:bg-white/20"
               >
                 <ArrowLeft className="w-5 h-5 mr-2" />
-                Back to Services
+                <span className="text-sm md:text-base">Back to Services</span>
               </Link>
             </motion.div>
 
@@ -95,30 +108,30 @@ export default function ServiceDetailPage({ params }: { params: { id: string } }
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8 }}
-              className="mb-8"
+              transition={{ duration: 0.6 }}
+              className="mb-6 md:mb-8"
             >
-              <div className="w-24 h-24 bg-white/20 backdrop-blur-md rounded-2xl flex items-center justify-center mx-auto border border-white/30 shadow-lg">
-                <Icon className="w-12 h-12 text-white" />
+              <div className="w-20 h-20 md:w-24 md:h-24 bg-white/20 backdrop-blur-md rounded-2xl flex items-center justify-center mx-auto border border-white/30 shadow-lg">
+                <Icon className="w-10 h-10 md:w-12 md:h-12 text-white" />
               </div>
             </motion.div>
 
-            {/* Title */}
+            {/* Title - Responsive sizing to prevent cutoff */}
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-4xl md:text-5xl lg:text-7xl font-bold mb-6 drop-shadow-2xl"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 md:mb-6 drop-shadow-2xl leading-tight px-4"
             >
               {service.title}
             </motion.h1>
 
-            {/* Description */}
+            {/* Description - Responsive sizing */}
             <motion.p
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="text-xl md:text-2xl lg:text-3xl text-white/95 max-w-3xl mx-auto drop-shadow-lg"
+              className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-white/95 max-w-3xl mx-auto drop-shadow-lg leading-relaxed px-4"
             >
               {service.shortDescription}
             </motion.p>
