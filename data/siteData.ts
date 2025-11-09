@@ -14,7 +14,7 @@ export const siteConfig = {
     fullAddress: "7800 Preston Rd, STE 125, Plano TX 75024"
   },
   social: {
-    linkedin: "https://www.linkedin.com/company/texas2success",
+    linkedin: "https://www.linkedin.com/company/texas-2-success/posts/?feedView=all",
     twitter: "https://twitter.com/texas2success",
     facebook: "https://www.facebook.com/texas2success",
     whatsapp: "https://wa.me/14697083802"

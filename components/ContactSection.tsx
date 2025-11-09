@@ -168,7 +168,7 @@ export default function ContactSection() {
               <div className="p-4 md:p-6">
                 <div className="h-96 md:h-[500px] lg:h-[600px] relative rounded-2xl overflow-hidden bg-gray-100 border-2 border-green-100">
                   <iframe
-                    src={`https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3347.1234567890!2d-96.7890123!3d33.1234567!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzPCsDA3JzI0LjQiTiA5NsKwNDcjMjAuNCJX!5e0!3m2!1sen!2sus!4v1234567890123!5m2!1sen!2sus&q=${encodeURIComponent(siteConfig.contact.fullAddress)}`}
+                    src={`https://www.google.com/maps?q=${encodeURIComponent(siteConfig.contact.fullAddress)}&output=embed&zoom=15`}
                     width="100%"
                     height="100%"
                     style={{ border: 0 }}

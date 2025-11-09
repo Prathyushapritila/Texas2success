@@ -4,14 +4,21 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Menu, X } from 'lucide-react'
+import { Menu, X, Sun, Moon } from 'lucide-react'
+import { useTheme } from 'next-themes'
 import { siteConfig } from '@/data/siteData'
 import Image from 'next/image'
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const { theme, setTheme } = useTheme()
+  const [mounted, setMounted] = useState(false)
   const pathname = usePathname()
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
 
   useEffect(() => {
     const handleScroll = () => {
@@ -42,8 +49,8 @@ export default function Navbar() {
       animate={{ y: 0 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? 'bg-white/95 backdrop-blur-md shadow-lg'
-          : 'bg-white/80 backdrop-blur-sm'
+          ? 'bg-white/95 dark:bg-gray-900/95 backdrop-blur-md shadow-lg'
+          : 'bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm'
       }`}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -71,7 +78,7 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-6 lg:space-x-8">
+          <div className="hidden md:flex items-center space-x-4 lg:space-x-6">
             {navLinks.map((link) => {
               const active = isActive(link.href)
               return (
@@ -80,29 +87,44 @@ export default function Navbar() {
                   href={link.href}
                   className={`relative font-medium text-sm lg:text-base transition-all duration-300 ${
                     active
-                      ? 'text-green-600 font-semibold'
-                      : 'text-gray-700 hover:text-green-600'
+                      ? 'text-green-600 font-semibold dark:text-green-400'
+                      : 'text-gray-700 hover:text-green-600 dark:text-gray-300 dark:hover:text-green-400'
                   }`}
                 >
                   {link.label}
                   {active && (
                     <motion.span
                       layoutId="activeIndicator"
-                      className="absolute bottom-0 left-0 w-full h-0.5 bg-green-600"
+                      className="absolute bottom-0 left-0 w-full h-0.5 bg-green-600 dark:bg-green-400"
                       initial={false}
                       transition={{ type: 'spring', stiffness: 380, damping: 30 }}
                     />
                   )}
                   {!active && (
-                    <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-green-600 group-hover:w-full transition-all duration-300"></span>
+                    <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-green-600 dark:bg-green-400 group-hover:w-full transition-all duration-300"></span>
                   )}
                 </Link>
               )
             })}
 
+            {/* Theme Toggle */}
+            {mounted && (
+              <button
+                onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+                className="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
+                aria-label="Toggle theme"
+              >
+                {theme === 'dark' ? (
+                  <Sun className="w-5 h-5" />
+                ) : (
+                  <Moon className="w-5 h-5" />
+                )}
+              </button>
+            )}
+
             <Link
               href="/contact"
-              className="bg-green-600 text-white px-6 py-2.5 rounded-lg hover:bg-green-700 transition-colors font-semibold text-sm lg:text-base shadow-md hover:shadow-lg"
+              className="bg-green-600 dark:bg-green-700 text-white px-6 py-2.5 rounded-lg hover:bg-green-700 dark:hover:bg-green-600 transition-colors font-semibold text-sm lg:text-base shadow-md hover:shadow-lg"
             >
               Get Started
             </Link>
@@ -110,9 +132,22 @@ export default function Navbar() {
 
           {/* Mobile Menu Button */}
           <div className="md:hidden flex items-center space-x-3">
+            {mounted && (
+              <button
+                onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+                className="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300"
+                aria-label="Toggle theme"
+              >
+                {theme === 'dark' ? (
+                  <Sun className="w-5 h-5" />
+                ) : (
+                  <Moon className="w-5 h-5" />
+                )}
+              </button>
+            )}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="p-2 rounded-lg bg-gray-100"
+              className="p-2 rounded-lg bg-gray-100 dark:bg-gray-800"
               aria-label="Toggle menu"
             >
               {isMobileMenuOpen ? (
@@ -132,7 +167,7 @@ export default function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-white border-t border-gray-200"
+            className="md:hidden bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700"
           >
             <div className="container mx-auto px-4 py-4 space-y-2">
               {navLinks.map((link) => {
@@ -144,8 +179,8 @@ export default function Navbar() {
                     onClick={() => setIsMobileMenuOpen(false)}
                     className={`block py-3 rounded-lg px-4 font-medium transition-colors ${
                       active
-                        ? 'text-green-600 bg-green-50 font-semibold'
-                        : 'text-gray-700 hover:text-green-600 hover:bg-green-50'
+                        ? 'text-green-600 dark:text-green-400 bg-green-50 dark:bg-green-900/30 font-semibold'
+                        : 'text-gray-700 dark:text-gray-300 hover:text-green-600 dark:hover:text-green-400 hover:bg-green-50 dark:hover:bg-green-900/20'
                     }`}
                   >
                     {link.label}
@@ -155,7 +190,7 @@ export default function Navbar() {
               <Link
                 href="/contact"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="block py-3 bg-green-600 text-white rounded-lg text-center font-semibold mx-4 mt-4"
+                className="block py-3 bg-green-600 dark:bg-green-700 text-white rounded-lg text-center font-semibold mx-4 mt-4"
               >
                 Get Started
               </Link>

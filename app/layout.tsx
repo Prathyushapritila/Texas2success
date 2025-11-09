@@ -4,6 +4,7 @@ import './globals.css'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import FloatingContactButton from '@/components/FloatingContactButton'
+import { ThemeProvider } from '@/components/ThemeProvider'
 import { siteConfig } from '@/data/siteData'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -133,10 +134,12 @@ export default function RootLayout({
         />
       </head>
       <body className={inter.className}>
-        <Navbar />
-        {children}
-        <Footer />
-        <FloatingContactButton />
+        <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
+          <Navbar />
+          {children}
+          <Footer />
+          <FloatingContactButton />
+        </ThemeProvider>
       </body>
     </html>
   )

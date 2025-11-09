@@ -31,11 +31,13 @@ export default function TestimonialsSection() {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
+              transition={{ duration: 0.4, delay: index * 0.05 }}
               whileHover={{ y: -8, scale: 1.03 }}
-              className="bg-gradient-to-br from-gray-50 to-white p-6 md:p-8 rounded-2xl border-2 border-gray-200 shadow-md hover:shadow-2xl hover:border-green-300 transition-all duration-300 cursor-pointer"
+              whileTap={{ scale: 0.98 }}
+              className="bg-gradient-to-br from-gray-50 to-white p-6 md:p-8 rounded-2xl border-2 border-gray-200 shadow-md hover:shadow-2xl hover:border-green-300 cursor-pointer group"
+              style={{ willChange: 'transform' }}
             >
-              <Quote className="w-10 h-10 text-green-600 mb-4 opacity-50" />
+              <Quote className="w-10 h-10 text-green-600 mb-4 opacity-50 group-hover:opacity-100 transition-opacity duration-200" />
               <div className="flex mb-4">
                 {[...Array(testimonial.rating)].map((_, i) => (
                   <Star
