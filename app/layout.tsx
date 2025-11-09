@@ -124,11 +124,12 @@ export default function RootLayout({
                 email: siteConfig.contact.email,
                 availableLanguage: 'English',
               },
-              sameAs: [
-                siteConfig.social.linkedin,
-                siteConfig.social.twitter,
-                siteConfig.social.facebook,
-              ],
+                sameAs: [
+                  siteConfig.social.linkedin,
+                  siteConfig.social.facebook,
+                  siteConfig.social.twitter,
+                  siteConfig.social.instagram,
+                ],
             }),
           }}
         />
