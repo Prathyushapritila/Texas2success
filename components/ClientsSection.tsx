@@ -5,7 +5,7 @@ import Image from 'next/image'
 import { clients } from '@/data/siteData'
 
 export default function ClientsSection() {
-  // Duplicate clients array for seamless infinite scroll (need enough duplicates for smooth loop)
+  // Duplicate clients array for seamless infinite scroll
   const duplicatedClients = [...clients, ...clients, ...clients, ...clients]
 
   return (
@@ -28,23 +28,21 @@ export default function ClientsSection() {
         <div className="relative overflow-hidden">
           <div className="animate-scroll flex items-center">
             {duplicatedClients.map((client, index) => (
-              <motion.div
+              <div
                 key={`${client.name}-${index}`}
                 className="flex-shrink-0 mx-8 md:mx-12 lg:mx-16 group"
-                whileHover={{ scale: 1.15, y: -8 }}
-                transition={{ duration: 0.2, ease: "easeOut" }}
               >
                 {/* Fixed size container for consistent logo appearance */}
-                <div className="relative w-48 h-32 md:w-56 md:h-40 flex items-center justify-center cursor-pointer">
+                <div className="relative w-48 h-32 md:w-56 md:h-40 flex items-center justify-center cursor-pointer transition-all duration-200 ease-out hover:scale-110 hover:-translate-y-2">
                   <Image
                     src={client.logo}
                     alt={`${client.name} Logo`}
                     fill
-                    className="object-contain filter drop-shadow-lg group-hover:drop-shadow-2xl group-hover:brightness-110 transition-all duration-200 p-4"
+                    className="object-contain filter drop-shadow-lg group-hover:drop-shadow-2xl group-hover:brightness-110 transition-all duration-200 ease-out p-4"
                     sizes="(max-width: 768px) 200px, 250px"
                   />
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>

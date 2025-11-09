@@ -164,19 +164,19 @@ export const industries = [
 
 export const clients = [
   { 
-    name: 'Lumen Med', 
-    industry: 'Healthcare',
-    logo: '/clients/LumenMed.png'
-  },
-  { 
     name: 'Illinois Valley', 
     industry: 'Healthcare',
-    logo: '/clients/IllinoiValley.png'
+    logo: '/5.png'
+  },
+  { 
+    name: 'Lumen Med', 
+    industry: 'Healthcare',
+    logo: '/Lumen.png'
   },
   { 
     name: 'Honestabes', 
     industry: 'Healthcare',
-    logo: '/clients/HonestAbes.png'
+    logo: '/HonestAbes.png'
   },
 ]
 

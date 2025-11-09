@@ -139,37 +139,58 @@ export default function ContactSection() {
             </motion.div>
           </div>
 
-          {/* Enhanced Google Map with Custom Design */}
+          {/* Completely Restyled Google Map Section */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="mt-12 max-w-6xl mx-auto"
+            className="mt-16 max-w-6xl mx-auto"
           >
-            <div className="relative bg-white rounded-3xl shadow-2xl border-2 border-green-200 overflow-hidden">
-              {/* "Find Us Here" Overlay Label */}
-              <div className="absolute top-6 right-6 z-20 bg-gradient-to-r from-green-600 to-green-700 text-white px-6 py-3 rounded-full shadow-lg flex items-center space-x-2">
+            {/* Map Title */}
+            <div className="text-center mb-8">
+              <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-2">Visit Our Office</h3>
+              <p className="text-gray-600">We'd love to meet you in person</p>
+            </div>
+
+            {/* Custom Map Container */}
+            <div className="relative bg-gradient-to-br from-green-50 to-white rounded-3xl shadow-2xl border-4 border-green-200 overflow-hidden transform hover:scale-[1.01] transition-transform duration-300">
+              {/* "Find Us Here" Overlay Badge */}
+              <div className="absolute top-6 right-6 z-20 bg-gradient-to-r from-green-600 to-green-700 text-white px-6 py-3 rounded-full shadow-xl flex items-center space-x-2 backdrop-blur-sm border-2 border-white/30">
                 <MapPin className="w-5 h-5" />
-                <span className="font-semibold text-sm md:text-base">Find Us Here</span>
+                <span className="font-bold text-sm md:text-base">Find Us Here</span>
               </div>
 
-              {/* Map Container */}
-              <div className="h-96 md:h-[500px] lg:h-[600px] relative">
-                <iframe
-                  src={`https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3347.1234567890!2d-96.7890123!3d33.1234567!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzPCsDA3JzI0LjQiTiA5NsKwNDcjMjAuNCJX!5e0!3m2!1sen!2sus!4v1234567890123!5m2!1sen!2sus&q=${encodeURIComponent(siteConfig.contact.fullAddress)}`}
-                  width="100%"
-                  height="100%"
-                  style={{ border: 0 }}
-                  allowFullScreen
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  className="w-full h-full"
-                  title="Texas 2 Success Location"
-                />
-                
-                {/* Decorative Corner Accent */}
-                <div className="absolute bottom-0 left-0 w-32 h-32 bg-gradient-to-tr from-green-600/10 to-transparent pointer-events-none"></div>
+              {/* Decorative Top Border */}
+              <div className="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-green-400 via-green-500 to-green-600 z-10"></div>
+
+              {/* Map Container with Padding */}
+              <div className="p-4 md:p-6">
+                <div className="h-96 md:h-[500px] lg:h-[600px] relative rounded-2xl overflow-hidden bg-gray-100 border-2 border-green-100">
+                  <iframe
+                    src={`https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3347.1234567890!2d-96.7890123!3d33.1234567!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzPCsDA3JzI0LjQiTiA5NsKwNDcjMjAuNCJX!5e0!3m2!1sen!2sus!4v1234567890123!5m2!1sen!2sus&q=${encodeURIComponent(siteConfig.contact.fullAddress)}`}
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    className="w-full h-full rounded-xl"
+                    title="Texas 2 Success Location"
+                  />
+                  
+                  {/* Decorative Corner Elements */}
+                  <div className="absolute top-0 left-0 w-24 h-24 bg-gradient-to-br from-green-600/20 to-transparent pointer-events-none rounded-br-3xl"></div>
+                  <div className="absolute bottom-0 right-0 w-32 h-32 bg-gradient-to-tl from-green-600/20 to-transparent pointer-events-none rounded-tl-3xl"></div>
+                </div>
+              </div>
+
+              {/* Address Display at Bottom */}
+              <div className="bg-white/80 backdrop-blur-sm px-6 py-4 border-t-2 border-green-200">
+                <div className="flex items-center justify-center space-x-2 text-gray-700">
+                  <MapPin className="w-5 h-5 text-green-600" />
+                  <span className="font-semibold">{siteConfig.contact.fullAddress}</span>
+                </div>
               </div>
             </div>
           </motion.div>
