@@ -19,26 +19,26 @@ const getOverlayStyle = (serviceId: string) => {
     case 'erp-crm':
       // Dark overlay for ERP/CRM - business analytics theme
       return {
-        background: 'linear-gradient(135deg, rgba(0, 0, 0, 0.65) 0%, rgba(0, 74, 173, 0.7) 50%, rgba(0, 0, 0, 0.8) 100%)'
+        background: 'linear-gradient(135deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 74, 173, 0.7) 50%, rgba(0, 0, 0, 0.85) 100%)'
       }
     case 'salesforce':
       // Dark overlay for Salesforce - cloud CRM theme
       return {
-        background: 'linear-gradient(135deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 74, 173, 0.6) 50%, rgba(0, 0, 0, 0.75) 100%)'
+        background: 'linear-gradient(135deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 74, 173, 0.6) 50%, rgba(0, 0, 0, 0.8) 100%)'
       }
     case 'websites-apps':
       // Dark overlay for Websites & Apps - development theme
       return {
-        background: 'linear-gradient(135deg, rgba(0, 0, 0, 0.65) 0%, rgba(0, 74, 173, 0.5) 50%, rgba(0, 0, 0, 0.75) 100%)'
+        background: 'linear-gradient(135deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 74, 173, 0.5) 50%, rgba(0, 0, 0, 0.8) 100%)'
       }
     case 'seo-marketing':
       // Dark overlay for SEO & Marketing - analytics theme
       return {
-        background: 'linear-gradient(135deg, rgba(0, 0, 0, 0.7) 0%, rgba(255, 122, 0, 0.3) 50%, rgba(0, 0, 0, 0.8) 100%)'
+        background: 'linear-gradient(135deg, rgba(0, 0, 0, 0.75) 0%, rgba(255, 122, 0, 0.3) 50%, rgba(0, 0, 0, 0.85) 100%)'
       }
     default:
       return {
-        background: 'linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.8))'
+        background: 'linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.85))'
       }
   }
 }
@@ -59,7 +59,7 @@ export default function ServiceDetailPage({ params }: { params: { id: string } }
       {/* Full-Screen Hero Section with Background Image */}
       <section 
         id={`service-${service.id}`}
-        className="relative min-h-[85vh] md:min-h-[90vh] flex flex-col justify-center overflow-hidden"
+        className="relative min-h-[85vh] md:min-h-[90vh] flex flex-col justify-center items-center overflow-hidden"
         style={{
           backgroundImage: service.backgroundImage ? `url(${service.backgroundImage})` : 'linear-gradient(to bottom, #1f2937, #111827)',
           backgroundSize: 'cover',
@@ -67,27 +67,27 @@ export default function ServiceDetailPage({ params }: { params: { id: string } }
           backgroundRepeat: 'no-repeat',
         }}
       >
-        {/* Enhanced Dark Overlay for better text readability */}
+        {/* Enhanced Dark Overlay for better text readability - darker in dark mode */}
         <div 
-          className="absolute inset-0 z-10"
+          className="absolute inset-0 z-10 dark:bg-black/60"
           style={getOverlayStyle(service.id)}
         ></div>
-        {/* Additional subtle gradient overlay for extra contrast */}
-        <div className="absolute inset-0 z-10 bg-gradient-to-b from-transparent via-black/30 to-black/50"></div>
+        {/* Additional subtle gradient overlay for extra contrast - darker in dark mode */}
+        <div className="absolute inset-0 z-10 bg-gradient-to-b from-transparent via-black/40 to-black/60 dark:via-black/50 dark:to-black/70"></div>
 
-        {/* Content Container with proper spacing */}
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-20 w-full py-16 md:py-20">
-          <div className="max-w-5xl mx-auto text-center">
+        {/* Content Container with proper spacing and centering */}
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-20 w-full py-16 md:py-20 flex flex-col items-center justify-center">
+          <div className="max-w-5xl mx-auto text-center w-full">
             {/* Back Button - Positioned at top */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5 }}
-              className="mb-8 md:mb-12 flex justify-start"
+              className="mb-8 md:mb-12 flex justify-start w-full"
             >
               <Link
                 href="/services"
-                className="inline-flex items-center text-white/90 hover:text-white dark:text-white/90 dark:hover:text-white transition-colors bg-white/10 backdrop-blur-sm px-4 py-2.5 rounded-lg border border-white/20 hover:bg-white/20 dark:bg-white/10 dark:border-white/20"
+                className="inline-flex items-center text-white hover:text-white dark:text-white dark:hover:text-white transition-colors bg-white/10 backdrop-blur-sm px-4 py-2.5 rounded-lg border border-white/20 hover:bg-white/20 dark:bg-white/10 dark:border-white/20"
               >
                 <ArrowLeft className="w-5 h-5 mr-2 text-white dark:text-white" />
                 <span className="text-sm md:text-base text-white dark:text-white">Back to Services</span>
@@ -99,19 +99,19 @@ export default function ServiceDetailPage({ params }: { params: { id: string } }
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6 }}
-              className="mb-6 md:mb-8"
+              className="mb-6 md:mb-8 flex justify-center"
             >
-              <div className="w-20 h-20 md:w-24 md:h-24 bg-white/20 dark:bg-white/20 backdrop-blur-md rounded-2xl flex items-center justify-center mx-auto border border-white/30 dark:border-white/30 shadow-lg">
+              <div className="w-20 h-20 md:w-24 md:h-24 bg-white/20 dark:bg-white/20 backdrop-blur-md rounded-2xl flex items-center justify-center border border-white/30 dark:border-white/30 shadow-lg">
                 <Icon className="w-10 h-10 md:w-12 md:h-12 text-white dark:text-white" />
               </div>
             </motion.div>
 
-            {/* Title - Premium metallic gradient effect (white and grey) */}
+            {/* Title - Premium metallic gradient effect (white and grey) with white fallback */}
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 md:mb-6 drop-shadow-2xl leading-tight px-4 break-words"
+              className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 md:mb-6 drop-shadow-2xl leading-tight px-4 break-words text-white dark:text-white"
               style={{ 
                 wordBreak: 'break-word', 
                 overflowWrap: 'break-word',
@@ -120,23 +120,24 @@ export default function ServiceDetailPage({ params }: { params: { id: string } }
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
                 backgroundClip: 'text',
-                filter: 'drop-shadow(0 4px 8px rgba(0, 0, 0, 0.6)) drop-shadow(0 2px 4px rgba(0, 0, 0, 0.4))',
-                textShadow: '0 2px 4px rgba(0, 0, 0, 0.3)',
-                color: 'transparent', // Ensure gradient is used
+                filter: 'drop-shadow(0 4px 8px rgba(0, 0, 0, 0.8)) drop-shadow(0 2px 4px rgba(0, 0, 0, 0.6))',
+                textShadow: '0 2px 4px rgba(0, 0, 0, 0.5)',
+                color: 'white', // Fallback color for dark mode
               }}
             >
               {service.title}
             </motion.h1>
 
-            {/* Description - Responsive sizing with proper wrapping */}
+            {/* Description - White text with proper visibility */}
             <motion.p
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/95 dark:text-white/95 max-w-3xl mx-auto drop-shadow-lg leading-relaxed px-4 break-words"
+              className="text-base sm:text-lg md:text-xl lg:text-2xl max-w-3xl mx-auto drop-shadow-lg leading-relaxed px-4 break-words text-white dark:text-white"
               style={{ 
                 wordBreak: 'break-word', 
-                overflowWrap: 'break-word'
+                overflowWrap: 'break-word',
+                textShadow: '0 2px 4px rgba(0, 0, 0, 0.5)',
               }}
             >
               {service.shortDescription}
