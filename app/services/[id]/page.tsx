@@ -106,7 +106,7 @@ export default function ServiceDetailPage({ params }: { params: { id: string } }
               </div>
             </motion.div>
 
-            {/* Title - Premium gradient effect with proper visibility */}
+            {/* Title - Premium metallic gradient effect (white and grey) */}
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -116,11 +116,12 @@ export default function ServiceDetailPage({ params }: { params: { id: string } }
                 wordBreak: 'break-word', 
                 overflowWrap: 'break-word',
                 hyphens: 'auto',
-                background: 'linear-gradient(135deg, #ffffff 0%, #e0f2fe 50%, #ffffff 100%)',
+                background: 'linear-gradient(135deg, #ffffff 0%, #e5e7eb 25%, #d1d5db 50%, #e5e7eb 75%, #ffffff 100%)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
                 backgroundClip: 'text',
-                filter: 'drop-shadow(0 4px 6px rgba(0, 0, 0, 0.5)) drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3))',
+                filter: 'drop-shadow(0 4px 8px rgba(0, 0, 0, 0.6)) drop-shadow(0 2px 4px rgba(0, 0, 0, 0.4))',
+                textShadow: '0 2px 4px rgba(0, 0, 0, 0.3)',
               }}
             >
               {service.title}
