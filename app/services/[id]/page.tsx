@@ -6,6 +6,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { services } from '@/data/siteData'
 import { Database, Zap, Smartphone, TrendingUp, Check, ArrowLeft } from 'lucide-react'
+import { useState } from 'react'
 
 const iconMap = {
   Database,
@@ -20,22 +21,22 @@ const getOverlayStyle = (serviceId: string) => {
     case 'erp-crm':
       // Dark overlay for ERP/CRM - business analytics theme
       return {
-        background: 'linear-gradient(135deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 74, 173, 0.7) 50%, rgba(0, 0, 0, 0.75) 100%)'
+        background: 'linear-gradient(135deg, rgba(0, 0, 0, 0.65) 0%, rgba(0, 74, 173, 0.7) 50%, rgba(0, 0, 0, 0.8) 100%)'
       }
     case 'salesforce':
       // Dark overlay for Salesforce - cloud CRM theme
       return {
-        background: 'linear-gradient(135deg, rgba(0, 0, 0, 0.65) 0%, rgba(0, 74, 173, 0.6) 50%, rgba(0, 0, 0, 0.7) 100%)'
+        background: 'linear-gradient(135deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 74, 173, 0.6) 50%, rgba(0, 0, 0, 0.75) 100%)'
       }
     case 'websites-apps':
       // Dark overlay for Websites & Apps - development theme
       return {
-        background: 'linear-gradient(135deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 74, 173, 0.5) 50%, rgba(0, 0, 0, 0.7) 100%)'
+        background: 'linear-gradient(135deg, rgba(0, 0, 0, 0.65) 0%, rgba(0, 74, 173, 0.5) 50%, rgba(0, 0, 0, 0.75) 100%)'
       }
     case 'seo-marketing':
       // Dark overlay for SEO & Marketing - analytics theme
       return {
-        background: 'linear-gradient(135deg, rgba(0, 0, 0, 0.65) 0%, rgba(255, 122, 0, 0.3) 50%, rgba(0, 0, 0, 0.75) 100%)'
+        background: 'linear-gradient(135deg, rgba(0, 0, 0, 0.7) 0%, rgba(255, 122, 0, 0.3) 50%, rgba(0, 0, 0, 0.8) 100%)'
       }
     default:
       return {
@@ -47,6 +48,7 @@ const getOverlayStyle = (serviceId: string) => {
 export default function ServiceDetailPage({ params }: { params: { id: string } }) {
   const router = useRouter()
   const service = services.find(s => s.id === params.id)
+  const [imageError, setImageError] = useState(false)
 
   if (!service) {
     router.push('/services')
@@ -56,33 +58,41 @@ export default function ServiceDetailPage({ params }: { params: { id: string } }
   const Icon = iconMap[service.icon as keyof typeof iconMap] || Database
 
   return (
-    <div className="pt-0 min-h-screen">
+    <div className="pt-0 min-h-screen bg-white dark:bg-gray-900">
       {/* Full-Screen Hero Section with Background Image */}
       <section className="relative min-h-[85vh] md:min-h-[90vh] flex items-center justify-center overflow-hidden pt-20 md:pt-24">
         {/* Background Image Container */}
         <div className="absolute inset-0 z-0">
-          {/* Background Image - Using Next.js Image for better optimization */}
-          <img
-            src={service.backgroundImage}
-            alt={`${service.title} background`}
-            className="absolute inset-0 w-full h-full object-cover"
-            style={{ 
-              objectPosition: 'center',
-              width: '100%',
-              height: '100%'
-            }}
-            onError={(e) => {
-              // Fallback if image fails to load
-              console.error('Background image failed to load:', service.backgroundImage)
-            }}
-          />
+          {/* Fallback background color */}
+          <div className="absolute inset-0 bg-gradient-to-br from-gray-800 via-gray-900 to-black"></div>
+          
+          {/* Background Image - Using Next.js Image for optimization */}
+          {!imageError && service.backgroundImage && (
+            <div className="absolute inset-0 w-full h-full">
+              <Image
+                src={service.backgroundImage}
+                alt={`${service.title} background`}
+                fill
+                className="object-cover"
+                priority
+                quality={90}
+                sizes="100vw"
+                onError={() => {
+                  console.error('Background image failed to load:', service.backgroundImage)
+                  setImageError(true)
+                }}
+                unoptimized={false}
+              />
+            </div>
+          )}
+          
           {/* Enhanced Dark Overlay for better text readability */}
           <div 
             className="absolute inset-0 z-10"
             style={getOverlayStyle(service.id)}
           ></div>
           {/* Additional subtle gradient overlay for extra contrast */}
-          <div className="absolute inset-0 z-10 bg-gradient-to-b from-transparent via-black/20 to-black/40"></div>
+          <div className="absolute inset-0 z-10 bg-gradient-to-b from-transparent via-black/30 to-black/50"></div>
         </div>
 
         {/* Content Container with proper spacing */}
@@ -97,7 +107,7 @@ export default function ServiceDetailPage({ params }: { params: { id: string } }
             >
               <Link
                 href="/services"
-                className="inline-flex items-center text-white/90 hover:text-white transition-colors bg-white/10 backdrop-blur-sm px-4 py-2.5 rounded-lg border border-white/20 hover:bg-white/20"
+                className="inline-flex items-center text-white/90 hover:text-white transition-colors bg-white/10 backdrop-blur-sm px-4 py-2.5 rounded-lg border border-white/20 hover:bg-white/20 dark:bg-white/5 dark:border-white/10"
               >
                 <ArrowLeft className="w-5 h-5 mr-2" />
                 <span className="text-sm md:text-base">Back to Services</span>
@@ -121,7 +131,7 @@ export default function ServiceDetailPage({ params }: { params: { id: string } }
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 md:mb-6 drop-shadow-2xl leading-tight px-4"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 md:mb-6 drop-shadow-2xl leading-tight px-4 text-white"
             >
               {service.title}
             </motion.h1>
