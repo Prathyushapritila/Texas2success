@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { motion } from 'framer-motion'
 import ContactModal from './ContactModal'
 import { siteConfig } from '@/data/siteData'
-import { Phone, Mail, MapPin, MessageCircle, Clock, Handshake } from 'lucide-react'
+import { Phone, Mail, MapPin, MessageCircle, Clock, Hand } from 'lucide-react'
 
 export default function ContactSection() {
   const [isModalOpen, setIsModalOpen] = useState(false)
@@ -43,7 +43,7 @@ export default function ContactSection() {
                 {/* Representative Image/Icon at Top */}
                 <div className="flex justify-center mb-6">
                   <div className="w-24 h-24 md:w-32 md:h-32 bg-gradient-to-br from-green-100 to-green-200 rounded-full flex items-center justify-center shadow-lg">
-                    <Handshake className="w-12 h-12 md:w-16 md:h-16 text-green-600" />
+                    <Hand className="w-12 h-12 md:w-16 md:h-16 text-green-600" />
                   </div>
                 </div>
                 
