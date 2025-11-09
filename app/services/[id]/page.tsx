@@ -64,7 +64,7 @@ export default function ServiceDetailPage({ params }: { params: { id: string } }
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',
-          paddingTop: '120px', // Fixed padding to account for navbar (80px) + extra space (40px)
+          paddingTop: '140px', // Increased padding to ensure title is fully below navbar (navbar ~80-96px + 60px extra space)
         }}
       >
         {/* Enhanced Dark Overlay for better text readability */}
@@ -76,7 +76,7 @@ export default function ServiceDetailPage({ params }: { params: { id: string } }
         <div className="absolute inset-0 z-10 bg-gradient-to-b from-transparent via-black/30 to-black/50"></div>
 
         {/* Content Container with proper spacing */}
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-20 w-full mt-8 md:mt-12">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-20 w-full mt-12 md:mt-16">
           <div className="max-w-5xl mx-auto text-center text-white py-8 md:py-12">
             {/* Back Button - Positioned at top */}
             <motion.div
