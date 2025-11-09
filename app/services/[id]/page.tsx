@@ -57,40 +57,22 @@ export default function ServiceDetailPage({ params }: { params: { id: string } }
   return (
     <div className="pt-0 min-h-screen bg-white dark:bg-gray-900">
       {/* Full-Screen Hero Section with Background Image */}
-      <section className="relative min-h-[85vh] md:min-h-[90vh] flex items-center justify-center overflow-hidden pt-20 md:pt-24">
-        {/* Background Image Container */}
-        <div className="absolute inset-0 z-0">
-          {/* Fallback background color */}
-          <div className="absolute inset-0 bg-gradient-to-br from-gray-800 via-gray-900 to-black"></div>
-          
-          {/* Background Image - Using regular img tag for external URLs */}
-          {service.backgroundImage && (
-            <img
-              src={service.backgroundImage}
-              alt={`${service.title} background`}
-              className="absolute inset-0 w-full h-full object-cover"
-              style={{
-                objectPosition: 'center',
-                width: '100%',
-                height: '100%',
-                display: 'block'
-              }}
-              onError={(e) => {
-                console.error('Background image failed to load:', service.backgroundImage)
-                // Hide the image on error, fallback will show
-                e.currentTarget.style.display = 'none'
-              }}
-            />
-          )}
-          
-          {/* Enhanced Dark Overlay for better text readability */}
-          <div 
-            className="absolute inset-0 z-10"
-            style={getOverlayStyle(service.id)}
-          ></div>
-          {/* Additional subtle gradient overlay for extra contrast */}
-          <div className="absolute inset-0 z-10 bg-gradient-to-b from-transparent via-black/30 to-black/50"></div>
-        </div>
+      <section 
+        className="relative min-h-[85vh] md:min-h-[90vh] flex items-center justify-center overflow-hidden pt-20 md:pt-24"
+        style={{
+          backgroundImage: service.backgroundImage ? `url(${service.backgroundImage})` : 'linear-gradient(to bottom, #1f2937, #111827)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+        }}
+      >
+        {/* Enhanced Dark Overlay for better text readability */}
+        <div 
+          className="absolute inset-0 z-10"
+          style={getOverlayStyle(service.id)}
+        ></div>
+        {/* Additional subtle gradient overlay for extra contrast */}
+        <div className="absolute inset-0 z-10 bg-gradient-to-b from-transparent via-black/30 to-black/50"></div>
 
         {/* Content Container with proper spacing */}
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-20 w-full">
