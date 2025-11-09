@@ -39,7 +39,7 @@ export default function ServicesSection() {
               className="group h-full"
             >
               <Link href={`/services/${service.id}`} className="block h-full">
-                <div className="relative h-80 md:h-96 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300">
+                <div className="relative min-h-[400px] md:min-h-[450px] rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300">
                   {/* Background Image with Lazy Loading */}
                   <Image
                     src={service.cardBackgroundImage || service.backgroundImage}
@@ -58,17 +58,25 @@ export default function ServicesSection() {
                     }}
                   ></div>
                   
-                  {/* Content Overlay */}
-                  <div className="absolute inset-0 flex flex-col justify-end p-6 md:p-8 z-10">
-                    <h3 className="text-2xl md:text-3xl font-bold mb-3 text-white drop-shadow-lg break-words">
+                  {/* Content Overlay - More padding and better spacing */}
+                  <div className="absolute inset-0 flex flex-col justify-end p-4 sm:p-5 md:p-6 lg:p-8 z-10">
+                    <h3 
+                      className="text-lg sm:text-xl md:text-2xl font-bold mb-2 sm:mb-3 text-white drop-shadow-lg break-words leading-tight"
+                      style={{ 
+                        wordBreak: 'break-word', 
+                        overflowWrap: 'break-word',
+                        hyphens: 'auto',
+                        maxWidth: '100%'
+                      }}
+                    >
                       {service.title}
                     </h3>
-                    <p className="text-white/90 mb-6 text-base md:text-lg drop-shadow-md leading-relaxed break-words">
+                    <p className="text-white/90 mb-3 sm:mb-4 md:mb-6 text-xs sm:text-sm md:text-base drop-shadow-md leading-relaxed break-words line-clamp-2 sm:line-clamp-3">
                       {service.shortDescription}
                     </p>
-                    <div className="inline-flex items-center space-x-2 bg-white/20 backdrop-blur-sm px-6 py-3 rounded-lg text-white font-semibold hover:bg-white/30 transition-all duration-300 group-hover:translate-x-2">
+                    <div className="inline-flex items-center space-x-2 bg-white/20 backdrop-blur-sm px-4 sm:px-5 md:px-6 py-2 sm:py-2.5 md:py-3 rounded-lg text-white font-semibold hover:bg-white/30 transition-all duration-300 group-hover:translate-x-2 text-xs sm:text-sm md:text-base w-fit">
                       <span>Learn More</span>
-                      <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                      <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 group-hover:translate-x-1 transition-transform flex-shrink-0" />
                     </div>
                   </div>
                 </div>
