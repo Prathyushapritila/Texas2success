@@ -58,7 +58,7 @@ export default function ServiceDetailPage({ params }: { params: { id: string } }
     <div className="pt-0 min-h-screen bg-white dark:bg-gray-900">
       {/* Full-Screen Hero Section with Background Image */}
       <section 
-        className="relative min-h-[85vh] md:min-h-[90vh] flex items-center justify-center overflow-hidden pt-20 md:pt-24"
+        className="relative min-h-[85vh] md:min-h-[90vh] flex items-center justify-center overflow-hidden pt-28 md:pt-32"
         style={{
           backgroundImage: service.backgroundImage ? `url(${service.backgroundImage})` : 'linear-gradient(to bottom, #1f2937, #111827)',
           backgroundSize: 'cover',
