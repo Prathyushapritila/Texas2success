@@ -55,16 +55,18 @@ export default function ServiceDetailPage({ params }: { params: { id: string } }
   const Icon = iconMap[service.icon as keyof typeof iconMap] || Database
 
   return (
-    <div className="pt-0 min-h-screen bg-white dark:bg-gray-900">
+    <div className="min-h-screen bg-white dark:bg-gray-900">
+      {/* Spacer to account for fixed navbar - ensures content starts below header */}
+      <div className="h-24 md:h-28"></div>
+      
       {/* Full-Screen Hero Section with Background Image */}
       <section 
-        className="relative min-h-[85vh] md:min-h-[90vh] flex items-center justify-center overflow-hidden"
+        className="relative min-h-[85vh] md:min-h-[90vh] flex flex-col justify-center overflow-hidden"
         style={{
           backgroundImage: service.backgroundImage ? `url(${service.backgroundImage})` : 'linear-gradient(to bottom, #1f2937, #111827)',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',
-          paddingTop: '300px', // Maximum padding to ensure title is fully below navbar with ample space
         }}
       >
         {/* Enhanced Dark Overlay for better text readability */}
@@ -76,8 +78,8 @@ export default function ServiceDetailPage({ params }: { params: { id: string } }
         <div className="absolute inset-0 z-10 bg-gradient-to-b from-transparent via-black/30 to-black/50"></div>
 
         {/* Content Container with proper spacing */}
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-20 w-full mt-16 md:mt-20">
-          <div className="max-w-5xl mx-auto text-center text-white py-8 md:py-12">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-20 w-full py-16 md:py-20">
+          <div className="max-w-5xl mx-auto text-center text-white">
             {/* Back Button - Positioned at top */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
