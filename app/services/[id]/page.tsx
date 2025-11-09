@@ -3,10 +3,8 @@
 import { useRouter } from 'next/navigation'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
-import Image from 'next/image'
 import { services } from '@/data/siteData'
 import { Database, Zap, Smartphone, TrendingUp, Check, ArrowLeft } from 'lucide-react'
-import { useState } from 'react'
 
 const iconMap = {
   Database,
@@ -48,7 +46,6 @@ const getOverlayStyle = (serviceId: string) => {
 export default function ServiceDetailPage({ params }: { params: { id: string } }) {
   const router = useRouter()
   const service = services.find(s => s.id === params.id)
-  const [imageError, setImageError] = useState(false)
 
   if (!service) {
     router.push('/services')
@@ -66,24 +63,24 @@ export default function ServiceDetailPage({ params }: { params: { id: string } }
           {/* Fallback background color */}
           <div className="absolute inset-0 bg-gradient-to-br from-gray-800 via-gray-900 to-black"></div>
           
-          {/* Background Image - Using Next.js Image for optimization */}
-          {!imageError && service.backgroundImage && (
-            <div className="absolute inset-0 w-full h-full">
-              <Image
-                src={service.backgroundImage}
-                alt={`${service.title} background`}
-                fill
-                className="object-cover"
-                priority
-                quality={90}
-                sizes="100vw"
-                onError={() => {
-                  console.error('Background image failed to load:', service.backgroundImage)
-                  setImageError(true)
-                }}
-                unoptimized={false}
-              />
-            </div>
+          {/* Background Image - Using regular img tag for external URLs */}
+          {service.backgroundImage && (
+            <img
+              src={service.backgroundImage}
+              alt={`${service.title} background`}
+              className="absolute inset-0 w-full h-full object-cover"
+              style={{
+                objectPosition: 'center',
+                width: '100%',
+                height: '100%',
+                display: 'block'
+              }}
+              onError={(e) => {
+                console.error('Background image failed to load:', service.backgroundImage)
+                // Hide the image on error, fallback will show
+                e.currentTarget.style.display = 'none'
+              }}
+            />
           )}
           
           {/* Enhanced Dark Overlay for better text readability */}
