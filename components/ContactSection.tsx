@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { motion } from 'framer-motion'
 import ContactModal from './ContactModal'
 import { siteConfig } from '@/data/siteData'
-import { Phone, Mail, MapPin, MessageCircle, Clock } from 'lucide-react'
+import { Phone, Mail, MapPin, MessageCircle, Clock, Handshake } from 'lucide-react'
 
 export default function ContactSection() {
   const [isModalOpen, setIsModalOpen] = useState(false)
@@ -29,22 +29,31 @@ export default function ContactSection() {
             </p>
           </motion.div>
 
+          {/* Two-Column Layout with Equal Width */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 max-w-6xl mx-auto">
-            {/* Contact Form Button */}
+            {/* Left Column - Get in Touch */}
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
+              className="flex flex-col h-full"
             >
-              <div className="bg-white p-8 md:p-10 rounded-2xl border border-gray-200 shadow-lg">
-                <h3 className="text-2xl md:text-3xl font-bold mb-4 text-gray-900">Get in Touch</h3>
-                <p className="text-gray-600 mb-6">
+              <div className="bg-white p-8 md:p-10 rounded-2xl border border-gray-200 shadow-lg h-full flex flex-col">
+                {/* Representative Image/Icon at Top */}
+                <div className="flex justify-center mb-6">
+                  <div className="w-24 h-24 md:w-32 md:h-32 bg-gradient-to-br from-green-100 to-green-200 rounded-full flex items-center justify-center shadow-lg">
+                    <Handshake className="w-12 h-12 md:w-16 md:h-16 text-green-600" />
+                  </div>
+                </div>
+                
+                <h3 className="text-2xl md:text-3xl font-bold mb-4 text-gray-900 text-center">Get in Touch</h3>
+                <p className="text-gray-600 mb-8 text-center flex-grow">
                   Ready to transform your business? Contact us today for a free consultation.
                 </p>
                 <button
                   onClick={() => setIsModalOpen(true)}
-                  className="w-full bg-green-600 text-white px-6 py-4 rounded-lg font-semibold hover:bg-green-700 transition-colors flex items-center justify-center space-x-2 shadow-lg hover:shadow-xl transform hover:scale-105"
+                  className="w-full bg-green-600 text-white px-6 py-4 rounded-lg font-semibold hover:bg-green-700 transition-colors flex items-center justify-center space-x-2 shadow-lg hover:shadow-xl transform hover:scale-105 mt-auto"
                 >
                   <MessageCircle className="w-5 h-5" />
                   <span>Open Contact Form</span>
@@ -52,18 +61,21 @@ export default function ContactSection() {
               </div>
             </motion.div>
 
-            {/* Contact Information */}
+            {/* Right Column - Contact Information */}
             <motion.div
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="space-y-4 md:space-y-6"
+              className="flex flex-col h-full"
             >
-              <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-md hover:shadow-lg transition-all">
+              <div className="bg-white p-8 md:p-10 rounded-2xl border border-gray-200 shadow-lg h-full flex flex-col space-y-6">
+                {/* Phone */}
                 <div className="flex items-start">
-                  <Phone className="w-6 h-6 text-green-600 mr-4 mt-1 flex-shrink-0" />
-                  <div>
+                  <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                    <Phone className="w-6 h-6 text-green-600" />
+                  </div>
+                  <div className="flex-grow">
                     <h3 className="font-semibold text-gray-900 mb-1 text-lg">Phone</h3>
                     <a
                       href={`tel:${siteConfig.contact.phone.replace(/\s/g, '')}`}
@@ -73,12 +85,13 @@ export default function ContactSection() {
                     </a>
                   </div>
                 </div>
-              </div>
 
-              <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-md hover:shadow-lg transition-all">
+                {/* Email */}
                 <div className="flex items-start">
-                  <Mail className="w-6 h-6 text-green-600 mr-4 mt-1 flex-shrink-0" />
-                  <div>
+                  <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                    <Mail className="w-6 h-6 text-green-600" />
+                  </div>
+                  <div className="flex-grow">
                     <h3 className="font-semibold text-gray-900 mb-1 text-lg">Email</h3>
                     <a
                       href={`mailto:${siteConfig.contact.email}`}
@@ -88,12 +101,13 @@ export default function ContactSection() {
                     </a>
                   </div>
                 </div>
-              </div>
 
-              <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-md hover:shadow-lg transition-all">
+                {/* Address */}
                 <div className="flex items-start">
-                  <MapPin className="w-6 h-6 text-green-600 mr-4 mt-1 flex-shrink-0" />
-                  <div>
+                  <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                    <MapPin className="w-6 h-6 text-green-600" />
+                  </div>
+                  <div className="flex-grow">
                     <h3 className="font-semibold text-gray-900 mb-1 text-lg">Address</h3>
                     <a
                       href={`https://maps.google.com/?q=${encodeURIComponent(siteConfig.contact.fullAddress)}`}
@@ -106,12 +120,13 @@ export default function ContactSection() {
                     </a>
                   </div>
                 </div>
-              </div>
 
-              <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-md hover:shadow-lg transition-all">
+                {/* Business Hours */}
                 <div className="flex items-start">
-                  <Clock className="w-6 h-6 text-green-600 mr-4 mt-1 flex-shrink-0" />
-                  <div>
+                  <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                    <Clock className="w-6 h-6 text-green-600" />
+                  </div>
+                  <div className="flex-grow">
                     <h3 className="font-semibold text-gray-900 mb-1 text-lg">Business Hours</h3>
                     <p className="text-gray-600 text-base md:text-lg">
                       Monday - Friday: 9:00 AM - 6:00 PM<br />
