@@ -56,11 +56,9 @@ export default function ServiceDetailPage({ params }: { params: { id: string } }
 
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900">
-      {/* Spacer to account for fixed navbar - ensures content starts below header */}
-      <div className="h-24 md:h-28"></div>
-      
       {/* Full-Screen Hero Section with Background Image */}
       <section 
+        id={`service-${service.id}`}
         className="relative min-h-[85vh] md:min-h-[90vh] flex flex-col justify-center overflow-hidden"
         style={{
           backgroundImage: service.backgroundImage ? `url(${service.backgroundImage})` : 'linear-gradient(to bottom, #1f2937, #111827)',

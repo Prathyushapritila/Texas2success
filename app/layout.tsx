@@ -136,7 +136,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
           <Navbar />
-          {children}
+          <main>{children}</main>
           <Footer />
           <FloatingContactButton />
         </ThemeProvider>

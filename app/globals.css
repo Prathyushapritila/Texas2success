@@ -6,6 +6,7 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 255, 255, 255;
   --background-end-rgb: 255, 255, 255;
+  --header-h: 80px; /* Default header height, will be updated by JavaScript */
 }
 
 .dark {
@@ -22,6 +23,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: var(--header-h);
 }
 
 body {
@@ -33,6 +35,15 @@ body {
     )
     rgb(var(--background-start-rgb));
   transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Prevent header from covering content */
+main {
+  padding-top: var(--header-h);
+}
+
+h1, h2, h3, section[id] {
+  scroll-margin-top: var(--header-h);
 }
 
 /* Glassmorphism effect */
