@@ -98,14 +98,26 @@ export default function Footer() {
                           : 'text-gray-400 dark:text-gray-500 hover:text-green-400 dark:hover:text-green-500 hover:translate-x-2'
                       }`}
                     >
-                      {active && <span className="w-2 h-2 bg-green-400 dark:bg-green-500 rounded-full mr-2"></span>}
+                      <span className={`w-2 h-2 rounded-full mr-2 transition-colors duration-300 ${
+                        active 
+                          ? 'bg-green-400 dark:bg-green-500' 
+                          : 'bg-gray-500 dark:bg-gray-600'
+                      }`}></span>
                       {link.label}
                     </Link>
                   </li>
                 )
               })}
               <li>
-                <Link href="/contact" className="text-gray-400 dark:text-gray-500 hover:text-green-400 dark:hover:text-green-500 hover:translate-x-2 transition-all duration-300 inline-flex items-center">
+                <Link 
+                  href="/contact" 
+                  className="text-gray-400 dark:text-gray-500 hover:text-green-400 dark:hover:text-green-500 hover:translate-x-2 transition-all duration-300 inline-flex items-center"
+                >
+                  <span className={`w-2 h-2 rounded-full mr-2 transition-colors duration-300 ${
+                    isActive('/contact')
+                      ? 'bg-green-400 dark:bg-green-500'
+                      : 'bg-gray-500 dark:bg-gray-600'
+                  }`}></span>
                   Contact
                 </Link>
               </li>
