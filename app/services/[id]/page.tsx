@@ -55,7 +55,7 @@ export default function ServiceDetailPage({ params }: { params: { id: string } }
   const Icon = iconMap[service.icon as keyof typeof iconMap] || Database
 
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-900">
+    <div className="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300">
       {/* Full-Screen Hero Section with Background Image */}
       <section 
         id={`service-${service.id}`}
@@ -87,10 +87,10 @@ export default function ServiceDetailPage({ params }: { params: { id: string } }
             >
               <Link
                 href="/services"
-                className="inline-flex items-center text-white/90 hover:text-white transition-colors bg-white/10 backdrop-blur-sm px-4 py-2.5 rounded-lg border border-white/20 hover:bg-white/20 dark:bg-white/5 dark:border-white/10"
+                className="inline-flex items-center text-white/90 hover:text-white dark:text-white/90 dark:hover:text-white transition-colors bg-white/10 backdrop-blur-sm px-4 py-2.5 rounded-lg border border-white/20 hover:bg-white/20 dark:bg-white/10 dark:border-white/20"
               >
-                <ArrowLeft className="w-5 h-5 mr-2" />
-                <span className="text-sm md:text-base">Back to Services</span>
+                <ArrowLeft className="w-5 h-5 mr-2 text-white dark:text-white" />
+                <span className="text-sm md:text-base text-white dark:text-white">Back to Services</span>
               </Link>
             </motion.div>
 
@@ -101,8 +101,8 @@ export default function ServiceDetailPage({ params }: { params: { id: string } }
               transition={{ duration: 0.6 }}
               className="mb-6 md:mb-8"
             >
-              <div className="w-20 h-20 md:w-24 md:h-24 bg-white/20 backdrop-blur-md rounded-2xl flex items-center justify-center mx-auto border border-white/30 shadow-lg">
-                <Icon className="w-10 h-10 md:w-12 md:h-12 text-white" />
+              <div className="w-20 h-20 md:w-24 md:h-24 bg-white/20 dark:bg-white/20 backdrop-blur-md rounded-2xl flex items-center justify-center mx-auto border border-white/30 dark:border-white/30 shadow-lg">
+                <Icon className="w-10 h-10 md:w-12 md:h-12 text-white dark:text-white" />
               </div>
             </motion.div>
 
@@ -132,7 +132,7 @@ export default function ServiceDetailPage({ params }: { params: { id: string } }
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/95 max-w-3xl mx-auto drop-shadow-lg leading-relaxed px-4 break-words"
+              className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/95 dark:text-white/95 max-w-3xl mx-auto drop-shadow-lg leading-relaxed px-4 break-words"
               style={{ 
                 wordBreak: 'break-word', 
                 overflowWrap: 'break-word'
@@ -199,8 +199,8 @@ export default function ServiceDetailPage({ params }: { params: { id: string } }
             transition={{ duration: 0.8 }}
             className="text-center"
           >
-            <div className="bg-gradient-to-r from-green-600 to-green-700 dark:from-green-700 dark:to-green-800 p-12 md:p-16 rounded-2xl text-white max-w-3xl mx-auto shadow-xl">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4 break-words">Ready to Get Started?</h2>
+            <div className="bg-gradient-to-r from-green-600 to-green-700 dark:from-green-700 dark:to-green-800 p-12 md:p-16 rounded-2xl text-white dark:text-white max-w-3xl mx-auto shadow-xl">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white dark:text-white break-words">Ready to Get Started?</h2>
               <p className="text-xl md:text-2xl mb-8 text-green-50 dark:text-green-100 break-words">
                 Contact us today for a free consultation and learn how we can help transform your business.
               </p>
