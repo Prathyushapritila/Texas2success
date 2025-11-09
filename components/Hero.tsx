@@ -11,12 +11,12 @@ export default function Hero() {
   }
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-white via-green-50 to-white">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-white via-green-50 to-white dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
       {/* Decorative Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-green-100 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob"></div>
-        <div className="absolute top-40 right-10 w-72 h-72 bg-green-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-2000"></div>
-        <div className="absolute -bottom-8 left-1/2 w-72 h-72 bg-green-100 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-4000"></div>
+        <div className="absolute top-20 left-10 w-72 h-72 bg-green-100 dark:bg-green-900/30 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob"></div>
+        <div className="absolute top-40 right-10 w-72 h-72 bg-green-200 dark:bg-green-800/30 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-2000"></div>
+        <div className="absolute -bottom-8 left-1/2 w-72 h-72 bg-green-100 dark:bg-green-900/30 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-4000"></div>
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
@@ -30,7 +30,7 @@ export default function Hero() {
           >
             <div className="relative">
               {/* Glow effect */}
-              <div className="absolute inset-0 bg-green-400 rounded-full blur-2xl opacity-20 animate-pulse"></div>
+              <div className="absolute inset-0 bg-green-400 dark:bg-green-600 rounded-full blur-2xl opacity-20 animate-pulse"></div>
               {/* Logo container - no box, just clean image */}
               <div className="relative w-40 h-40 md:w-48 md:h-48">
                 <Image
@@ -49,7 +49,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 text-gray-900 leading-tight"
+            className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 text-gray-900 dark:text-white leading-tight"
           >
             Texas 2 Success
           </motion.h1>
@@ -59,7 +59,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-xl md:text-2xl lg:text-3xl text-gray-700 mb-4 font-medium"
+            className="text-xl md:text-2xl lg:text-3xl text-gray-700 dark:text-gray-300 mb-4 font-medium"
           >
             Comprehensive IT solutions to help you succeed
           </motion.p>
@@ -68,7 +68,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="text-lg md:text-xl text-gray-600 mb-12 max-w-3xl mx-auto"
+            className="text-lg md:text-xl text-gray-600 dark:text-gray-400 mb-12 max-w-3xl mx-auto"
           >
             Your trusted boutique IT Staffing consultancy & software development company
           </motion.p>
@@ -82,14 +82,14 @@ export default function Hero() {
           >
             <button
               onClick={scrollToContact}
-              className="group bg-green-600 hover:bg-green-700 text-white px-10 py-4 rounded-lg font-semibold text-lg transition-all flex items-center space-x-2 shadow-lg hover:shadow-xl transform hover:scale-105"
+              className="group bg-green-600 hover:bg-green-700 dark:bg-green-700 dark:hover:bg-green-600 text-white px-10 py-4 rounded-lg font-semibold text-lg transition-all flex items-center space-x-2 shadow-lg hover:shadow-xl transform hover:scale-105"
             >
               <span>Get a Free Consultation Today</span>
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </button>
             <a
               href="#services"
-              className="group bg-white hover:bg-gray-50 text-green-600 border-2 border-green-600 px-10 py-4 rounded-lg font-semibold text-lg transition-all flex items-center space-x-2 shadow-md hover:shadow-lg"
+              className="group bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 text-green-600 dark:text-green-400 border-2 border-green-600 dark:border-green-500 px-10 py-4 rounded-lg font-semibold text-lg transition-all flex items-center space-x-2 shadow-md hover:shadow-lg"
             >
               <span>Our Services</span>
               <ArrowDown className="w-5 h-5 group-hover:translate-y-1 transition-transform" />
@@ -115,12 +115,12 @@ export default function Hero() {
                 transition={{ duration: 0.5, delay: 1.2 + index * 0.1 }}
                 className="text-center"
               >
-                <div className="inline-flex items-center justify-center w-24 h-24 md:w-28 md:h-28 rounded-full border-4 border-green-600 bg-white shadow-lg mb-3">
-                  <div className="text-3xl md:text-4xl font-bold text-green-600">
+                <div className="inline-flex items-center justify-center w-24 h-24 md:w-28 md:h-28 rounded-full border-4 border-green-600 dark:border-green-500 bg-white dark:bg-gray-800 shadow-lg mb-3">
+                  <div className="text-3xl md:text-4xl font-bold text-green-600 dark:text-green-400">
                     {stat.number}
                   </div>
                 </div>
-                <div className="text-gray-600 font-medium text-sm md:text-base">
+                <div className="text-gray-600 dark:text-gray-400 font-medium text-sm md:text-base">
                   {stat.label}
                 </div>
               </motion.div>

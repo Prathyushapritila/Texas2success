@@ -76,16 +76,16 @@ export default function TeamworkSection() {
                 transition={{ duration: 0.4, delay: index * 0.05 }}
                 whileHover={{ y: -8, scale: 1.05 }}
                 whileTap={{ scale: 0.98 }}
-                className="bg-white/95 backdrop-blur-sm p-6 md:p-8 rounded-xl shadow-lg hover:shadow-2xl hover:border-green-300 border-2 border-white/20 text-center cursor-pointer group"
+                className="bg-white/95 dark:bg-gray-800/95 backdrop-blur-sm p-6 md:p-8 rounded-xl shadow-lg hover:shadow-2xl hover:border-green-300 dark:hover:border-green-600 border-2 border-white/20 dark:border-gray-700/20 text-center cursor-pointer group transition-colors duration-300"
                 style={{ willChange: 'transform' }}
               >
-                <div className="w-16 h-16 md:w-20 md:h-20 bg-green-100 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:bg-green-600 transition-all duration-200">
-                  <Icon className="w-8 h-8 md:w-10 md:h-10 text-green-600 group-hover:text-white transition-all duration-200" />
+                <div className="w-16 h-16 md:w-20 md:h-20 bg-green-100 dark:bg-green-900/50 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:bg-green-600 dark:group-hover:bg-green-700 transition-all duration-200">
+                  <Icon className="w-8 h-8 md:w-10 md:h-10 text-green-600 dark:text-green-400 group-hover:text-white transition-all duration-200" />
                 </div>
-                <h3 className="text-xl md:text-2xl font-semibold mb-4 text-gray-900 group-hover:text-green-600 transition-colors duration-200">
+                <h3 className="text-xl md:text-2xl font-semibold mb-4 text-gray-900 dark:text-white group-hover:text-green-600 dark:group-hover:text-green-400 transition-colors duration-200">
                   {item.title}
                 </h3>
-                <p className="text-gray-600 text-sm md:text-base leading-relaxed">
+                <p className="text-gray-600 dark:text-gray-400 text-sm md:text-base leading-relaxed">
                   {item.description}
                 </p>
               </motion.div>

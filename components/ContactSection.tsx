@@ -11,7 +11,7 @@ export default function ContactSection() {
 
   return (
     <>
-      <section id="contact" className="py-20 md:py-24 bg-gradient-to-b from-white to-gray-50">
+      <section id="contact" className="py-20 md:py-24 bg-gradient-to-b from-white to-gray-50 dark:from-gray-900 dark:to-gray-800">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -20,11 +20,11 @@ export default function ContactSection() {
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-gray-900">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-gray-900 dark:text-white">
               Let's Build Your Success Story
             </h2>
-            <div className="w-24 h-1 bg-green-600 mx-auto mb-6"></div>
-            <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto">
+            <div className="w-24 h-1 bg-green-600 dark:bg-green-500 mx-auto mb-6"></div>
+            <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
               We'd love to hear from you. Drop us a message and our team will respond within 24 hours.
             </p>
           </motion.div>
@@ -39,16 +39,16 @@ export default function ContactSection() {
               transition={{ duration: 0.8 }}
               className="flex flex-col h-full"
             >
-              <div className="bg-white p-8 md:p-10 rounded-2xl border border-gray-200 shadow-lg h-full flex flex-col">
+              <div className="bg-white dark:bg-gray-800 p-8 md:p-10 rounded-2xl border border-gray-200 dark:border-gray-700 shadow-lg h-full flex flex-col transition-colors duration-300">
                 {/* Representative Image/Icon at Top */}
                 <div className="flex justify-center mb-6">
-                  <div className="w-24 h-24 md:w-32 md:h-32 bg-gradient-to-br from-green-100 to-green-200 rounded-full flex items-center justify-center shadow-lg">
-                    <Hand className="w-12 h-12 md:w-16 md:h-16 text-green-600" />
+                  <div className="w-24 h-24 md:w-32 md:h-32 bg-gradient-to-br from-green-100 to-green-200 dark:from-green-900/50 dark:to-green-800/50 rounded-full flex items-center justify-center shadow-lg">
+                    <Hand className="w-12 h-12 md:w-16 md:h-16 text-green-600 dark:text-green-400" />
                   </div>
                 </div>
                 
-                <h3 className="text-2xl md:text-3xl font-bold mb-4 text-gray-900 text-center">Get in Touch</h3>
-                <p className="text-gray-600 mb-8 text-center flex-grow">
+                <h3 className="text-2xl md:text-3xl font-bold mb-4 text-gray-900 dark:text-white text-center">Get in Touch</h3>
+                <p className="text-gray-600 dark:text-gray-400 mb-8 text-center flex-grow">
                   Ready to transform your business? Contact us today for a free consultation.
                 </p>
                 <button
@@ -69,17 +69,17 @@ export default function ContactSection() {
               transition={{ duration: 0.8 }}
               className="flex flex-col h-full"
             >
-              <div className="bg-white p-8 md:p-10 rounded-2xl border border-gray-200 shadow-lg h-full flex flex-col space-y-6">
+              <div className="bg-white dark:bg-gray-800 p-8 md:p-10 rounded-2xl border border-gray-200 dark:border-gray-700 shadow-lg h-full flex flex-col space-y-6 transition-colors duration-300">
                 {/* Phone */}
                 <div className="flex items-start">
-                  <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
-                    <Phone className="w-6 h-6 text-green-600" />
+                  <div className="w-12 h-12 bg-green-100 dark:bg-green-900/50 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                    <Phone className="w-6 h-6 text-green-600 dark:text-green-400" />
                   </div>
                   <div className="flex-grow">
-                    <h3 className="font-semibold text-gray-900 mb-1 text-lg">Phone</h3>
+                    <h3 className="font-semibold text-gray-900 dark:text-white mb-1 text-lg">Phone</h3>
                     <a
                       href={`tel:${siteConfig.contact.phone.replace(/\s/g, '')}`}
-                      className="text-gray-600 hover:text-green-600 transition-colors text-base md:text-lg"
+                      className="text-gray-600 dark:text-gray-400 hover:text-green-600 dark:hover:text-green-400 transition-colors text-base md:text-lg"
                     >
                       {siteConfig.contact.phone}
                     </a>
@@ -88,14 +88,14 @@ export default function ContactSection() {
 
                 {/* Email */}
                 <div className="flex items-start">
-                  <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
-                    <Mail className="w-6 h-6 text-green-600" />
+                  <div className="w-12 h-12 bg-green-100 dark:bg-green-900/50 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                    <Mail className="w-6 h-6 text-green-600 dark:text-green-400" />
                   </div>
                   <div className="flex-grow">
-                    <h3 className="font-semibold text-gray-900 mb-1 text-lg">Email</h3>
+                    <h3 className="font-semibold text-gray-900 dark:text-white mb-1 text-lg">Email</h3>
                     <a
                       href={`mailto:${siteConfig.contact.email}`}
-                      className="text-gray-600 hover:text-green-600 transition-colors text-base md:text-lg break-all"
+                      className="text-gray-600 dark:text-gray-400 hover:text-green-600 dark:hover:text-green-400 transition-colors text-base md:text-lg break-all"
                     >
                       {siteConfig.contact.email}
                     </a>
@@ -104,16 +104,16 @@ export default function ContactSection() {
 
                 {/* Address */}
                 <div className="flex items-start">
-                  <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
-                    <MapPin className="w-6 h-6 text-green-600" />
+                  <div className="w-12 h-12 bg-green-100 dark:bg-green-900/50 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                    <MapPin className="w-6 h-6 text-green-600 dark:text-green-400" />
                   </div>
                   <div className="flex-grow">
-                    <h3 className="font-semibold text-gray-900 mb-1 text-lg">Address</h3>
+                    <h3 className="font-semibold text-gray-900 dark:text-white mb-1 text-lg">Address</h3>
                     <a
                       href={`https://maps.google.com/?q=${encodeURIComponent(siteConfig.contact.fullAddress)}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-gray-600 hover:text-green-600 transition-colors text-base md:text-lg"
+                      className="text-gray-600 dark:text-gray-400 hover:text-green-600 dark:hover:text-green-400 transition-colors text-base md:text-lg"
                     >
                       {siteConfig.contact.address}<br />
                       {siteConfig.contact.city}
@@ -123,12 +123,12 @@ export default function ContactSection() {
 
                 {/* Business Hours */}
                 <div className="flex items-start">
-                  <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
-                    <Clock className="w-6 h-6 text-green-600" />
+                  <div className="w-12 h-12 bg-green-100 dark:bg-green-900/50 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                    <Clock className="w-6 h-6 text-green-600 dark:text-green-400" />
                   </div>
                   <div className="flex-grow">
-                    <h3 className="font-semibold text-gray-900 mb-1 text-lg">Business Hours</h3>
-                    <p className="text-gray-600 text-base md:text-lg">
+                    <h3 className="font-semibold text-gray-900 dark:text-white mb-1 text-lg">Business Hours</h3>
+                    <p className="text-gray-600 dark:text-gray-400 text-base md:text-lg">
                       Monday - Friday: 9:00 AM - 6:00 PM<br />
                       Saturday: 10:00 AM - 4:00 PM<br />
                       Sunday: Closed
@@ -149,14 +149,14 @@ export default function ContactSection() {
           >
             {/* Map Title */}
             <div className="text-center mb-8">
-              <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-2">Visit Our Office</h3>
-              <p className="text-gray-600">We'd love to meet you in person</p>
+              <h3 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-2">Visit Our Office</h3>
+              <p className="text-gray-600 dark:text-gray-400">We'd love to meet you in person</p>
             </div>
 
             {/* Custom Map Container */}
-            <div className="relative bg-gradient-to-br from-green-50 to-white rounded-3xl shadow-2xl border-4 border-green-200 overflow-hidden transform hover:scale-[1.01] transition-transform duration-300">
+            <div className="relative bg-gradient-to-br from-green-50 to-white dark:from-gray-800 dark:to-gray-900 rounded-3xl shadow-2xl border-4 border-green-200 dark:border-green-800 overflow-hidden transform hover:scale-[1.01] transition-transform duration-300">
               {/* "Find Us Here" Overlay Badge */}
-              <div className="absolute top-6 right-6 z-20 bg-gradient-to-r from-green-600 to-green-700 text-white px-6 py-3 rounded-full shadow-xl flex items-center space-x-2 backdrop-blur-sm border-2 border-white/30">
+              <div className="absolute top-6 right-6 z-20 bg-gradient-to-r from-green-600 to-green-700 dark:from-green-700 dark:to-green-800 text-white px-6 py-3 rounded-full shadow-xl flex items-center space-x-2 backdrop-blur-sm border-2 border-white/30">
                 <MapPin className="w-5 h-5" />
                 <span className="font-bold text-sm md:text-base">Find Us Here</span>
               </div>
@@ -186,9 +186,9 @@ export default function ContactSection() {
               </div>
 
               {/* Address Display at Bottom */}
-              <div className="bg-white/80 backdrop-blur-sm px-6 py-4 border-t-2 border-green-200">
-                <div className="flex items-center justify-center space-x-2 text-gray-700">
-                  <MapPin className="w-5 h-5 text-green-600" />
+              <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm px-6 py-4 border-t-2 border-green-200 dark:border-green-800">
+                <div className="flex items-center justify-center space-x-2 text-gray-700 dark:text-gray-300">
+                  <MapPin className="w-5 h-5 text-green-600 dark:text-green-400" />
                   <span className="font-semibold">{siteConfig.contact.fullAddress}</span>
                 </div>
               </div>

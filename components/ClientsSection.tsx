@@ -9,7 +9,7 @@ export default function ClientsSection() {
   const duplicatedClients = [...clients, ...clients, ...clients, ...clients]
 
   return (
-    <section className="py-16 md:py-20 bg-gradient-to-b from-white to-gray-50 overflow-hidden">
+    <section className="py-16 md:py-20 bg-gradient-to-b from-white to-gray-50 dark:from-gray-900 dark:to-gray-800 overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -18,10 +18,10 @@ export default function ClientsSection() {
           transition={{ duration: 0.8 }}
           className="text-center mb-12 md:mb-16"
         >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-gray-900">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-gray-900 dark:text-white">
             Our Clients
           </h2>
-          <div className="w-24 h-1 bg-green-600 mx-auto mb-4"></div>
+          <div className="w-24 h-1 bg-green-600 dark:bg-green-500 mx-auto mb-4"></div>
         </motion.div>
 
         {/* Infinite Scroll Container */}

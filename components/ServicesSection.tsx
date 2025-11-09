@@ -8,7 +8,7 @@ import { ArrowRight } from 'lucide-react'
 
 export default function ServicesSection() {
   return (
-    <section id="services" className="py-20 md:py-24 bg-gray-50">
+    <section id="services" className="py-20 md:py-24 bg-gray-50 dark:bg-gray-900">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -17,11 +17,11 @@ export default function ServicesSection() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-gray-900">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-gray-900 dark:text-white">
             Our Services
           </h2>
-          <div className="w-24 h-1 bg-green-600 mx-auto mb-6"></div>
-          <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto">
+          <div className="w-24 h-1 bg-green-600 dark:bg-green-500 mx-auto mb-6"></div>
+          <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
             Comprehensive IT solutions to help you succeed
           </p>
         </motion.div>
