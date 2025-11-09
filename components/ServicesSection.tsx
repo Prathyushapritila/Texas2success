@@ -8,7 +8,7 @@ import { ArrowRight } from 'lucide-react'
 
 export default function ServicesSection() {
   return (
-    <section id="services" className="py-20 md:py-24 bg-gray-50 dark:bg-gray-900">
+    <section id="services" className="py-20 md:py-24 bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -17,11 +17,11 @@ export default function ServicesSection() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-gray-900 dark:text-white break-words">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-gray-900 dark:text-white break-words transition-colors duration-300">
             Our Services
           </h2>
-          <div className="w-24 h-1 bg-green-600 dark:bg-green-500 mx-auto mb-6"></div>
-          <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto break-words">
+          <div className="w-24 h-1 bg-green-600 dark:bg-green-500 mx-auto mb-6 transition-colors duration-300"></div>
+          <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto break-words transition-colors duration-300">
             Comprehensive IT solutions to help you succeed
           </p>
         </motion.div>
@@ -50,9 +50,9 @@ export default function ServicesSection() {
                     sizes="(max-width: 768px) 100vw, 50vw"
                   />
                   
-                  {/* Dark Overlay - 40% opacity black */}
+                  {/* Dark Overlay - Darker in dark mode for better text visibility */}
                   <div 
-                    className="absolute inset-0 bg-gradient-to-br from-black/40 to-black/40 transition-opacity duration-300 group-hover:opacity-70"
+                    className="absolute inset-0 bg-gradient-to-br from-black/40 to-black/40 dark:from-black/60 dark:to-black/60 transition-opacity duration-300 group-hover:opacity-70 dark:group-hover:opacity-80"
                     style={{
                       background: 'linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4))'
                     }}
@@ -61,13 +61,13 @@ export default function ServicesSection() {
                   {/* Content Overlay - Increased padding and proper spacing to prevent clipping */}
                   <div className="absolute inset-0 flex flex-col justify-end z-10" style={{ padding: '1.5rem' }}>
                     <div className="w-full">
-                      <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-2 sm:mb-3 text-white drop-shadow-lg break-words leading-snug">
+                      <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-2 sm:mb-3 text-white dark:text-white drop-shadow-lg break-words leading-snug transition-colors duration-300">
                         {service.title}
                       </h3>
-                      <p className="text-white/90 mb-3 sm:mb-4 md:mb-5 text-xs sm:text-sm md:text-base drop-shadow-md leading-relaxed break-words line-clamp-2 sm:line-clamp-3" style={{ overflow: 'visible' }}>
+                      <p className="text-white/90 dark:text-white/95 mb-3 sm:mb-4 md:mb-5 text-xs sm:text-sm md:text-base drop-shadow-md leading-relaxed break-words line-clamp-2 sm:line-clamp-3 transition-colors duration-300" style={{ overflow: 'visible' }}>
                         {service.shortDescription}
                       </p>
-                      <div className="inline-flex items-center space-x-2 bg-white/20 backdrop-blur-sm px-4 sm:px-5 md:px-6 py-2 sm:py-2.5 md:py-3 rounded-lg text-white font-semibold hover:bg-white/30 transition-all duration-300 group-hover:translate-x-2 text-xs sm:text-sm md:text-base w-fit">
+                      <div className="inline-flex items-center space-x-2 bg-white/20 dark:bg-white/30 backdrop-blur-sm px-4 sm:px-5 md:px-6 py-2 sm:py-2.5 md:py-3 rounded-lg text-white dark:text-white font-semibold hover:bg-white/30 dark:hover:bg-white/40 transition-all duration-300 group-hover:translate-x-2 text-xs sm:text-sm md:text-base w-fit">
                         <span>Learn More</span>
                         <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 group-hover:translate-x-1 transition-transform flex-shrink-0" />
                       </div>
