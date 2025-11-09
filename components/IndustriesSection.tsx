@@ -61,13 +61,13 @@ export default function IndustriesSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                whileHover={{ y: -5, scale: 1.02 }}
-                className="bg-white/95 backdrop-blur-sm p-6 md:p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-white/20"
+                whileHover={{ y: -8, scale: 1.05 }}
+                className="bg-white/95 backdrop-blur-sm p-6 md:p-8 rounded-xl shadow-lg hover:shadow-2xl hover:border-green-300 transition-all duration-300 border-2 border-white/20 cursor-pointer group"
               >
-                <div className="w-14 h-14 md:w-16 md:h-16 bg-green-100 rounded-xl flex items-center justify-center mb-4 group-hover:bg-green-600 transition-colors">
-                  <Icon className="w-7 h-7 md:w-8 md:h-8 text-green-600" />
+                <div className="w-14 h-14 md:w-16 md:h-16 bg-green-100 rounded-xl flex items-center justify-center mb-4 group-hover:bg-green-600 transition-all duration-300">
+                  <Icon className="w-7 h-7 md:w-8 md:h-8 text-green-600 group-hover:text-white transition-all duration-300" />
                 </div>
-                <h4 className="text-xl md:text-2xl font-semibold mb-3 text-gray-900">
+                <h4 className="text-xl md:text-2xl font-semibold mb-3 text-gray-900 group-hover:text-green-600 transition-colors duration-300">
                   {industry.name}
                 </h4>
                 <p className="text-gray-600 text-sm md:text-base leading-relaxed">

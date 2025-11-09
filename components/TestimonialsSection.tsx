@@ -32,8 +32,8 @@ export default function TestimonialsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              whileHover={{ y: -5 }}
-              className="bg-gradient-to-br from-gray-50 to-white p-6 md:p-8 rounded-2xl border border-gray-200 shadow-md hover:shadow-xl transition-all"
+              whileHover={{ y: -8, scale: 1.03 }}
+              className="bg-gradient-to-br from-gray-50 to-white p-6 md:p-8 rounded-2xl border-2 border-gray-200 shadow-md hover:shadow-2xl hover:border-green-300 transition-all duration-300 cursor-pointer"
             >
               <Quote className="w-10 h-10 text-green-600 mb-4 opacity-50" />
               <div className="flex mb-4">
