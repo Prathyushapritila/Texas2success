@@ -14,8 +14,8 @@ const valueIcons = {
 
 export default function About() {
   return (
-    <div className="pt-32 pb-20">
-      <div className="container mx-auto px-4">
+    <div className="pt-32 pb-20 bg-white dark:bg-gray-900 min-h-screen transition-colors duration-300">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
           {/* Hero Section */}
           <motion.div
@@ -24,10 +24,10 @@ export default function About() {
             transition={{ duration: 0.8 }}
             className="text-center mb-20"
           >
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 text-gray-900">
+            <h1 className="text-5xl md:text-6xl font-bold mb-6 text-gray-900 dark:text-white">
               About Us
             </h1>
-            <p className="text-xl text-gray-600 mb-8">
+            <p className="text-xl text-gray-600 dark:text-gray-400 mb-8">
               {siteConfig.description}
             </p>
           </motion.div>
@@ -38,16 +38,16 @@ export default function About() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="bg-white p-8 md:p-12 rounded-2xl border border-gray-200 shadow-lg mb-16"
+            className="bg-white dark:bg-gray-800 p-8 md:p-12 rounded-2xl border border-gray-200 dark:border-gray-700 shadow-lg mb-16 transition-colors duration-300"
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900 dark:text-white">
               Our Story
             </h2>
             <div className="prose prose-lg max-w-none">
-              <p className="text-gray-700 leading-relaxed mb-4">
+              <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
                 We are privileged to work with hundreds of future-thinking businesses, including many of the world's top hardware, software, and brands. Our comprehensive approach combines cutting-edge technology with proven methodologies to deliver exceptional results.
               </p>
-              <p className="text-gray-700 leading-relaxed">
+              <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
                 As a boutique IT Staffing consultancy & software development company, we pride ourselves on delivering personalized solutions that drive real business value. Our team of experts brings decades of combined experience in enterprise software, cloud infrastructure, and digital transformation.
               </p>
             </div>
@@ -61,10 +61,10 @@ export default function About() {
             transition={{ duration: 0.8 }}
             className="text-center mb-12"
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900 dark:text-white">
               Our Values
             </h2>
-            <p className="text-xl text-gray-600">
+            <p className="text-xl text-gray-600 dark:text-gray-400">
               The principles that guide everything we do
             </p>
           </motion.div>
@@ -80,15 +80,15 @@ export default function About() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   whileHover={{ y: -10 }}
-                  className="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all border border-gray-100"
+                  className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all border border-gray-100 dark:border-gray-700"
                 >
-                  <div className="w-16 h-16 bg-green-100 rounded-xl flex items-center justify-center mb-4">
-                    <Icon className="w-8 h-8 text-green-600" />
+                  <div className="w-16 h-16 bg-green-100 dark:bg-green-900/50 rounded-xl flex items-center justify-center mb-4">
+                    <Icon className="w-8 h-8 text-green-600 dark:text-green-400" />
                   </div>
-                  <h3 className="text-2xl font-semibold mb-3 text-gray-900">
+                  <h3 className="text-2xl font-semibold mb-3 text-gray-900 dark:text-white">
                     {value.title}
                   </h3>
-                  <p className="text-gray-600">
+                  <p className="text-gray-600 dark:text-gray-400">
                     {value.description}
                   </p>
                 </motion.div>
@@ -104,10 +104,10 @@ export default function About() {
             transition={{ duration: 0.8 }}
             className="text-center mb-12"
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900 dark:text-white">
               Leadership Team
             </h2>
-            <p className="text-xl text-gray-600">
+            <p className="text-xl text-gray-600 dark:text-gray-400">
               Meet the experts driving our success
             </p>
           </motion.div>
@@ -121,18 +121,18 @@ export default function About() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 whileHover={{ y: -5 }}
-                className="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all text-center border border-gray-100"
+                className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all text-center border border-gray-100 dark:border-gray-700"
               >
-                <div className="w-32 h-32 bg-gray-200 rounded-full mx-auto mb-4 flex items-center justify-center">
-                  <span className="text-4xl text-gray-400">👤</span>
+                <div className="w-32 h-32 bg-gray-200 dark:bg-gray-700 rounded-full mx-auto mb-4 flex items-center justify-center">
+                  <span className="text-4xl text-gray-400 dark:text-gray-500">👤</span>
                 </div>
-                <h3 className="text-2xl font-semibold mb-2 text-gray-900">
+                <h3 className="text-2xl font-semibold mb-2 text-gray-900 dark:text-white">
                   {leader.name}
                 </h3>
-                <p className="text-green-600 font-medium mb-4">
+                <p className="text-green-600 dark:text-green-400 font-medium mb-4">
                   {leader.role}
                 </p>
-                <p className="text-gray-600 text-sm">
+                <p className="text-gray-600 dark:text-gray-400 text-sm">
                   {leader.bio}
                 </p>
               </motion.div>

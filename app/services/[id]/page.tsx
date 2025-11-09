@@ -105,12 +105,13 @@ export default function ServiceDetailPage({ params }: { params: { id: string } }
               </div>
             </motion.div>
 
-            {/* Title - Responsive sizing to prevent cutoff */}
+            {/* Title - Fixed to prevent cutoff with proper word wrapping */}
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 md:mb-6 drop-shadow-2xl leading-tight px-4 text-white"
+              className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 md:mb-6 drop-shadow-2xl leading-tight px-4 text-white break-words hyphens-auto"
+              style={{ wordBreak: 'break-word', overflowWrap: 'break-word' }}
             >
               {service.title}
             </motion.h1>
@@ -120,7 +121,7 @@ export default function ServiceDetailPage({ params }: { params: { id: string } }
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-white/95 max-w-3xl mx-auto drop-shadow-lg leading-relaxed px-4"
+              className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/95 max-w-3xl mx-auto drop-shadow-lg leading-relaxed px-4"
             >
               {service.shortDescription}
             </motion.p>
