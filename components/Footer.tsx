@@ -82,21 +82,16 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Quick Links - Highlighted */}
+          {/* Quick Links */}
           <div>
             <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-3">
               {navLinks.map((link) => {
-                const active = isActive(link.href)
                 return (
                   <li key={link.href}>
                     <Link 
                       href={link.href} 
-                      className={`transition-all duration-300 ${
-                        active
-                          ? 'text-green-400 dark:text-green-500 font-semibold text-lg'
-                          : 'text-gray-400 dark:text-gray-500 hover:text-green-400 dark:hover:text-green-500 hover:translate-x-2'
-                      }`}
+                      className="text-gray-400 dark:text-gray-500 hover:text-green-400 dark:hover:text-green-500 hover:translate-x-2 transition-all duration-300"
                     >
                       {link.label}
                     </Link>
