@@ -92,17 +92,12 @@ export default function Footer() {
                   <li key={link.href}>
                     <Link 
                       href={link.href} 
-                      className={`inline-flex items-center transition-all duration-300 ${
+                      className={`transition-all duration-300 ${
                         active
                           ? 'text-green-400 dark:text-green-500 font-semibold text-lg'
                           : 'text-gray-400 dark:text-gray-500 hover:text-green-400 dark:hover:text-green-500 hover:translate-x-2'
                       }`}
                     >
-                      <span className={`w-2 h-2 rounded-full mr-2 transition-colors duration-300 ${
-                        active 
-                          ? 'bg-green-400 dark:bg-green-500' 
-                          : 'bg-gray-500 dark:bg-gray-600'
-                      }`}></span>
                       {link.label}
                     </Link>
                   </li>
@@ -111,13 +106,8 @@ export default function Footer() {
               <li>
                 <Link 
                   href="/contact" 
-                  className="text-gray-400 dark:text-gray-500 hover:text-green-400 dark:hover:text-green-500 hover:translate-x-2 transition-all duration-300 inline-flex items-center"
+                  className="text-gray-400 dark:text-gray-500 hover:text-green-400 dark:hover:text-green-500 hover:translate-x-2 transition-all duration-300"
                 >
-                  <span className={`w-2 h-2 rounded-full mr-2 transition-colors duration-300 ${
-                    isActive('/contact')
-                      ? 'bg-green-400 dark:bg-green-500'
-                      : 'bg-gray-500 dark:bg-gray-600'
-                  }`}></span>
                   Contact
                 </Link>
               </li>
@@ -129,26 +119,22 @@ export default function Footer() {
             <h4 className="text-lg font-semibold mb-4">Services</h4>
             <ul className="space-y-2">
               <li>
-                <Link href="/services/erp-crm" className="text-gray-400 dark:text-gray-500 hover:text-green-400 dark:hover:text-green-500 transition-colors inline-flex items-center hover:translate-x-1">
-                  <span className="mr-2">→</span>
+                <Link href="/services/erp-crm" className="text-gray-400 dark:text-gray-500 hover:text-green-400 dark:hover:text-green-500 transition-colors">
                   ERP & CRM Software
                 </Link>
               </li>
               <li>
-                <Link href="/services/salesforce" className="text-gray-400 dark:text-gray-500 hover:text-green-400 dark:hover:text-green-500 transition-colors inline-flex items-center hover:translate-x-1">
-                  <span className="mr-2">→</span>
+                <Link href="/services/salesforce" className="text-gray-400 dark:text-gray-500 hover:text-green-400 dark:hover:text-green-500 transition-colors">
                   Salesforce Development
                 </Link>
               </li>
               <li>
-                <Link href="/services/websites-apps" className="text-gray-400 dark:text-gray-500 hover:text-green-400 dark:hover:text-green-500 transition-colors inline-flex items-center hover:translate-x-1">
-                  <span className="mr-2">→</span>
+                <Link href="/services/websites-apps" className="text-gray-400 dark:text-gray-500 hover:text-green-400 dark:hover:text-green-500 transition-colors">
                   Websites & Apps
                 </Link>
               </li>
               <li>
-                <Link href="/services/seo-marketing" className="text-gray-400 dark:text-gray-500 hover:text-green-400 dark:hover:text-green-500 transition-colors inline-flex items-center hover:translate-x-1">
-                  <span className="mr-2">→</span>
+                <Link href="/services/seo-marketing" className="text-gray-400 dark:text-gray-500 hover:text-green-400 dark:hover:text-green-500 transition-colors">
                   SEO & Marketing
                 </Link>
               </li>
